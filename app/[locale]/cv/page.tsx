@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "CV",
 };
 
-const cvFilePath = "/cv/cv_kliushnyk_frontend.pdf";
+const cvFilePath = "/cv/cv_kliushnyk.pdf";
 
 export default function CV() {
   return <CVSection cvFile={cvFilePath} />;
