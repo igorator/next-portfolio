@@ -6,8 +6,11 @@ import { Section } from "@/shared/components/layout/Section/Section";
 import { GlassSurface } from "../../ui/GlassSurface/GlassSurface";
 import styles from "./CV.module.css";
 
-export const CVSection = () => {
-  const cvFile = "/cv/CV_Kliushnyk_Frontend.pdf"; // ← строка, НЕ import
+type CVSectionProps = {
+  cvFile: string;
+};
+
+export const CVSection = ({ cvFile }: CVSectionProps) => {
   const t = useTranslations();
 
   return (

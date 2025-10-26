@@ -12,7 +12,8 @@ const fontText = Inter({ variable: "--font-text", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ihor's Portfolio",
-  description: "",
+  description:
+    "Portfolio by Ihor Kliushnyk — design-driven, fast, and functional.",
 };
 
 export default function RootLayout({

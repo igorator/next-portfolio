@@ -1,7 +1,12 @@
+import type { Metadata } from "next";
 import type { Locale } from "next-intl";
 import { getProjects } from "@/shared/api/projects/getProjects";
 import { getTechnologies } from "@/shared/api/technologies/getTechnologies";
 import { ProjectsSection } from "@/shared/components/pages/Projects/Projects";
+
+export const metadata: Metadata = {
+  title: "Projects",
+};
 
 export default async function Projects({
   params,
