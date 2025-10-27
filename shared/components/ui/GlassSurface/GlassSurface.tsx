@@ -1,13 +1,10 @@
-"use client";
-
-import { type CSSProperties, type ReactNode, useId } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import styles from "./GlassSurface.module.css";
 
 type GlassSurfaceProps = {
   children: ReactNode;
   className?: string;
   contentClassName?: string;
-  /** Опционально: инлайн-оверрайд только CSS-переменных (не стилевых свойств) */
   style?: CSSProperties & {
     ["--gs-radius"]?: string;
     ["--gs-padding"]?: string;
@@ -24,7 +21,8 @@ export const GlassSurface = ({
   contentClassName,
   style,
 }: GlassSurfaceProps) => {
-  const filterId = useId().replace(/:/g, "-");
+  // фиксированный ID — без useId
+  const filterId = "glass-surface-filter";
 
   return (
     <div
@@ -39,7 +37,6 @@ export const GlassSurface = ({
         {children}
       </div>
 
-      {/* Локальный SVG-фильтр с уникальным id */}
       <svg aria-hidden="true" focusable="false" className={styles.hiddenSvg}>
         <filter
           id={filterId}

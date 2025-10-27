@@ -188,36 +188,40 @@ export function ProjectSection({
           )}
         </motion.article>
 
-        {(demoUrl || githubUrl) && (
-          <motion.article
-            className={`${styles.card} ${styles.linksCard}`}
-            variants={cardItem}
-          >
-            <h2 className={styles.cardTitle}>Links</h2>
-            <div className={styles.links}>
-              {demoUrl && (
-                <a
-                  className={`${styles.btn} ${styles.btnPrimary}`}
-                  href={demoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Live Demo
-                </a>
-              )}
-              {githubUrl && (
-                <a
-                  className={`${styles.btn} ${styles.btnGhost}`}
-                  href={githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </a>
-              )}
-            </div>
-          </motion.article>
-        )}
+        <motion.article
+          className={`${styles.card} ${styles.linksCard}`}
+          variants={cardItem}
+        >
+          <h2 className={styles.cardTitle}>Links</h2>
+
+          <div className={styles.links}>
+            {demoUrl ? (
+              <a
+                className={`${styles.btn} ${styles.btnPrimary}`}
+                href={demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Demo
+              </a>
+            ) : null}
+
+            {githubUrl ? (
+              <a
+                className={`${styles.btn} ${styles.btnGhost}`}
+                href={githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+            ) : null}
+
+            {!demoUrl && !githubUrl && (
+              <span className={styles.noLinks}>{t("noLinks")}</span>
+            )}
+          </div>
+        </motion.article>
 
         <motion.article
           className={`${styles.card} ${styles.imageCard}`}

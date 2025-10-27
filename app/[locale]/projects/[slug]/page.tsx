@@ -3,14 +3,13 @@ import { getProjectBySlug } from "@/shared/api/projects/getProjectBySlug";
 import { ProjectSection } from "@/shared/components/pages/Projects/Project/Project";
 
 export const revalidate = 60;
-export const dynamic = "force-static";
 
-type ProjectPageProps = {
-  params: Promise<{ slug: string; locale: Locale }>;
-};
+type Params = { slug: string; locale: Locale };
+type Props = { params: Params | Promise<Params> };
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
-  const { slug, locale } = await params;
+export default async function ProjectPage({ params }: Props) {
+  const { slug, locale } = await Promise.resolve(params); // <- ключевая строка
+
   const project = await getProjectBySlug(slug, locale);
 
   return (

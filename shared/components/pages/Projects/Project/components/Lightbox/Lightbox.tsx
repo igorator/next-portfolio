@@ -1,12 +1,12 @@
 /** biome-ignore-all lint/a11y/useKeyWithClickEvents: <Becauseeeee> */
 
 import Image from "next/image";
+import type { Dispatch, SetStateAction } from "react";
 import { useCallback, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { MdClose } from "react-icons/md";
 import styles from "./Lightbox.module.css";
-import type { Dispatch, SetStateAction } from "react";
 
 export const Lightbox = ({
   images,
