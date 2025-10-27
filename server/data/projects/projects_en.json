@@ -1,4 +1,10 @@
 {
+  "this-website": {
+    "title": "This website",
+    "description": "My portfolio website",
+    "type": "startup",
+    "category": "portfolio"
+  },
   "doido-market": {
     "title": "DOIDO Market",
     "description": "NFT/Gift marketplace: client built with React, Redux Toolkit, and React Router v7; backend on Node.js, Express, and TypeORM; integrated TON payments, Telegram Auth, and bot flows.",

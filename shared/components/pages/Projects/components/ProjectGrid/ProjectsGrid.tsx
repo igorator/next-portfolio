@@ -19,18 +19,26 @@ export const ProjectsGrid = ({
   const t = useTranslations("projects_ui");
 
   return (
-    <motion.div layout className={styles.projectsWrapper}>
+    <div className={styles.projectsWrapper}>
       {projects.length > 0 ? (
-        <AnimatePresence mode="popLayout">
-          <ProjectOverviewCard />
+        <AnimatePresence>
+          <motion.div
+            key="overview"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+          >
+            <ProjectOverviewCard />
+          </motion.div>
+
           {projects.map((project) => (
             <motion.div
               key={project.slug}
-              layout
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.25 }}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
             >
               <ProjectCard
                 onTechnologyClick={onTechnologyClick}
@@ -52,10 +60,11 @@ export const ProjectsGrid = ({
           className={styles.noProjects}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
         >
           {t("noMatches")}
         </motion.div>
       )}
-    </motion.div>
+    </div>
   );
 };

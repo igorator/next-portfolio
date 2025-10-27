@@ -3,15 +3,14 @@
 import { motion, type Variants } from "motion/react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { type CSSProperties, useEffect, useMemo, useState } from "react";
-import { createPortal } from "react-dom";
+import { type CSSProperties, useMemo, useState } from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
-import { MdClose } from "react-icons/md";
 import { Link } from "@/i18n/navigation";
 import { Section } from "@/shared/components/layout/Section/Section";
 import { GlassSurface } from "@/shared/components/ui/GlassSurface/GlassSurface";
 import { routes } from "@/shared/config/routes";
 import type { Technology } from "@/shared/types/technology";
+import { Lightbox } from "./components/Lightbox/Lightbox";
 import styles from "./Project.module.css";
 
 type ProjectSectionProps = {
@@ -308,118 +307,11 @@ export function ProjectSection({
         <Lightbox
           images={images}
           index={idx}
-          setIndex={(n) => goTo(n)}
+          setIndex={setIdx}
           onClose={() => setLightboxOpen(false)}
           title={title}
         />
       )}
     </Section>
-  );
-}
-
-function Lightbox({
-  images,
-  index,
-  setIndex,
-  onClose,
-  title,
-}: {
-  images: string[];
-  index: number;
-  setIndex: (n: number) => void;
-  onClose: () => void;
-  title: string;
-}) {
-  const total = images.length;
-
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-      if (e.key === "ArrowRight") setIndex(index + 1);
-      if (e.key === "ArrowLeft") setIndex(index - 1);
-    };
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", onKey);
-    return () => {
-      document.body.style.overflow = prevOverflow;
-      window.removeEventListener("keydown", onKey);
-    };
-  }, [index, onClose, setIndex]);
-
-  const go = (n: number) => setIndex((n + total) % total);
-
-  return createPortal(
-    <div
-      className={styles.lbRoot}
-      role="dialog"
-      aria-modal
-      onPointerDown={onClose}
-    >
-      <button
-        type="button"
-        className={`${styles.lbBtn} ${styles.lbClose}`}
-        aria-label="Close"
-        onClick={onClose}
-      >
-        <MdClose />
-      </button>
-      <button
-        type="button"
-        className={`${styles.lbBtn} ${styles.lbPrev}`}
-        aria-label="Previous"
-        onClick={(e) => {
-          e.stopPropagation();
-          go(index - 1);
-        }}
-      >
-        <BsArrowLeft />
-      </button>
-      <button
-        type="button"
-        className={`${styles.lbBtn} ${styles.lbNext}`}
-        aria-label="Next"
-        onClick={(e) => {
-          e.stopPropagation();
-          go(index + 1);
-        }}
-      >
-        <BsArrowRight />
-      </button>
-
-      <div
-        className={styles.lbStage}
-        onPointerDown={(e) => e.stopPropagation()}
-        aria-live="polite"
-      >
-        <div className={styles.lbFigure}>
-          <Image
-            key={images[index]}
-            src={images[index]}
-            alt={`${title} — image ${index + 1} of ${total}`}
-            fill
-            sizes="100vw"
-            className={styles.lbImg}
-            priority
-          />
-        </div>
-      </div>
-
-      <div className={styles.lbMeta} onPointerDown={(e) => e.stopPropagation()}>
-        <span className={styles.lbCaption}>{title}</span>
-        <span className={styles.lbCount}>
-          {index + 1} / {total}
-        </span>
-        <a
-          className={styles.lbOpen}
-          href={images[index]}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Open original
-        </a>
-      </div>
-    </div>,
-    document.body,
   );
 }

@@ -1,4 +1,10 @@
 {
+  "this-website": {
+    "title": "Цей вебсайт",
+    "description": "Мій портфоліо-сайт",
+    "type": "стартап",
+    "category": "портфоліо"
+  },
   "doido-market": {
     "title": "DOIDO Market",
     "description": "NFT/Gift маркетплейс: клієнтська частина на React, Redux Toolkit і React Router v7; бекенд на Node.js, Express і TypeORM; інтеграція TON-платежів, Telegram-авторизації та бот-флоу.",

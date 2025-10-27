@@ -1,5 +1,12 @@
 [
   {
+    "slug": "this-website",
+    "date": "2025-10",
+    "githubUrl": "",
+    "isCommercial": false,
+    "technologiesIds": ["nextjs", "css", "framer-motion", "i18n"]
+  },
+  {
     "slug": "doido-market",
     "date": "2025-06",
     "githubUrl": "https://github.com/igorator",
