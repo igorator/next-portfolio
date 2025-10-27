@@ -5,9 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { useMemo } from "react";
-
-import { GlassSurface } from "@/shared/components/ui/GlassSurface/GlassSurface";
 import { routing } from "@/i18n/routing";
+import { GlassSurface } from "@/shared/components/ui/GlassSurface/GlassSurface";
 import { routes } from "@/shared/config/routes";
 import styles from "./NavbarLinks.module.css";
 

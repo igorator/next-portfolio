@@ -1,14 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import { motion, type Variants } from "motion/react";
+import Image from "next/image";
+import type React from "react";
 import { BsArrowLeft } from "react-icons/bs";
 import { Link } from "@/i18n/navigation";
 import { Section } from "@/shared/components/layout/Section/Section";
+import { GlassSurface } from "@/shared/components/ui/GlassSurface/GlassSurface";
 import type { Technology } from "@/shared/types/technology";
 import styles from "./Project.module.css";
-import { GlassSurface } from "@/shared/components/ui/GlassSurface/GlassSurface";
-import React from "react";
 
 type ProjectSectionProps = {
   title: string;

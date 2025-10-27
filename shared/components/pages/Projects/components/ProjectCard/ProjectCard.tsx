@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import type { CSSProperties } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { Link } from "@/i18n/navigation";
 import { ProjectCardTooltip } from "./PojectCardTooltip/ProjectCardTooltip";
@@ -14,7 +13,6 @@ export type ProjectCardProps = {
   type: string;
   category: string;
   technologies?: Array<{ id: string; name: string; color?: string }>;
-  imageUrl?: string;
   githubUrl?: string | null;
   demoUrl?: string | null;
   isCommercial?: boolean;

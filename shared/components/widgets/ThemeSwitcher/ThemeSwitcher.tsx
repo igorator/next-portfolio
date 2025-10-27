@@ -2,9 +2,9 @@
 
 import * as Switch from "@radix-ui/react-switch";
 import { BsMoon, BsSun } from "react-icons/bs";
+import { GlassSurface } from "@/shared/components/ui/GlassSurface/GlassSurface";
 import { useThemeStore } from "@/shared/state/store/useThemeStore";
 import styles from "./ThemeSwitcher.module.css";
-import { GlassSurface } from "@/shared/components/ui/GlassSurface/GlassSurface";
 
 export const ThemeSwitch = () => {
   const { theme, setTheme } = useThemeStore();
