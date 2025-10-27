@@ -34,11 +34,11 @@ export const TechnologyMultiSelect = ({
   return (
     <DropdownMenu.Root>
       <GlassSurface>
-        <DropdownMenu.Trigger
-          className={`${styles.triggerButton} glass-wrapper`}
-        >
-          <span className={styles.triggerLabel}>{triggerLabel}</span>
-          <BsChevronDown className={styles.chevronIcon} aria-hidden />
+        <DropdownMenu.Trigger>
+          <div className={`${styles.triggerButton}`}>
+            <span className={styles.triggerLabel}>{triggerLabel}</span>
+            <BsChevronDown className={styles.chevronIcon} aria-hidden />
+          </div>
         </DropdownMenu.Trigger>
       </GlassSurface>
 

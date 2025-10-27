@@ -1,282 +1,207 @@
 "use client";
 
+import Image from "next/image";
 import { motion, type Variants } from "motion/react";
 import { BsArrowLeft } from "react-icons/bs";
 import { Link } from "@/i18n/navigation";
 import { Section } from "@/shared/components/layout/Section/Section";
-import { GlassSurface } from "@/shared/components/ui/GlassSurface/GlassSurface";
-import { routes } from "@/shared/config/routes";
 import type { Technology } from "@/shared/types/technology";
 import styles from "./Project.module.css";
+import { GlassSurface } from "@/shared/components/ui/GlassSurface/GlassSurface";
+import React from "react";
 
 type ProjectSectionProps = {
   title: string;
   description: string;
   type: string;
   category: string;
-  year: number;
   date: string;
-  imageUrl: string;
+  cover: string;
   technologies: Technology[];
   githubUrl?: string | null;
   demoUrl?: string | null;
+  screens: string[] | [];
 };
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const containerVariants: Variants = {
+const cardsContainer: Variants = {
   hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.05,
-    },
-  },
+  show: { transition: { staggerChildren: 0.06, delayChildren: 0.04 } },
 };
 
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 16, filter: "blur(6px)" },
+const cardItem: Variants = {
+  hidden: { opacity: 0, y: 10, filter: "blur(6px)" },
   show: {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { duration: 0.4, ease },
+    transition: { duration: 0.28, ease },
   },
 };
 
-const Card = ({
-  className,
-  children,
-  variants,
-}: {
-  className?: string;
-  children: React.ReactNode;
-  variants: Variants;
-}) => (
-  <motion.article
-    className={`${styles.card} ${className ?? ""}`}
-    variants={variants}
-  >
-    {children}
-  </motion.article>
-);
+function colorFromString(seed: string) {
+  let h = 0;
+  for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) >>> 0;
+  const hue = h % 360;
+  return `hsl(${hue} 70% 55%)`;
+}
 
-const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-  <h2 className={styles.cardTitle}>{children}</h2>
-);
-
-const LinkBtn = ({
-  href,
-  children,
-  variant = "primary",
-}: {
-  href: string;
-  children: React.ReactNode;
-  variant?: "primary" | "ghost";
-}) => (
-  <a
-    className={`${styles.btn} ${
-      variant === "primary" ? styles.btnPrimary : styles.btnGhost
-    }`}
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    {children}
-  </a>
-);
-
-const TechChip = ({ name }: { name: string }) => (
-  <motion.li
-    className={styles.techChip}
-    whileHover={{ scale: 1.05 }}
-    transition={{ type: "spring", stiffness: 260, damping: 20 }}
-  >
-    {name}
-  </motion.li>
-);
-
-/* ---------- Page header blocks ---------- */
-const BackToProjects = () => (
-  <GlassSurface className={styles.backRow}>
-    <motion.div
-      initial={{ opacity: 0, y: 6 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.25, ease }}
-    >
-      <Link href={routes.projects.path} className={styles.back}>
-        <BsArrowLeft size={16} />
-
-        <span>Back to projects</span>
-      </Link>
-    </motion.div>
-  </GlassSurface>
-);
-
-const PageHeader = ({
-  title,
-  type,
-  category,
-  year,
-}: {
-  title: string;
-  type: string;
-  category: string;
-  year: number;
-}) => (
-  <motion.header
-    className={styles.header}
-    initial={{ opacity: 0, y: 12 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.35, ease }}
-  >
-    <h1 className={styles.title}>{title}</h1>
-    <div className={styles.sub}>
-      <span className={styles.badge}>{type}</span>
-      <span className={styles.dot} aria-hidden />
-      <span className={styles.badgeAlt}>{category}</span>
-      <span className={styles.dot} aria-hidden />
-      <time className={styles.year} dateTime={String(year)}>
-        {year}
-      </time>
-    </div>
-  </motion.header>
-);
-
-/* ---------- Content cards ---------- */
-const ImageCard = ({
-  imageUrl,
-  title,
-  date,
-}: {
-  imageUrl: string;
-  title: string;
-  date: string;
-}) => (
-  <Card className={styles.imageCard} variants={itemVariants}>
-    <div className={styles.imageWrap}>
-      <img className={styles.image} src={imageUrl} alt={title} />
-      <div className={styles.imageGloss} aria-hidden />
-    </div>
-    <footer className={styles.imageMeta}>
-      <time className={styles.date} dateTime={date}>
-        {date}
-      </time>
-    </footer>
-  </Card>
-);
-
-const MetaCard = ({
-  type,
-  category,
-  year,
-  date,
-}: {
-  type: string;
-  category: string;
-  year: number;
-  date: string;
-}) => (
-  <Card className={styles.metaCard} variants={itemVariants}>
-    <SectionTitle>Overview</SectionTitle>
-    <ul className={styles.metaList}>
-      <li className={styles.metaItem}>
-        <span className={styles.metaLabel}>Type</span>
-        <span className={styles.metaValue}>{type}</span>
-      </li>
-      <li className={styles.metaItem}>
-        <span className={styles.metaLabel}>Category</span>
-        <span className={styles.metaValue}>{category}</span>
-      </li>
-      <li className={styles.metaItem}>
-        <span className={styles.metaLabel}>Year</span>
-        <span className={styles.metaValue}>{year}</span>
-      </li>
-      <li className={styles.metaItem}>
-        <span className={styles.metaLabel}>Date</span>
-        <time className={styles.metaValue} dateTime={date}>
-          {date}
-        </time>
-      </li>
-    </ul>
-  </Card>
-);
-
-const DescriptionCard = ({ description }: { description: string }) => (
-  <Card className={styles.descCard} variants={itemVariants}>
-    <SectionTitle>Description</SectionTitle>
-    <p className={styles.description}>{description}</p>
-  </Card>
-);
-
-const TechnologiesCard = ({ technologies }: { technologies: Technology[] }) => (
-  <Card className={styles.techCard} variants={itemVariants}>
-    <SectionTitle>Technologies</SectionTitle>
-    {technologies?.length ? (
-      <ul className={styles.techList} aria-label="Technology stack">
-        {technologies.map((t) => (
-          <TechChip key={t.id} name={t.name} />
-        ))}
-      </ul>
-    ) : (
-      <p className={styles.muted}>No technologies listed.</p>
-    )}
-  </Card>
-);
-
-const LinksCard = ({
-  demoUrl,
-  githubUrl,
-}: {
-  demoUrl?: string | null;
-  githubUrl?: string | null;
-}) => (
-  <Card className={styles.linksCard} variants={itemVariants}>
-    <SectionTitle>Links</SectionTitle>
-    <div className={styles.linksRow}>
-      {demoUrl && <LinkBtn href={demoUrl}>Live Demo</LinkBtn>}
-      {githubUrl && (
-        <LinkBtn href={githubUrl} variant="ghost">
-          GitHub
-        </LinkBtn>
-      )}
-    </div>
-  </Card>
-);
-
-export const ProjectSection = ({
+export function ProjectSection({
   title,
   description,
   type,
   category,
-  year,
   date,
-  imageUrl,
+  cover,
   technologies,
   githubUrl,
   demoUrl,
-}: ProjectSectionProps) => {
+  screens,
+}: ProjectSectionProps) {
   return (
     <Section className={styles.wrap}>
-      <BackToProjects />
-      <PageHeader title={title} type={type} category={category} year={year} />
+      {/* Topbar: GlassSurface з посиланням назад */}
+      <div className={styles.topbar}>
+        <GlassSurface>
+          <Link
+            href="/projects"
+            className={styles.back}
+            aria-label="Back to projects"
+          >
+            <BsArrowLeft aria-hidden size={16} />
+            <span>Back</span>
+          </Link>
+        </GlassSurface>
+      </div>
 
+      {/* ТІЛЬКИ картки в гріді */}
       <motion.section
-        className={styles.grid}
-        variants={containerVariants}
+        className={styles.cardsGrid}
+        variants={cardsContainer}
         initial="hidden"
         animate="show"
         transition={{ ease }}
       >
-        <ImageCard imageUrl={imageUrl} title={title} date={date} />
-        <MetaCard type={type} category={category} year={year} date={date} />
-        <DescriptionCard description={description} />
-        <TechnologiesCard technologies={technologies} />
-        <LinksCard
-          demoUrl={demoUrl ?? undefined}
-          githubUrl={githubUrl ?? undefined}
-        />
+        {/* 1) Image */}
+        <motion.article
+          className={`${styles.card} ${styles.imageCard}`}
+          variants={cardItem}
+        >
+          <div className={styles.imageWrap}>
+            <Image
+              className={styles.image}
+              src={cover}
+              alt={title}
+              fill
+              sizes="(min-width: 980px) 66vw, 100vw" // 2/3 ширины на десктопе, 100% на мобиле
+              priority
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNSIgZmlsbD0iI2NjYyIgLz4=" // лёгкий плейсхолдер
+            />
+            <div className={styles.imageShade} aria-hidden />
+          </div>
+        </motion.article>
+
+        {/* 2) Overview */}
+        <motion.article
+          className={`${styles.card} ${styles.overviewCard}`}
+          variants={cardItem}
+        >
+          <h1 className={styles.projectTitle}>{title}</h1>
+
+          <ul className={styles.kvList}>
+            <li className={styles.kv}>
+              <span className={styles.kvKey}>Type</span>
+              <span className={styles.kvVal}>{type}</span>
+            </li>
+            <li className={styles.kv}>
+              <span className={styles.kvKey}>Category</span>
+              <span className={styles.kvVal}>{category}</span>
+            </li>
+            <li className={styles.kv}>
+              <span className={styles.kvKey}>Date</span>
+              <time className={styles.kvVal} dateTime={date}>
+                {date}
+              </time>
+            </li>
+          </ul>
+        </motion.article>
+
+        {/* 3) Technologies */}
+        <motion.article
+          className={`${styles.card} ${styles.stackCard}`}
+          variants={cardItem}
+        >
+          <h2 className={styles.cardTitle}>Technologies</h2>
+
+          {technologies?.length ? (
+            <ul className={styles.techList} aria-label="Technology stack">
+              {technologies.map((t) => {
+                const c = (t as any).color || colorFromString(t.name);
+                return (
+                  <li
+                    key={t.id}
+                    className={styles.techChip}
+                    style={
+                      {
+                        "--chip-fg": c,
+                        "--chip-bg": `color-mix(in srgb, ${c} 12%, transparent)`,
+                        "--chip-brd": `color-mix(in srgb, ${c} 42%, transparent)`,
+                      } as React.CSSProperties
+                    }
+                  >
+                    {t.name}
+                  </li>
+                );
+              })}
+            </ul>
+          ) : (
+            <p className={styles.muted}>No technologies listed.</p>
+          )}
+        </motion.article>
+
+        {/* 4) Links — свой заголовок и та же колонка справа, под Technologies */}
+        {(demoUrl || githubUrl) && (
+          <motion.article
+            className={`${styles.card} ${styles.linksCard}`}
+            variants={cardItem}
+          >
+            <h2 className={styles.cardTitle}>Links</h2>
+
+            <div className={styles.links}>
+              {demoUrl && (
+                <a
+                  className={`${styles.btn} ${styles.btnPrimary}`}
+                  href={demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Demo
+                </a>
+              )}
+              {githubUrl && (
+                <a
+                  className={`${styles.btn} ${styles.btnGhost}`}
+                  href={githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              )}
+            </div>
+          </motion.article>
+        )}
+
+        <motion.article
+          className={`${styles.card} ${styles.descFull}`}
+          variants={cardItem}
+        >
+          <h2 className={styles.cardTitle}>Description</h2>
+          <p className={styles.description}>{description}</p>
+        </motion.article>
       </motion.section>
     </Section>
   );
-};
+}

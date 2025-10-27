@@ -1,125 +1,56 @@
-[
-  {
-    "slug": "doido-market",
+{
+  "doido-market": {
     "title": "DOIDO Market",
-    "date": "2025-06",
-    "year": 2025,
-    "type": "стартап",
-    "category": "маркетплейс",
     "description": "NFT/Gift маркетплейс: клієнтська частина на React, Redux Toolkit і React Router v7; бекенд на Node.js, Express і TypeORM; інтеграція TON-платежів, Telegram-авторизації та бот-флоу.",
-    "technologiesIds": [
-      "react",
-      "redux",
-      "react-router-v7",
-      "typescript",
-      "nodejs",
-      "express",
-      "typeorm",
-      "postgres",
-      "telegram",
-      "ton",
-      "tailwind",
-      "shadcn",
-      "framer-motion",
-      "jest"
-    ],
-    "imageUrl": "/projects/doido-market.png",
-    "githubUrl": "https://github.com/igorator",
-    "demoUrl": "https://t.me/doido_marketplace_bot/gifts",
-    "isCommercial": true
+    "type": "стартап",
+    "category": "маркетплейс"
   },
-  {
-    "slug": "zycsel-store-bot",
+  "zycsel-store-bot": {
     "title": "Zycsel Store Bot",
-    "date": "2025-03",
-    "year": 2025,
+    "description": "Telegram-бот для пошуку й каталогу одягу із базою даних Supabase, на Node.js з фреймворком GrammY та інтеграцією Telegram API.",
     "type": "сервіс",
-    "category": "бот",
-    "description": "Telegram-бот для пошуку й каталогу одягу із базою даних Supabase, побудований на Node.js з фреймворком GrammY та інтеграцією Telegram API.",
-    "technologiesIds": ["nodejs", "supabase", "telegram", "grammy"],
-    "imageUrl": "/projects/zycsel-store-bot.png",
-    "githubUrl": "https://github.com/igorator/zycsel_bot",
-    "demoUrl": null,
-    "isCommercial": true
+    "category": "бот"
   },
-  {
-    "slug": "studio-dashboard",
+  "studio-dashboard": {
     "title": "Studio Dashboard",
-    "date": "2024-11",
-    "year": 2024,
-    "type": "внутрішній інструмент",
-    "category": "дашборд",
     "description": "Адмін-панель на React, TypeScript, Redux Toolkit і Ant Design; бекенд на Node.js, Express і PostgreSQL.",
-    "technologiesIds": [
-      "react",
-      "typescript",
-      "redux",
-      "antd",
-      "nodejs",
-      "express",
-      "postgres"
-    ],
-    "imageUrl": "/projects/studio-dashboard.png",
-    "githubUrl": "https://github.com/igorator/studio-dashboard",
-    "demoUrl": null,
-    "isCommercial": true
+    "type": "внутрішній інструмент",
+    "category": "дашборд"
   },
-  {
-    "slug": "3mpq-studio-lite",
+  "3mpq-studio-lite": {
     "title": "3mpq Studio Lite",
-    "date": "2024-09",
-    "year": 2024,
+    "description": "Сайт-вітрина на Next.js із Tailwind, Zustand, next-intl і React Hook Form; плавні анімації через Framer Motion.",
     "type": "вітрина",
-    "category": "лендинг",
-    "description": "Сайт-вітрина, створений на Next.js із Tailwind, Zustand, next-intl і React Hook Form; плавні анімації через Framer Motion.",
-    "technologiesIds": [
-      "nextjs",
-      "typescript",
-      "tailwind",
-      "zustand",
-      "react-hook-form",
-      "framer-motion",
-      "next-intl"
-    ],
-    "imageUrl": "/projects/3mpq-studio-lite.png",
-    "githubUrl": "https://github.com/igorator/3mpq-Studio-lite",
-    "demoUrl": null,
-    "isCommercial": true
+    "category": "лендинг"
   },
-  {
-    "slug": "webwise",
+  "webwise": {
     "title": "Webwise (Logics7)",
-    "date": "2024-07",
-    "year": 2024,
+    "description": "Маркетинговий лендинг на Next.js, Tailwind і Spline 3D; інтеграція із CRM Zoho.",
     "type": "бізнес",
-    "category": "лендинг",
-    "description": "Маркетинговий лендинг, створений на Next.js, Tailwind і Spline 3D; інтеграція із CRM Zoho.",
-    "technologiesIds": [
-      "nextjs",
-      "typescript",
-      "tailwind",
-      "spline3d",
-      "zustand",
-      "framer-motion",
-      "zoho"
-    ],
-    "imageUrl": "/projects/webwise.png",
-    "githubUrl": null,
-    "demoUrl": "https://webwise.logics7.com/",
-    "isCommercial": true
+    "category": "лендинг"
   },
-  {
-    "slug": "turbota-liqpay",
+  "turbota-liqpay": {
     "title": "Turbota — інтеграція LiqPay",
-    "date": "2024-05",
-    "year": 2024,
-    "type": "сервіс",
-    "category": "інтеграція",
     "description": "Інтеграція платежів LiqPay для сервісу Turbota, реалізована на Node.js і Express через API LiqPay.",
-    "technologiesIds": ["nodejs", "express", "liqpay"],
-    "imageUrl": "/projects/turbota-liqpay.png",
-    "githubUrl": null,
-    "demoUrl": null,
-    "isCommercial": true
+    "type": "сервіс",
+    "category": "інтеграція"
+  },
+  "anyway": {
+    "title": "Anyway",
+    "description": "Сучасний сайт для відеопродакшен команди: роботи, послуги та процес. Зроблено у Webflow.",
+    "type": "лендинг",
+    "category": "відео"
+  },
+  "custom-globe": {
+    "title": "Кастомний Three.js глобус для сайту",
+    "description": "Інтерактивний компонент глобуса на Three.js для вебсайту.",
+    "type": "лендинг",
+    "category": "3D"
+  },
+  "out-of-the-box-test": {
+    "title": "Тестове завдання Out-of-the-box",
+    "description": "Лендінг для тестового завдання з розширеними анімаціями",
+    "type": "лендінг",
+    "category": "тестове-завдання"
   }
-]
+}

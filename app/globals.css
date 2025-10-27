@@ -1,16 +1,41 @@
-:root {
-  /* === Apple HIG–style colors === */
-  --background-light: #ffffff; /* systemBackground (light) */
-  --foreground-light: #1d1d1f; /* label (light) — Apple text tone */
-  --accent-light: #3e9eff; /* systemBlue (macOS/iOS) */
-  --muted-light: #f2f2f7; /* secondary/tertiary surfaces */
-  --border-light: rgba(60, 60, 67, 0.1); /* separator (light) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  --background-dark: #000000; /* systemBackground (dark) */
-  --foreground-dark: #f5f5f7; /* label (dark) */
-  --accent-dark: #3e9eff; /* systemBlue */
-  --muted-dark: #1c1c1e; /* secondarySystemBackground (dark) */
-  --border-dark: rgba(84, 84, 88, 0.1); /* separator (dark) */
+html,
+body {
+  max-width: 100vw;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-text);
+  font-weight: var(--default-font-weight);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --background-light: #ffffff;
+  --foreground-light: #1d1d1f;
+  --accent-light: #3e9eff;
+  --muted-light: #f2f2f7;
+  --border-light: rgba(60, 60, 67, 0.1);
+
+  --background-dark: #000000;
+  --foreground-dark: #f5f5f7;
+  --accent-dark: #3e9eff;
+  --muted-dark: #1c1c1e;
+  --border-dark: rgba(84, 84, 88, 0.1);
 
   --background: var(--background-dark);
   --foreground: var(--foreground-dark);
@@ -19,29 +44,25 @@
   --border: var(--border-dark);
 
   --default-font-weight: 400;
-
   --default-max-width: 1440px;
-  --navbar-height: 56px; /* 7 × 8 – компактная шапка в духе iOS/macOS */
+  --navbar-height: 56px;
 
-  /* Spacing System */
-  --space-1: 4px; /* tiny */
-  --space-2: 8px; /* extra small */
-  --space-3: 12px; /* small */
-  --space-4: 16px; /* base */
-  --space-5: 24px; /* medium */
-  --space-6: 32px; /* large */
-  --space-7: 48px; /* extra large */
-  --space-8: 64px; /* huge */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
 
-  /* Layout Spacing */
-  --inner-padding: var(--space-2); /* 8px */
-  --outer-padding: var(--space-5); /* 24px */
-  --container-padding: var(--space-6); /* 32px */
-  --section-gap: var(--space-7); /* 48px */
-  --component-gap: var(--space-3); /* 12px */
-  --element-gap: var(--space-2); /* 8px */
+  --inner-padding: var(--space-2);
+  --outer-padding: var(--space-5);
+  --container-padding: var(--space-6);
+  --section-gap: var(--space-7);
+  --component-gap: var(--space-3);
+  --element-gap: var(--space-2);
 
-  /* Radii */
   --radius-xs: 3px;
   --radius-sm: 6px;
   --radius-md: 8px;
@@ -55,18 +76,15 @@
   --glass-border: color-mix(in srgb, var(--foreground) 10%, transparent);
   --glass-shine: color-mix(in srgb, var(--foreground) 5%, transparent);
 
-  /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg:
     0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 
-  /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 200ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* Fluid type (оставил твою сетку значений) */
   --text-xs: clamp(12px, 10.8px + 0.35vw, 13px);
   --text-sm: clamp(13px, 11.8px + 0.4vw, 14px);
   --text-base: clamp(14px, 12.8px + 0.5vw, 16px);
@@ -76,26 +94,7 @@
   --text-3xl: clamp(28px, 19.2px + 2.6vw, 40px);
   --text-4xl: clamp(36px, 22.4px + 4vw, 56px);
   --text-5xl: clamp(48px, 25.6px + 6vw, 72px);
-}
 
-:root[data-theme="light"] {
-  --background: var(--background-light);
-  --foreground: var(--foreground-light);
-  --accent: var(--accent-light);
-  --muted: var(--muted-light);
-  --border: var(--border-light);
-}
-
-:root[data-theme="dark"] {
-  --background: var(--background-dark);
-  --foreground: var(--foreground-dark);
-  --accent: var(--accent-dark);
-  --muted: var(--muted-dark);
-  --border: var(--border-dark);
-}
-
-/* Scrollbar */
-:root {
   --scrollbar-size: 10px;
   --scrollbar-track: transparent;
   --scrollbar-thumb: color-mix(in srgb, var(--foreground) 10%, transparent);
@@ -107,84 +106,61 @@
   --scrollbar-radius: var(--radius-full);
 }
 
-/* WebKit/Blink: Chrome, Edge, Safari */
+:root[data-theme="light"] {
+  --background: var(--background-light);
+  --foreground: var(--foreground-light);
+  --accent: var(--accent-light);
+  --muted: var(--muted-light);
+  --border: var(--border-light);
+}
+:root[data-theme="dark"] {
+  --background: var(--background-dark);
+  --foreground: var(--foreground-dark);
+  --accent: var(--accent-dark);
+  --muted: var(--muted-dark);
+  --border: var(--border-dark);
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
 *::-webkit-scrollbar {
   width: var(--scrollbar-size);
   height: var(--scrollbar-size);
 }
-
 *::-webkit-scrollbar-track {
   background: var(--scrollbar-track);
 }
-
 *::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-thumb);
   border-radius: var(--scrollbar-radius);
   background-clip: padding-box;
   border: 3px solid transparent;
 }
-
 *::-webkit-scrollbar-thumb:hover {
   background-color: var(--scrollbar-thumb-hover);
 }
 
 html {
-  scrollbar-width: thin; /* thin | auto | none */
-  scrollbar-color: var(--sb-thumb) transparent; /* thumb | track */
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
 }
 
-@supports not (scrollbar-gutter: stable) {
-  html {
-    overflow-y: scroll;
-  }
+body[data-scroll-locked] {
+  --removed-body-scroll-bar-size: 0 !important;
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+  overflow-y: auto !important;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+[data-fixed-gap] {
+  padding-inline-end: var(--removed-body-scroll-bar-size, 0px);
 }
 
-html,
-body {
-  max-width: 100vw;
-}
-
-body {
-  position: relative;
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-text);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: var(--default-font-weight);
-}
-.page-wrapper {
-  position: relative;
-  min-height: 100svh;
-  align-items: stretch;
-  display: flex;
-  justify-content: center;
-}
-
-.content {
-  position: relative;
-  display: flex;
-  justify-content: stretch;
-  width: 100%;
-  max-width: var(--default-max-width);
-}
-
-button {
-  font-family: var(--font-headings);
-  font-weight: 600;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: var(--navbar-height);
-  color-scheme: light dark;
-}
 h1,
 h2,
 h3,
@@ -193,12 +169,45 @@ h5,
 h6 {
   font-family: var(--font-headings);
 }
+button {
+  all: unset; /* Сбрасывает ВСЁ (включая браузерные стили) */
+  display: inline-block;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-align: inherit;
+  line-height: normal;
+
+  /* твои фирменные стили */
+  font-family: var(--font-headings);
+  font-weight: 600;
+}
 
 a {
   color: var(--foreground);
   text-decoration: none;
-  transition: color 0.2s ease-in-out;
+  transition: color var(--transition-fast);
 }
 a:hover {
   color: var(--accent);
+}
+
+.page-wrapper {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  justify-content: stretch;
+  width: 100%;
+  max-width: var(--default-max-width);
 }

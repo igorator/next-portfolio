@@ -6,7 +6,7 @@
   border: none;
   font-family: var(--font-headings);
   min-width: 220px;
-  padding: 0 var(--space-3);
+  padding: var(--space-3);
   color: var(--foreground);
   font-size: var(--text-sm);
   cursor: pointer;

@@ -63,7 +63,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             <button
               key={tech.id}
               className={styles.tech}
-              style={{ color: tech.color } as CSSProperties}
+              style={{
+                color: tech.color,
+                background: `color-mix(in srgb, ${tech.color} 12%, transparent)`,
+                borderColor: `color-mix(in srgb, ${tech.color} 42%, transparent)`,
+              }}
               onClick={() => onTechnologyClick?.(tech.id)}
               type="button"
               title={tech.name}

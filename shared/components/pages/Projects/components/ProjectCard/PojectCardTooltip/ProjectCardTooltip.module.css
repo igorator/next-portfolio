@@ -8,22 +8,19 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: color-mix(in srgb, var(--accent) 25%, var(--glass-bg) 75%);
-  color: var(--accent);
+  background: var(--foreground);
+  color: var(--background);
   cursor: pointer;
-  transition: all 0.2s ease;
 }
 
 .commercialBadge:hover {
   background: var(--accent);
-  color: var(--system-bg);
-  transform: scale(1.08);
+  color: white;
 }
 
-/* Tooltip */
 .tooltipContent {
-  background: color-mix(in srgb, var(--glass-bg) 85%, var(--accent) 10%);
-  color: var(--label-primary);
+  background: var(--foreground);
+  color: var(--background);
   font-size: 0.75rem;
   padding: 4px 8px;
   border-radius: var(--radius-sm);

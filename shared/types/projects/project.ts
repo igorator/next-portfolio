@@ -4,12 +4,12 @@ export type Project = {
   slug: string;
   title: string;
   date: string;
-  year: number;
   description: string;
   type: string;
   category: string;
   technologiesIds: string[];
-  imageUrl: string;
+  cover?: string;
+  screens?: string[];
   githubUrl?: string | null;
   demoUrl?: string | null;
   isCommercial?: boolean;

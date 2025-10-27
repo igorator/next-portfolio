@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "doido-market",
+    "date": "2025-06",
+    "githubUrl": "https://github.com/igorator",
+    "demoUrl": "https://t.me/doido_marketplace_bot/gifts",
+    "isCommercial": true,
+    "technologiesIds": [
+      "vite",
+      "react",
+      "redux",
+      "react-router-v7",
+      "typescript",
+      "nodejs",
+      "express",
+      "typeorm",
+      "postgres",
+      "telegram",
+      "ton",
+      "tailwind",
+      "shadcn",
+      "framer-motion",
+      "jest"
+    ]
+  },
+  {
+    "slug": "zycsel-store-bot",
+    "date": "2025-03",
+    "githubUrl": "https://github.com/igorator/zycsel_bot",
+    "demoUrl": null,
+    "isCommercial": true,
+    "technologiesIds": ["nodejs", "supabase", "telegram", "grammy"]
+  },
+  {
+    "slug": "studio-dashboard",
+    "date": "2024-11",
+    "githubUrl": "https://github.com/igorator/studio-dashboard",
+    "demoUrl": null,
+    "isCommercial": true,
+    "technologiesIds": [
+      "react",
+      "typescript",
+      "redux",
+      "antd",
+      "nodejs",
+      "express",
+      "postgres"
+    ]
+  },
+  {
+    "slug": "3mpq-studio-lite",
+    "date": "2024-09",
+    "githubUrl": "https://github.com/igorator/3mpq-Studio-lite",
+    "demoUrl": null,
+    "isCommercial": true,
+    "technologiesIds": [
+      "nextjs",
+      "typescript",
+      "tailwind",
+      "zustand",
+      "react-hook-form",
+      "framer-motion",
+      "next-intl"
+    ]
+  },
+  {
+    "slug": "webwise",
+    "date": "2024-07",
+    "githubUrl": null,
+    "demoUrl": "https://webwise.logics7.com/",
+    "isCommercial": true,
+    "technologiesIds": [
+      "nextjs",
+      "typescript",
+      "tailwind",
+      "spline3d",
+      "zustand",
+      "framer-motion",
+      "zoho"
+    ]
+  },
+  {
+    "slug": "turbota-liqpay",
+    "date": "2024-05",
+    "githubUrl": null,
+    "demoUrl": null,
+    "isCommercial": true,
+    "technologiesIds": ["nodejs", "express", "liqpay"]
+  },
+  {
+    "slug": "anyway",
+    "date": "2024-03",
+    "githubUrl": null,
+    "demoUrl": "https://www.helloanyway.com/",
+    "isCommercial": true,
+    "technologiesIds": ["webflow", "javascript", "css"]
+  },
+  {
+    "slug": "custom-globe",
+    "date": "2022-04",
+    "githubUrl": null,
+    "demoUrl": null,
+    "isCommercial": true,
+    "technologiesIds": ["threejs", "javascript", "css"]
+  },
+  {
+    "slug": "out-of-the-box-test",
+    "date": "2025-08",
+    "githubUrl": "https://github.com/igorator/Out-of-the-box-test",
+    "demoUrl": "https://out-of-the-box-test-henna.vercel.app",
+    "isCommercial": false,
+    "technologiesIds": ["vue", "framer-motion", "tailwind", "vite"]
+  }
+]

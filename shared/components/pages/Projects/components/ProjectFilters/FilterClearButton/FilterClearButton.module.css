@@ -1,9 +1,13 @@
+.clearButtonWrapper {
+  align-self: center;
+}
+
 .clearButton {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+
   aspect-ratio: 1 / 1;
-  padding: 0 14px;
+  padding: var(--space-3);
   border-radius: var(--full-radius);
   color: var(--text-color);
   font-size: 14px;
@@ -14,17 +18,18 @@
     background-color 0.2s ease,
     opacity 0.2s ease;
 }
+.clearIcon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.1s ease;
+}
 
-.clearButton:hover:not(:disabled) {
-  background: var(--bg-hover, rgba(255, 255, 255, 0.08));
+.clearButton:hover:not(:disabled) .clearIcon {
+  color: var(--accent);
+  transform: scale(1.2);
 }
 
 .clearButton:disabled {
   opacity: 0.4;
   cursor: not-allowed;
-}
-
-.clearIcon {
-  width: 16px;
-  height: 16px;
 }

@@ -194,5 +194,26 @@
     "color": "#146EF5",
     "category": "Low / No code",
     "priority": 4
+  },
+  {
+    "id": "threejs",
+    "name": "Three.js",
+    "color": "#146EF5",
+    "category": "3D & Design",
+    "priority": 2
+  },
+  {
+    "id": "vue",
+    "name": "Vue",
+    "color": "#3eb27c",
+    "category": "Frameworks",
+    "priority": 4
+  },
+  {
+    "id": "vite",
+    "name": "Vite",
+    "color": "#fdd027",
+    "category": "Bundlers",
+    "priority": 3
   }
 ]

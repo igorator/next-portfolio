@@ -18,7 +18,7 @@ export const CommercialSwitch = ({
 
   return (
     <GlassSurface className={styles.wrapper}>
-      <label className={styles.label} htmlFor="commercial-switch">
+      <div className={styles.commercialSwitch}>
         <span className={styles.text}>
           {t("projects_ui.onlyCommercialProjects")}
         </span>
@@ -30,7 +30,7 @@ export const CommercialSwitch = ({
         >
           <Switch.Thumb className={styles.switchThumb} />
         </Switch.Root>
-      </label>
+      </div>
     </GlassSurface>
   );
 };

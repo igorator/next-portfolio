@@ -28,10 +28,10 @@ export const SortSelect = ({ value, onChange }: Props) => {
   const options = makeSortOptions(t);
 
   return (
-    <GlassSurface>
-      <Select.Root value={value} onValueChange={(v) => onChange(v as SortKey)}>
+    <Select.Root value={value} onValueChange={(v) => onChange(v as SortKey)}>
+      <GlassSurface>
         <Select.Trigger
-          className={`${styles.selectTrigger} glass-wrapper`}
+          className={`${styles.selectTrigger}`}
           aria-label={t("projects.filters.sort")}
         >
           <Select.Value placeholder={t("projects.filters.sort")} />
@@ -39,31 +39,31 @@ export const SortSelect = ({ value, onChange }: Props) => {
             <BsChevronDown className={styles.chevronIcon} aria-hidden="true" />
           </Select.Icon>
         </Select.Trigger>
+      </GlassSurface>
 
-        <Select.Portal>
-          <Select.Content
-            className={`${styles.selectContent} glass-wrapper`}
-            position="popper"
-            sideOffset={20}
-            align="start"
-          >
-            <Select.Viewport className={styles.selectViewport}>
-              {options.map((opt) => (
-                <Select.Item
-                  key={opt.id}
-                  value={opt.id}
-                  className={styles.selectItem}
-                >
-                  <Select.ItemText>{opt.name}</Select.ItemText>
-                  <Select.ItemIndicator className={styles.selectCheck}>
-                    <BsCheckLg aria-hidden="true" />
-                  </Select.ItemIndicator>
-                </Select.Item>
-              ))}
-            </Select.Viewport>
-          </Select.Content>
-        </Select.Portal>
-      </Select.Root>
-    </GlassSurface>
+      <Select.Portal>
+        <Select.Content
+          className={`${styles.selectContent} glass-wrapper`}
+          position="popper"
+          sideOffset={20}
+          align="start"
+        >
+          <Select.Viewport className={styles.selectViewport}>
+            {options.map((opt) => (
+              <Select.Item
+                key={opt.id}
+                value={opt.id}
+                className={styles.selectItem}
+              >
+                <Select.ItemText>{opt.name}</Select.ItemText>
+                <Select.ItemIndicator className={styles.selectCheck}>
+                  <BsCheckLg aria-hidden="true" />
+                </Select.ItemIndicator>
+              </Select.Item>
+            ))}
+          </Select.Viewport>
+        </Select.Content>
+      </Select.Portal>
+    </Select.Root>
   );
 };

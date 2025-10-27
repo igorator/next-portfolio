@@ -1,0 +1,78 @@
+:root {
+  --gs-radius: 9999px;
+  --gs-padding: 0;
+  --gs-blur: 6px;
+  --gs-tint: rgba(255, 255, 255, 0.08);
+  --gs-shadow: 0 2px 2px rgba(0, 0, 0, 0.2), 0 0 50px rgba(0, 0, 0, 0.1);
+  --gs-shine: 1;
+}
+
+.glass {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--gs-padding);
+  border-radius: var(--gs-radius);
+  box-shadow: var(--gs-shadow);
+  width: fit-content;
+
+  transition:
+    box-shadow 400ms,
+    transform 400ms,
+    filter 400ms;
+  overflow: hidden;
+}
+
+.effect,
+.tint,
+.shine,
+.content {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.effect {
+  z-index: 0;
+  /* Весь blur и SVG-эффект здесь */
+  backdrop-filter: blur(var(--gs-blur));
+  /* Ссылка на фильтр приходит из TS через --gs-filter */
+  filter: var(--gs-filter, none);
+  overflow: hidden;
+}
+
+.tint {
+  z-index: 1;
+  background: var(--gs-tint);
+}
+
+.shine {
+  z-index: 2;
+  /* Показываем блики только когда --gs-shine = 1 */
+  box-shadow:
+    inset 2px 2px 1px 0 rgba(255, 255, 255, 0.5),
+    inset -1px -1px 1px 1px rgba(255, 255, 255, 0.5);
+  opacity: calc(var(--gs-shine) * 1); /* 0 или 1 */
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  border-radius: inherit;
+}
+
+.hiddenSvg {
+  display: none;
+}
+
+/* Удобный модификатор для отключения бликов классом */
+.glass.noShine {
+  --gs-shine: 0;
+}

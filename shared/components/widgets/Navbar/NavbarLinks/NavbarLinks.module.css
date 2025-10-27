@@ -1,14 +1,4 @@
-.navbar {
-  position: fixed;
-  inset-inline: 0;
-  bottom: calc(var(--space-4) + env(safe-area-inset-bottom));
-  z-index: 50;
-  display: flex;
-  gap: var(--component-gap);
-  justify-content: center;
-  width: auto;
-  margin-inline: auto;
-}
+/* shared/components/layout/Navbar/NavbarLinks.module.css */
 
 .navbarLinks {
   width: 100%;
@@ -60,13 +50,6 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.navbarControls {
-  display: flex;
-  height: 100%;
-  gap: var(--component-gap);
-  padding: var(--space-2) var(--space-4);
 }
 
 @media (max-width: 360px) {

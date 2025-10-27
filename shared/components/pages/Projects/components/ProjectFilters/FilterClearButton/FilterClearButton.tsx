@@ -17,10 +17,10 @@ export const FilterClearButton = ({
   const t = useTranslations();
 
   return (
-    <GlassSurface>
+    <GlassSurface className={styles.clearButtonWrapper}>
       <button
         type="button"
-        className={`${styles.clearButton} glass-wrapper`}
+        className={`${styles.clearButton}`}
         onClick={onClear}
         disabled={disabled}
         title={t("projects.filters.clear")}
