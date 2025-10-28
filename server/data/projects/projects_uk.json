@@ -7,9 +7,9 @@
   },
   "doido-market": {
     "title": "DOIDO Market",
-    "description": "NFT/Gift маркетплейс: клієнтська частина на React, Redux Toolkit і React Router v7; бекенд на Node.js, Express і TypeORM; інтеграція TON-платежів, Telegram-авторизації та бот-флоу.",
+    "description": "NFT/Gift маркетплейс: клієнтська частина на React, Redux Toolkit і React Router v7; бекенд на Node.js, Express і TypeORM; інтеграція TON-платежів, Telegram-авторизації та Telegram-бот.",
     "type": "стартап",
-    "category": "маркетплейс"
+    "category": "NFT маркетплейс"
   },
   "zycsel-store-bot": {
     "title": "Zycsel Store Bot",
@@ -27,13 +27,13 @@
     "title": "3mpq Studio Lite",
     "description": "Сайт-вітрина на Next.js із Tailwind, Zustand, next-intl і React Hook Form; плавні анімації через Framer Motion.",
     "type": "вітрина",
-    "category": "лендинг"
+    "category": "лендінг"
   },
   "webwise": {
     "title": "Webwise (Logics7)",
-    "description": "Маркетинговий лендинг на Next.js, Tailwind і Spline 3D; інтеграція із CRM Zoho.",
+    "description": "Маркетинговий лендінг на Next.js, Tailwind і Spline 3D; інтеграція із CRM Zoho.",
     "type": "бізнес",
-    "category": "лендинг"
+    "category": "лендінг"
   },
   "turbota-liqpay": {
     "title": "Turbota — інтеграція LiqPay",
@@ -44,19 +44,74 @@
   "anyway": {
     "title": "Anyway",
     "description": "Сучасний сайт для відеопродакшен команди: роботи, послуги та процес. Зроблено у Webflow.",
-    "type": "лендинг",
-    "category": "відео"
+    "type": "бізнес",
+    "category": "лендінг"
   },
   "custom-globe": {
     "title": "Кастомний Three.js глобус для сайту",
     "description": "Інтерактивний компонент глобуса на Three.js для вебсайту.",
-    "type": "лендинг",
-    "category": "3D"
+    "type": "3D",
+    "category": "інтеграція"
   },
   "out-of-the-box-test": {
     "title": "Тестове завдання Out-of-the-box",
     "description": "Лендінг для тестового завдання з розширеними анімаціями",
-    "type": "лендінг",
+    "type": "фронтенд",
     "category": "тестове-завдання"
+  },
+
+  "scart-test": {
+    "title": "Scart Test",
+    "description": "Невеликий тестовий проєкт на React і Tailwind, зосереджений на верстці та чистому коді.",
+    "type": "фронтенд",
+    "category": "тестове завдання"
+  },
+  "rely-test": {
+    "title": "Rely Test",
+    "description": "Фронтенд тестовий проєкт на React і Tailwind CSS із адаптивним дизайном.",
+    "type": "тестове завдання",
+    "category": "фронтенд"
+  },
+  "easm": {
+    "title": "EASM — Logics7",
+    "description": "Корпоративний лендінг у Webflow для сервісу EASM від компанії Logics7.",
+    "type": "Цифрова безпека",
+    "category": "лендінг"
+  },
+  "pss": {
+    "title": "PSS — Logics7",
+    "description": "Бізнес-сайт для систем паркування та безпеки з Google Maps API, створений у Webflow.",
+    "type": "бізнес",
+    "category": "лендінг"
+  },
+  "dovira": {
+    "title": "Dovira",
+    "description": "Сайт ініціативи Dovira у Великій Британії, створений у Webflow з кастомними анімаціями.",
+    "type": "психологія",
+    "category": "лендінг"
+  },
+  "meataversus": {
+    "title": "Metaversus",
+    "description": "Концепт лендінгу на Next.js, TypeScript, Tailwind і Framer Motion.",
+    "type": "навчальний",
+    "category": "лендінг"
+  },
+  "evogym": {
+    "title": "EvoGym",
+    "description": "Сучасний фітнес-лендінг із анімаціями та адаптивом на React, Tailwind і Framer Motion.",
+    "type": "навчальний",
+    "category": "лендінг"
+  },
+  "hoobank": {
+    "title": "HooBank",
+    "description": "Лендінг банку, створений на React і Tailwind CSS як навчальний проєкт.",
+    "type": "навчальний",
+    "category": "лендінг"
+  },
+  "cashdata": {
+    "title": "CASHData",
+    "description": "Леднінг прототипу вебдодатку для відстеження витрат і візуалізації даних на React і Tailwind.",
+    "type": "навчальний",
+    "category": "лендінг"
   }
 }

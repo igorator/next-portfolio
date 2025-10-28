@@ -7,10 +7,16 @@
     "technologiesIds": ["nextjs", "css", "framer-motion", "i18n"]
   },
   {
+    "slug": "out-of-the-box-test",
+    "date": "2025-08",
+    "githubUrl": "https://github.com/igorator/Out-of-the-box-test",
+    "demoUrl": "https://out-of-the-box-test-henna.vercel.app",
+    "isCommercial": false,
+    "technologiesIds": ["vue", "framer-motion", "tailwind", "vite"]
+  },
+  {
     "slug": "doido-market",
     "date": "2025-06",
-    "githubUrl": "https://github.com/igorator",
-    "demoUrl": "https://t.me/doido_marketplace_bot/gifts",
     "isCommercial": true,
     "technologiesIds": [
       "vite",
@@ -29,6 +35,20 @@
       "framer-motion",
       "jest"
     ]
+  },
+  {
+    "slug": "scart-test",
+    "date": "2025-07",
+    "githubUrl": "https://github.com/igorator/Scart-test",
+    "isCommercial": false,
+    "technologiesIds": ["react", "tailwind"]
+  },
+  {
+    "slug": "rely-test",
+    "date": "2025-01",
+    "githubUrl": "https://github.com/igorator/RELY_Test_Kliushnyk",
+    "isCommercial": false,
+    "technologiesIds": ["react", "tailwind"]
   },
   {
     "slug": "zycsel-store-bot",
@@ -87,18 +107,42 @@
     ]
   },
   {
+    "slug": "anyway",
+    "date": "2024-03",
+    "githubUrl": null,
+    "demoUrl": "https://www.helloanyway.com/",
+    "isCommercial": true,
+    "technologiesIds": ["webflow", "javascript", "css"]
+  },
+  {
     "slug": "turbota-liqpay",
-    "date": "2024-05",
+    "date": "2023-11",
     "githubUrl": null,
     "demoUrl": null,
     "isCommercial": true,
     "technologiesIds": ["nodejs", "express", "liqpay"]
   },
   {
-    "slug": "anyway",
-    "date": "2024-03",
+    "slug": "easm",
+    "date": "2023-09",
     "githubUrl": null,
-    "demoUrl": "https://www.helloanyway.com/",
+    "demoUrl": "https://logics7.com/easm/",
+    "isCommercial": true,
+    "technologiesIds": ["webflow", "javascript", "css"]
+  },
+  {
+    "slug": "pss",
+    "date": "2023-05",
+    "githubUrl": null,
+    "demoUrl": "https://pss.logics7.com/",
+    "isCommercial": true,
+    "technologiesIds": ["webflow", "javascript", "google-maps-api", "css"]
+  },
+  {
+    "slug": "dovira",
+    "date": "2022-10",
+    "githubUrl": null,
+    "demoUrl": "https://www.dovira.uk/",
     "isCommercial": true,
     "technologiesIds": ["webflow", "javascript", "css"]
   },
@@ -111,11 +155,35 @@
     "technologiesIds": ["threejs", "javascript", "css"]
   },
   {
-    "slug": "out-of-the-box-test",
-    "date": "2025-08",
-    "githubUrl": "https://github.com/igorator/Out-of-the-box-test",
-    "demoUrl": "https://out-of-the-box-test-henna.vercel.app",
+    "slug": "meataversus",
+    "date": "2021-05",
+    "githubUrl": "https://github.com/igorator/Metaversus",
+    "demoUrl": null,
     "isCommercial": false,
-    "technologiesIds": ["vue", "framer-motion", "tailwind", "vite"]
+    "technologiesIds": ["nextjs", "typescript", "tailwind", "framer-motion"]
+  },
+  {
+    "slug": "evogym",
+    "date": "2021-04",
+    "githubUrl": "https://github.com/igorator/EvoGym",
+    "demoUrl": null,
+    "isCommercial": false,
+    "technologiesIds": ["react", "typescript", "tailwind", "framer-motion"]
+  },
+  {
+    "slug": "hoobank",
+    "date": "2021-03",
+    "githubUrl": "https://github.com/igorator/HooBank",
+    "demoUrl": null,
+    "isCommercial": false,
+    "technologiesIds": ["react", "tailwind"]
+  },
+  {
+    "slug": "cashdata",
+    "date": "2021-02",
+    "githubUrl": "https://github.com/igorator/CASHData",
+    "demoUrl": null,
+    "isCommercial": false,
+    "technologiesIds": ["react", "tailwind"]
   }
 ]

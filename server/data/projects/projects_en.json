@@ -1,31 +1,31 @@
 {
   "this-website": {
-    "title": "This website",
+    "title": "This Website",
     "description": "My portfolio website",
     "type": "startup",
     "category": "portfolio"
   },
   "doido-market": {
     "title": "DOIDO Market",
-    "description": "NFT/Gift marketplace: client built with React, Redux Toolkit, and React Router v7; backend on Node.js, Express, and TypeORM; integrated TON payments, Telegram Auth, and bot flows.",
+    "description": "NFT/Gift marketplace: client-side built with React, Redux Toolkit, and React Router v7; backend with Node.js, Express, and TypeORM; integration of TON payments, Telegram authentication, and Telegram bot.",
     "type": "startup",
-    "category": "marketplace"
+    "category": "NFT marketplace"
   },
   "zycsel-store-bot": {
     "title": "Zycsel Store Bot",
-    "description": "Telegram clothing search and catalog bot using Supabase as database, Node.js with GrammY framework, and Telegram API integration.",
+    "description": "Telegram bot for searching and cataloging clothing items with a Supabase database, built on Node.js using the GrammY framework and Telegram API integration.",
     "type": "service",
     "category": "bot"
   },
   "studio-dashboard": {
     "title": "Studio Dashboard",
-    "description": "Admin dashboard built with React, TypeScript, Redux Toolkit, and Ant Design; backend on Node.js, Express, and PostgreSQL.",
+    "description": "Admin panel built with React, TypeScript, Redux Toolkit, and Ant Design; backend with Node.js, Express, and PostgreSQL.",
     "type": "internal tool",
     "category": "dashboard"
   },
   "3mpq-studio-lite": {
     "title": "3mpq Studio Lite",
-    "description": "Showcase website built with Next.js, Tailwind, Zustand, next-intl, and React Hook Form. Smooth Framer Motion animations.",
+    "description": "Showcase website built with Next.js, Tailwind, Zustand, next-intl, and React Hook Form; smooth animations using Framer Motion.",
     "type": "showcase",
     "category": "landing"
   },
@@ -37,26 +37,80 @@
   },
   "turbota-liqpay": {
     "title": "Turbota — LiqPay Integration",
-    "description": "Payment integration for Turbota service built with Node.js and Express using LiqPay API.",
+    "description": "LiqPay payment integration for the Turbota service, implemented with Node.js and Express via the LiqPay API.",
     "type": "service",
     "category": "integration"
   },
   "anyway": {
     "title": "Anyway",
-    "description": "A clean and modern website built for a video production team — showcasing their work, services, and creative process. Made in Webflow.",
-    "type": "landing",
-    "category": "video"
+    "description": "Modern website for a video production team: works, services, and process. Built in Webflow.",
+    "type": "business",
+    "category": "landing"
   },
   "custom-globe": {
-    "title": "Custom Three.js Globe for website",
-    "description": "Interactive Three.js globe component for a website.",
-    "type": "landing",
-    "category": "3D"
+    "title": "Custom Three.js Globe for Website",
+    "description": "Interactive globe component built with Three.js for web use.",
+    "type": "3D",
+    "category": "integration"
   },
   "out-of-the-box-test": {
-    "title": "Out-of-the-box test task",
-    "description": "Landing page for test task with advanced animations",
-    "type": "landing",
+    "title": "Out-of-the-box Test Task",
+    "description": "Landing page for a test task with advanced animations.",
+    "type": "frontend",
     "category": "test task"
+  },
+  "scart-test": {
+    "title": "Scart Test",
+    "description": "Small test project built with React and Tailwind, focused on clean layout and code quality.",
+    "type": "frontend",
+    "category": "test task"
+  },
+  "rely-test": {
+    "title": "Rely Test",
+    "description": "Frontend test project built with React and Tailwind CSS featuring a responsive design.",
+    "type": "test task",
+    "category": "frontend"
+  },
+  "easm": {
+    "title": "EASM — Logics7",
+    "description": "Corporate landing page in Webflow for the EASM service by Logics7.",
+    "type": "digital security",
+    "category": "landing"
+  },
+  "pss": {
+    "title": "PSS — Logics7",
+    "description": "Business website for parking and security systems with Google Maps API, built in Webflow.",
+    "type": "business",
+    "category": "landing"
+  },
+  "dovira": {
+    "title": "Dovira",
+    "description": "Website for the Dovira initiative in the UK, built in Webflow with custom animations.",
+    "type": "psychology",
+    "category": "landing"
+  },
+  "meataversus": {
+    "title": "Metaversus",
+    "description": "Concept landing page built with Next.js, TypeScript, Tailwind, and Framer Motion.",
+    "type": "educational",
+    "category": "landing"
+  },
+  "evogym": {
+    "title": "EvoGym",
+    "description": "Modern fitness landing page with animations and responsive design using React, Tailwind, and Framer Motion.",
+    "type": "educational",
+    "category": "landing"
+  },
+  "hoobank": {
+    "title": "HooBank",
+    "description": "Bank landing page built with React and Tailwind CSS as an educational project.",
+    "type": "educational",
+    "category": "landing"
+  },
+  "cashdata": {
+    "title": "CASHData",
+    "description": "Landing prototype of a web app for tracking expenses and visualizing data, built with React and Tailwind.",
+    "type": "educational",
+    "category": "landing"
   }
 }
