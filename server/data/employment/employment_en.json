@@ -9,7 +9,7 @@
     ]
   },
   "3mpq-studio": {
-    "type": "agency",
+    "type": "on demand",
     "roles": [
       "Developed dashboards and tools with React, TypeScript, Redux",
       "Built apps with Next.js and Zustand",
@@ -18,7 +18,7 @@
     ]
   },
   "tresor-tech": {
-    "type": "contract",
+    "type": "outsource",
     "roles": [
       "Built sites with Webflow, JavaScript, jQuery, React, Next.js",
       "Enhanced interactivity with API integrations",
@@ -34,7 +34,7 @@
     ]
   },
   "logics7": {
-    "type": "contract",
+    "type": "on demand",
     "roles": [
       "Developed apps with Next.js, TypeScript, Spline 3D",
       "Integrated payment solutions via Node.js and Liqpay API",

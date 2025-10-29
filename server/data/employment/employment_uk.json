@@ -9,7 +9,7 @@
     ]
   },
   "3mpq-studio": {
-    "type": "агенція",
+    "type": "за вимогою",
     "roles": [
       "Розробляв дашборди та інструменти на React, TypeScript, Redux",
       "Створював застосунки з використанням Next.js і Zustand",
@@ -18,7 +18,7 @@
     ]
   },
   "tresor-tech": {
-    "type": "контракт",
+    "type": "аутсорс",
     "roles": [
       "Створював сайти на Webflow, JavaScript, jQuery, React, Next.js",
       "Підвищував інтерактивність через інтеграцію API",
@@ -27,14 +27,14 @@
     ]
   },
   "nocorny-agency": {
-    "type": "агенція",
+    "type": "проєктно",
     "roles": [
       "Створював сайти на Webflow з нуля",
       "Брав участь у клієнтських проєктах на Webflow"
     ]
   },
   "logics7": {
-    "type": "контракт",
+    "type": "за вимогою",
     "roles": [
       "Розробляв застосунки на Next.js, TypeScript, Spline 3D",
       "Інтегрував платіжні рішення через Node.js та Liqpay API",
