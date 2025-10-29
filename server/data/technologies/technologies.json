@@ -119,6 +119,13 @@
     "priority": 2
   },
   {
+    "id": "css",
+    "name": "CSS",
+    "color": "yellow",
+    "category": "Styling & UI",
+    "priority": 1
+  },
+  {
     "id": "tailwind",
     "name": "Tailwind CSS",
     "color": "#06B6D4",
@@ -140,8 +147,8 @@
     "priority": 1
   },
   {
-    "id": "next-intl",
-    "name": "Next Intl",
+    "id": "i18n",
+    "name": "i18n",
     "color": "#0070F3",
     "category": "Localization",
     "priority": 1

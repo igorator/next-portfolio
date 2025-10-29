@@ -87,7 +87,7 @@
       "zustand",
       "react-hook-form",
       "framer-motion",
-      "next-intl"
+      "i18n"
     ]
   },
   {
