@@ -2,50 +2,50 @@
   "doido-market": {
     "type": "startup",
     "roles": [
-      "Built client side with React, React Router v7, Redux Toolkit",
-      "Developed APIs with Node.js, Express, TypeORM",
-      "Integrated TON payments, Telegram auth, and bot flows",
-      "Optimized queries and ensured secure transactions"
+      "Developed the full client-side and server-side logic from scratch",
+      "Designed and implemented API architecture for data exchange",
+      "Integrated authentication, payments, and chat features",
+      "Improved performance and ensured reliable, secure transactions"
     ]
   },
   "tresor-tech": {
     "type": "outsource",
     "roles": [
-      "Built sites with Webflow, JavaScript, jQuery, React, Next.js",
-      "Enhanced interactivity with API integrations",
-      "Delivered Webflow projects with custom features",
-      "Developed React landing pages for marketing use"
+      "Created and maintained interactive websites for clients",
+      "Enhanced user experience through dynamic content and integrations",
+      "Delivered custom web solutions tailored to project requirements",
+      "Built marketing landing pages and optimized site performance"
     ]
   },
   "3mpq-studio": {
     "type": "freelance",
     "roles": [
-      "Developed dashboards and tools with React, TypeScript, Redux",
-      "Built apps with Next.js and Zustand",
-      "Created a Telegram clothing search using Node.js, Supabase, Telegram API",
-      "Handled freelance tasks from site fixes to landing pages"
+      "Designed and developed dashboards and internal tools",
+      "Created web applications and automated workflows",
+      "Built a Telegram-based product search and catalog system",
+      "Handled diverse freelance projects from fixes to full product builds"
     ]
   },
   "nocorny-agency": {
     "type": "few projects",
     "roles": [
-      "Created Webflow websites from scratch",
-      "Contributed to client Webflow projects"
+      "Developed 2 websites",
+      "Collaborated on client projects and implemented design ideas"
     ]
   },
   "logics7": {
     "type": "on demand",
     "roles": [
-      "Developed apps with Next.js, TypeScript, Spline 3D",
-      "Integrated payment solutions via Node.js and Liqpay API",
-      "Built and maintained Webflow sites with custom logic"
+      "Created custom web applications and interfaces",
+      "Implemented payment systems and user interaction features",
+      "Maintained and improved existing client websites"
     ]
   },
   "upwork-freelance": {
     "type": "freelance",
     "roles": [
-      "Completed small orders from minor fixes to landing pages",
-      "Delivered custom Webflow and React solutions for international clients"
+      "Delivered small-scale projects and one-off client requests",
+      "Built tailored web solutions for international clients"
     ]
   }
 }
