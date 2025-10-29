@@ -8,15 +8,6 @@
       "Optimized queries and ensured secure transactions"
     ]
   },
-  "3mpq-studio": {
-    "type": "on demand",
-    "roles": [
-      "Developed dashboards and tools with React, TypeScript, Redux",
-      "Built apps with Next.js and Zustand",
-      "Created a Telegram clothing search using Node.js, Supabase, Telegram API",
-      "Handled freelance tasks from site fixes to landing pages"
-    ]
-  },
   "tresor-tech": {
     "type": "outsource",
     "roles": [
@@ -26,8 +17,17 @@
       "Developed React landing pages for marketing use"
     ]
   },
+  "3mpq-studio": {
+    "type": "freelance",
+    "roles": [
+      "Developed dashboards and tools with React, TypeScript, Redux",
+      "Built apps with Next.js and Zustand",
+      "Created a Telegram clothing search using Node.js, Supabase, Telegram API",
+      "Handled freelance tasks from site fixes to landing pages"
+    ]
+  },
   "nocorny-agency": {
-    "type": "agency",
+    "type": "few projects",
     "roles": [
       "Created Webflow websites from scratch",
       "Contributed to client Webflow projects"
