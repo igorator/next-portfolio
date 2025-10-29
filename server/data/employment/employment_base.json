@@ -3,36 +3,36 @@
     "id": "doido-market",
     "company": "DOIDO Market",
     "period": "2025",
-    "projects": ["doido-webapp", "doido-bot", "doido-api"]
+    "projects": ["doido-market"]
+  },
+  {
+    "id": "tresor-tech",
+    "company": "Tresor.tech",
+    "period": "2024 - now",
+    "projects": []
   },
   {
     "id": "3mpq-studio",
     "company": "3mpq Studio",
     "period": "2023 — 2024",
-    "projects": ["studio-dashboard", "telegram-clothing-search"]
-  },
-  {
-    "id": "tresor-tech",
-    "company": "Tresor.tech",
-    "period": "2024",
-    "projects": ["tresor-webflow", "tresor-marketing"]
+    "projects": ["studio-dashboard", "zycsel-store-bot"]
   },
   {
     "id": "nocorny-agency",
     "company": "NoCorny Agency",
     "period": "2024",
-    "projects": ["nocorny-webflow"]
+    "projects": []
   },
   {
     "id": "logics7",
     "company": "Logics7",
     "period": "2023",
-    "projects": ["logics7-app", "logics7-webflow"]
+    "projects": ["pss", "dovira", "easm", "webwise"]
   },
   {
     "id": "upwork-freelance",
     "company": "Upwork Freelance",
     "period": "Various",
-    "projects": ["freelance-webflow", "freelance-react"]
+    "projects": ["anyway", "custom-globe"]
   }
 ]
