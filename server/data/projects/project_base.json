@@ -89,7 +89,8 @@
       "zustand",
       "react-hook-form",
       "framer-motion",
-      "i18n"
+      "i18n",
+      "spline3d"
     ]
   },
   {
@@ -102,8 +103,8 @@
       "nextjs",
       "typescript",
       "tailwind",
-      "spline3d",
       "zustand",
+      "react-hook-form",
       "framer-motion",
       "zoho"
     ]
