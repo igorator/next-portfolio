@@ -2,9 +2,11 @@
   {
     "slug": "this-website",
     "date": "2025-10",
-    "githubUrl": "",
+
     "isCommercial": false,
-    "technologiesIds": ["nextjs", "css", "framer-motion", "i18n"]
+    "technologiesIds": ["nextjs", "css", "framer-motion", "i18n"],
+    "demoUrl": "https://www.igorator.site",
+    "githubUrl": "https://github.com/igorator/ihor-next-portfolio"
   },
   {
     "slug": "out-of-the-box-test",
@@ -54,7 +56,7 @@
     "slug": "zycsel-store-bot",
     "date": "2025-03",
     "githubUrl": "https://github.com/igorator/zycsel_bot",
-    "demoUrl": null,
+    "demoUrl": "https://t.me/zycsel_bot",
     "isCommercial": true,
     "technologiesIds": ["nodejs", "supabase", "telegram", "grammy"]
   },

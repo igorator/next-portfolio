@@ -67,7 +67,7 @@
   },
   "rely-test": {
     "title": "Rely Test",
-    "description": "Frontend test project built with React and Tailwind CSS featuring a responsive design.",
+    "description": "Frontend test project built with React and Tailwind CSS featuring a responsive design. Integrated with cats api for data fetching and localstorage filtering.",
     "type": "test task",
     "category": "frontend"
   },
