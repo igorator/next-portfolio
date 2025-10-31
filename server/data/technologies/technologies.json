@@ -121,7 +121,7 @@
   {
     "id": "css",
     "name": "CSS",
-    "color": "yellow",
+    "color": "#264de4",
     "category": "Styling & UI",
     "priority": 1
   },
