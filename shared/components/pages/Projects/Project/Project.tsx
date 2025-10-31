@@ -197,7 +197,7 @@ export function ProjectSection({
           <div className={styles.links}>
             {demoUrl ? (
               <a
-                className={`${styles.btn} ${styles.btnPrimary}`}
+                className={`${styles.btn} ${styles.btnGhost}`}
                 href={demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"

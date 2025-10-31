@@ -223,16 +223,6 @@
   transform: translateY(1px);
 }
 
-.btnPrimary {
-  color: var(--on-accent, #fff);
-  background: var(--accent);
-  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
-}
-
-.btnPrimary:hover {
-  filter: brightness(1.05);
-}
-
 .btnGhost {
   background: transparent;
 }

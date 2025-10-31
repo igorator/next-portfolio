@@ -39,7 +39,7 @@ export const ProjectsSection = ({
         onTechnologySelect={toggleTech}
         onSortChange={setSortBy}
         commercialOnly={commercialOnly}
-        onCommercialChange={setCommercialOnly} // <-- пробросили
+        onCommercialChange={setCommercialOnly}
       />
 
       <AnimatePresence mode="popLayout">
