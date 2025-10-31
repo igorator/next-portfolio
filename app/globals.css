@@ -145,20 +145,10 @@ html[data-theme="dark"] {
   background-color: var(--scrollbar-thumb-hover);
 }
 
-html {
+body {
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-thumb) transparent;
-}
-
-body[data-scroll-locked] {
-  --removed-body-scroll-bar-size: 0 !important;
-  margin-right: 0 !important;
-  padding-right: 0 !important;
-  overflow-y: auto !important;
-}
-
-[data-fixed-gap] {
-  padding-inline-end: var(--removed-body-scroll-bar-size, 0px);
+  overflow-y: scroll;
 }
 
 h1,
@@ -170,7 +160,7 @@ h6 {
   font-family: var(--font-headings);
 }
 button {
-  all: unset; /* Сбрасывает ВСЁ (включая браузерные стили) */
+  all: unset;
   display: inline-block;
   cursor: pointer;
   font: inherit;
@@ -181,8 +171,6 @@ button {
   margin: 0;
   text-align: inherit;
   line-height: normal;
-
-  /* твои фирменные стили */
   font-family: var(--font-headings);
   font-weight: 600;
 }
