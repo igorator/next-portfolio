@@ -1,5 +1,4 @@
 import type { NextConfig } from "next";
-
 import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
@@ -7,7 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "fkqauumxlh0uuorb.public.blob.vercel-storage.com",
+        hostname: "cdn.jsdelivr.net",
         pathname: "/**",
       },
     ],
