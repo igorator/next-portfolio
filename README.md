@@ -1,4 +1,4 @@
-# Personal Portfolio — Next.js
+# Personal Portfolio
 
 Modern multilingual portfolio built with **Next.js 15** and **motion/react** animations.
 
