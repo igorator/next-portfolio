@@ -34,7 +34,6 @@
 }
 
 .effect {
-  z-index: 0;
   /* Весь blur и SVG-эффект здесь */
   backdrop-filter: blur(var(--gs-blur));
   /* Ссылка на фильтр приходит из TS через --gs-filter */
@@ -43,12 +42,10 @@
 }
 
 .tint {
-  z-index: 1;
   background: var(--gs-tint);
 }
 
 .shine {
-  z-index: 2;
   /* Показываем блики только когда --gs-shine = 1 */
   box-shadow:
     inset 2px 2px 1px 0 rgba(255, 255, 255, 0.5),
@@ -59,7 +56,7 @@
 
 .content {
   position: relative;
-  z-index: 3;
+
   width: 100%;
   height: 100%;
   display: flex;

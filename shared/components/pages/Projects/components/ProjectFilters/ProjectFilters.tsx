@@ -1,12 +1,12 @@
 "use client";
 
+import { GlassSurface } from "@/shared/components/ui/GlassSurface/GlassSurface";
 import type { Technology } from "@/shared/types/technology";
 import { CommercialSwitch } from "./CommercialSwitch/CommercialSwitch";
 import { FilterClearButton } from "./FilterClearButton/FilterClearButton";
 import styles from "./ProjectFilters.module.css";
 import { SortSelect } from "./SortSelect/SortSelect";
 import { TechnologyMultiSelect } from "./TechnologyMultiSelect/TechnologyMultiSelect";
-import { GlassSurface } from "@/shared/components/ui/GlassSurface/GlassSurface";
 
 type SortKey = "newest" | "oldest" | "az" | "za";
 
