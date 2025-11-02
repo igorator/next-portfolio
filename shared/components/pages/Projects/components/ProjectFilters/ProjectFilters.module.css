@@ -1,7 +1,78 @@
 .filtersBar {
   display: flex;
   align-items: stretch;
-  gap: 12px;
   flex-wrap: wrap;
+  gap: 12px;
   font-weight: 500;
+}
+
+.filtersBar > * {
+  flex: 1 1 260px;
+  min-width: 220px;
+}
+
+.filterClearButtonWrapper {
+  min-width: unset;
+  width: fit-content;
+  flex: 0 0 auto;
+  aspect-ratio: 1 / 1;
+}
+
+.technologySelectWrapper,
+.commercialSwitchWrapper,
+.sortSelectWrapper {
+  width: fit-content;
+  flex: 0 0 auto;
+}
+
+/* ===== мобилка ===== */
+@media (max-width: 720px) {
+  .filtersBar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "tech tech"
+      "comm sort"
+      "clear clear";
+    gap: 10px;
+  }
+
+  .technologySelectWrapper {
+    grid-area: tech;
+    width: 100%;
+  }
+  .commercialSwitchWrapper {
+    grid-area: comm;
+    width: 100%;
+  }
+  .sortSelectWrapper {
+    grid-area: sort;
+    width: 100%;
+  }
+  .filterClearButtonWrapper {
+    grid-area: clear;
+    width: 100%;
+    aspect-ratio: auto;
+  }
+
+  .filtersBar > * {
+    min-width: 0;
+  }
+
+  /* внутренняя кнопка clear — растягиваем */
+  .filterClearButtonWrapper :where(button, a) {
+    width: 100%;
+  }
+}
+
+/* узкие экраны */
+@media (max-width: 420px) {
+  .filtersBar {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "tech"
+      "comm"
+      "sort"
+      "clear";
+  }
 }

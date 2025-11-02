@@ -6,8 +6,8 @@
   padding: var(--space-3);
   border-radius: var(--full-radius);
   color: var(--text-color);
-  min-width: 150px;
-  font-size: 14px;
+  width: 100%;
+  font-size: var(--text-sm);
   cursor: pointer;
   font-weight: 600;
   background-color: transparent;

@@ -27,6 +27,7 @@
 
 .buttons {
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 24px;
 }

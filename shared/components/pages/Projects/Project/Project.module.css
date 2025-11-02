@@ -379,3 +379,120 @@
   justify-content: center;
   align-items: center;
 }
+
+/* ====== Mobile ≤ 720px ====== */
+@media (max-width: 720px) {
+  .wrap {
+    gap: 10px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  /* кнопки-линки — удобнее тапать */
+  .links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .btn {
+    height: 44px;
+    font-size: var(--text-sm);
+    width: 100%;
+  }
+
+  /* список ключ-значение компактнее */
+  .kv {
+    grid-template-columns: 90px 1fr;
+    gap: 6px;
+  }
+  .kvKey {
+    font-size: 12px;
+  }
+  .kvVal {
+    font-size: 14px;
+  }
+
+  /* tech chips — плотнее сетка и кликабельность */
+  .techList {
+    gap: 6px;
+  }
+  .techChip {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  /* галерея скриншотов — уменьшить минимальную колонку */
+  .screensGrid {
+    --min: 180px;
+    gap: var(--space-2);
+  }
+
+  /* стрелки навигации по изображению — немного крупнее для тача */
+  .navBtn {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* точки-индикаторы компактнее */
+  .dots {
+    padding: 4px 6px;
+    gap: 5px;
+    bottom: 8px;
+  }
+  .dot {
+    width: 7px;
+    height: 7px;
+  }
+}
+
+/* ====== Very small ≤ 420px ====== */
+@media (max-width: 420px) {
+  .projectTitle {
+    letter-spacing: -0.01em;
+    margin: 2px 0 10px;
+  }
+
+  /* ключ-значение в одну колонку */
+  .kv {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .kvKey {
+    font-size: 11.5px;
+    opacity: 0.8;
+  }
+  .kvVal {
+    font-size: 14px;
+  }
+
+  /* ссылки-кнопки — в один столбец */
+  .links {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  /* сетка скриншотов — ещё меньше минимальная ширина */
+  .screensGrid {
+    --min: 150px;
+  }
+
+  /* картинка проекта — более «плоское» соотношение, чтобы не уезжала вниз */
+  .imageWrap {
+    aspect-ratio: 16 / 10;
+    min-height: 200px;
+  }
+}
+
+/* ====== Motion prefs ====== */
+@media (prefers-reduced-motion: reduce) {
+  .techChip,
+  .btn,
+  .screenThumb,
+  .navBtn {
+    transition: none !important;
+    transform: none !important;
+  }
+}

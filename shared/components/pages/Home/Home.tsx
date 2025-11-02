@@ -81,6 +81,7 @@ export const HomeSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.6 }}
+          className={styles.homeLinksWrapper}
         >
           <GlassSurface>
             <div className={styles.buttons}>

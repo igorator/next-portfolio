@@ -6,12 +6,12 @@ import { ThemeProvider } from "@/shared/state/providers/theme-provider";
 
 export default async function LocaleLayout({
   children,
-  params, // <-- Promise
+  params,
 }: {
   children: React.ReactNode;
   params: Promise<{ locale: Locale }>;
 }) {
-  const { locale } = await params; // <-- обязательно await
+  const { locale } = await params;
 
   const messages = (await import(`../../messages/${locale}.json`)).default;
 

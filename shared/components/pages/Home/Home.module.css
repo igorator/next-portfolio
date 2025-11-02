@@ -1,61 +1,50 @@
 /* Home.module.css */
-
-/* ===== Глобальные переменные (видны везде) ===== */
 :root {
-  /* Палитра (подхватывает твои глобальные, но имеет фолбэки) */
   --fg-strong: var(--foreground, #e5e7eb);
   --fg-muted: var(--foreground-50, #9ca3af);
 
-  /* Размеры контейнеров */
   --home-min-h: 72svh;
   --home-pad: clamp(16px, 2vw, 32px);
   --content-max-w: 1100px;
   --content-max-w-vw: 92vw;
   --content-gap: clamp(16px, 3vw, 28px);
 
-  /* Типографика */
-  --title-gap: clamp(6px, 1.2vw, 10px);
+  --title-gap: clamp(12px, 1.2vw, 16px);
   --lh-tight: 1.05;
   --ls-tight: -0.02em;
 
-  --fz-fade: clamp(22px, 3.2vw, 34px);
+  --fz-fade: clamp(30px, 3.2vw, 34px);
   --fz-name: clamp(40px, 8vw, 92px);
-  --fz-role: clamp(28px, 4.5vw, 48px);
+  --fz-role: clamp(36px, 4.5vw, 48px);
 
-  /* Кнопки */
   --buttons-pad: 12px;
   --buttons-gap: 10px;
 
   --btn-min-w: 120px;
   --btn-radius: 14px;
-  --btn-pad-y: 10px;
+  --btn-pad-y: 12px;
   --btn-pad-x: 16px;
-  --btn-fz: 14px;
+  --btn-fz: 15px;
   --btn-fw: 700;
 
-  /* Ховер/актив */
-  --btn-hover-scale: 1.1;
+  --btn-hover-scale: 1.02;
   --btn-active-brightness: 0.98;
   --btn-active-saturate: 0.95;
 
-  /* Градиент имени */
   --name-grad-a: #d9d9d9;
   --name-grad-b: #f5f5f5;
   --name-grad-c: #bfbfbf;
   --name-grad-d: #f0f0f0;
   --name-grad-e: #d4d4d4;
 
-  /* Прочее */
   --opacity-role: 0.95;
 }
 
-/* ===== Блок секции ===== */
 .home {
   display: grid;
   place-items: center;
   min-height: var(--home-min-h);
   padding: var(--home-pad);
-  /* совет по визуальным эффектам: изоляция помогает со стеклянными слоями */
   isolation: isolate;
 }
 
@@ -68,14 +57,15 @@
   z-index: 0;
 }
 
-/* ===== Заголовок ===== */
 .title {
-  display: grid;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
   gap: var(--title-gap);
   line-height: var(--lh-tight);
   letter-spacing: var(--ls-tight);
   position: relative;
-  z-index: 2; /* держим текст поверх декоративных слоев */
+  z-index: 2;
 }
 
 .fade {
@@ -88,7 +78,6 @@
   font-weight: 800;
   font-size: var(--fz-name);
   line-height: 0.98;
-
   background: linear-gradient(
     90deg,
     var(--name-grad-a) 0%,
@@ -101,7 +90,6 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
@@ -112,33 +100,44 @@
   opacity: var(--opacity-role);
 }
 
-/* ===== Кнопки ===== */
 .buttons {
-  display: grid;
-  grid-auto-flow: column;
+  display: flex;
   padding: var(--buttons-pad);
   gap: var(--buttons-gap);
   align-items: center;
-  justify-content: start;
+  justify-content: stretch;
   position: relative;
-  z-index: 2; /* поверх стекла */
+  z-index: 2;
 }
 
 .btn {
   display: flex;
   gap: var(--space-2);
-  flex-grow: 1;
+  width: 100%;
   justify-content: center;
   align-items: center;
   padding: var(--btn-pad-y) var(--btn-pad-x);
-  min-width: var(--btn-min-w);
+  min-width: 0;
   border-radius: var(--btn-radius);
   font-weight: var(--btn-fw);
   font-size: var(--btn-fz);
   line-height: 1;
   color: var(--foreground, #111);
   text-decoration: none;
-  transition: transform 180ms ease;
+  transition:
+    transform 180ms ease,
+    filter 180ms ease;
+  touch-action: manipulation;
+}
+
+.homeLinksWrapper {
+  display: none;
+}
+
+@media (hover: hover) {
+  .btn:hover {
+    transform: scale(var(--btn-hover-scale));
+  }
 }
 
 .btn:active {
@@ -147,18 +146,21 @@
     brightness(var(--btn-active-brightness));
 }
 
-/* ===== Мобильные правки ===== */
-@media (max-width: 720px) {
-  .buttons {
-    grid-auto-flow: row;
-    justify-content: stretch;
+@media (min-width: 721px) {
+  .title {
+    text-align: start;
   }
+
+  .homeLinksWrapper {
+    display: block;
+  }
+
   .btn {
-    width: 100%;
+    width: auto;
+    min-width: var(--btn-min-w);
   }
 }
 
-/* ===== Respect prefers-reduced-motion ===== */
 @media (prefers-reduced-motion: reduce) {
   .btn,
   .title {

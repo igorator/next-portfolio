@@ -20,14 +20,12 @@ export function LanguageSelect() {
 
   return (
     <DropdownMenu.Root modal={false}>
-      <GlassSurface>
-        <DropdownMenu.Trigger
-          className={styles.selectTrigger}
-          aria-label="Language"
-        >
-          <div className={styles.selectLabel}>{locale.toUpperCase()}</div>
-        </DropdownMenu.Trigger>
-      </GlassSurface>
+      <DropdownMenu.Trigger
+        className={styles.selectTrigger}
+        aria-label="Language"
+      >
+        <div className={styles.selectLabel}>{locale.toUpperCase()}</div>
+      </DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>
         <DropdownMenu.Content

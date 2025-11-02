@@ -6,19 +6,18 @@ import { FilterClearButton } from "./FilterClearButton/FilterClearButton";
 import styles from "./ProjectFilters.module.css";
 import { SortSelect } from "./SortSelect/SortSelect";
 import { TechnologyMultiSelect } from "./TechnologyMultiSelect/TechnologyMultiSelect";
+import { GlassSurface } from "@/shared/components/ui/GlassSurface/GlassSurface";
 
-// 1) Единый тип сортировки
 type SortKey = "newest" | "oldest" | "az" | "za";
 
-// 2) Пропсы
 type ProjectFiltersProps = {
   technologies: Technology[];
   selectedTechnologies: string[];
   sortBy: SortKey;
-  commercialOnly: boolean; // <-- добавлено
-  onTechnologySelect: (id: string) => void; // toggler
+  commercialOnly: boolean;
+  onTechnologySelect: (id: string) => void;
   onSortChange: (value: SortKey) => void;
-  onCommercialChange: (value: boolean) => void; // <-- добавлено
+  onCommercialChange: (value: boolean) => void;
 };
 
 export const ProjectFilters = ({
@@ -45,17 +44,28 @@ export const ProjectFilters = ({
 
   return (
     <div className={styles.filtersBar}>
-      <TechnologyMultiSelect
-        technologies={technologies}
-        selectedTechnologies={selectedTechnologies}
-        onToggle={onTechnologySelect}
-      />
+      <GlassSurface className={styles.technologySelectWrapper}>
+        <TechnologyMultiSelect
+          technologies={technologies}
+          selectedTechnologies={selectedTechnologies}
+          onToggle={onTechnologySelect}
+        />
+      </GlassSurface>
 
-      <SortSelect value={sortBy} onChange={onSortChange} />
+      <GlassSurface className={styles.sortSelectWrapper}>
+        <SortSelect value={sortBy} onChange={onSortChange} />
+      </GlassSurface>
 
-      <CommercialSwitch value={commercialOnly} onChange={onCommercialChange} />
+      <GlassSurface className={styles.commercialSwitchWrapper}>
+        <CommercialSwitch
+          value={commercialOnly}
+          onChange={onCommercialChange}
+        />
+      </GlassSurface>
 
-      <FilterClearButton onClear={handleClear} disabled={isPristine} />
+      <GlassSurface className={styles.filterClearButtonWrapper}>
+        <FilterClearButton onClear={handleClear} disabled={isPristine} />
+      </GlassSurface>
     </div>
   );
 };

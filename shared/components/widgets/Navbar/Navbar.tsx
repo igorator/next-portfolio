@@ -5,17 +5,26 @@ import { NavbarLinks } from "@/shared/components/widgets/Navbar/NavbarLinks/Navb
 import { ThemeSwitch } from "@/shared/components/widgets/ThemeSwitcher/ThemeSwitcher";
 import { Socials } from "../Socials/Socials";
 import styles from "./Navbar.module.css";
+import { GlassSurface } from "../../ui/GlassSurface/GlassSurface";
 
 export const Navbar = () => {
   return (
     <nav className={styles.navbar}>
-      <Socials />
+      <GlassSurface className={styles.socialsWrapper}>
+        <Socials />
+      </GlassSurface>
 
-      <NavbarLinks />
+      <GlassSurface className={styles.navbarLinksWrapper}>
+        <NavbarLinks />
+      </GlassSurface>
 
-      <ThemeSwitch />
+      <GlassSurface className={styles.themeSwitcherWrapper}>
+        <ThemeSwitch />
+      </GlassSurface>
 
-      <LanguageSelect />
+      <GlassSurface className={styles.languageSelectWrapper}>
+        <LanguageSelect />
+      </GlassSurface>
     </nav>
   );
 };

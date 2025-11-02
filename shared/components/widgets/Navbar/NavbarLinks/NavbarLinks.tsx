@@ -35,39 +35,37 @@ export const NavbarLinks = () => {
   const items: Route[] = useMemo(() => Object.values(routes), []);
 
   return (
-    <GlassSurface>
-      <nav className={styles.navbarLinks}>
-        {items.map(({ path, icon: Icon }) => {
-          const active =
-            path === "/"
-              ? currentPath === "/"
-              : currentPath === path || currentPath.startsWith(`${path}/`);
+    <nav className={styles.navbarLinks}>
+      {items.map(({ path, icon: Icon }) => {
+        const active =
+          path === "/"
+            ? currentPath === "/"
+            : currentPath === path || currentPath.startsWith(`${path}/`);
 
-          const href = `/${locale}${path === "/" ? "" : path}`;
+        const href = `/${locale}${path === "/" ? "" : path}`;
 
-          const label =
-            path === routes.root.path
-              ? t("navigation.root")
-              : path === routes.cv.path
-                ? t("navigation.cv")
-                : path === routes.employment.path
-                  ? t("navigation.employment")
-                  : t("navigation.projects");
+        const label =
+          path === routes.root.path
+            ? t("navigation.root")
+            : path === routes.cv.path
+              ? t("navigation.cv")
+              : path === routes.employment.path
+                ? t("navigation.employment")
+                : t("navigation.projects");
 
-          return (
-            <Link
-              key={path}
-              href={href}
-              className={`${styles.navItem} ${active ? styles.isActive : ""}`}
-              aria-current={active ? "page" : undefined}
-              prefetch
-            >
-              <Icon className={styles.icon} aria-hidden="true" />
-              <span className={styles.label}>{label}</span>
-            </Link>
-          );
-        })}
-      </nav>
-    </GlassSurface>
+        return (
+          <Link
+            key={path}
+            href={href}
+            className={`${styles.navItem} ${active ? styles.isActive : ""}`}
+            aria-current={active ? "page" : undefined}
+            prefetch
+          >
+            <Icon className={styles.icon} aria-hidden="true" />
+            <span className={styles.label}>{label}</span>
+          </Link>
+        );
+      })}
+    </nav>
   );
 };

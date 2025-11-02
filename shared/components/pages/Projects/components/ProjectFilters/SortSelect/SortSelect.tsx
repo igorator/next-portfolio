@@ -3,7 +3,7 @@
 import * as Select from "@radix-ui/react-select";
 import { useTranslations } from "next-intl";
 import { BsCheckLg, BsChevronDown } from "react-icons/bs";
-import { GlassSurface } from "@/shared/components/ui/GlassSurface/GlassSurface";
+
 import styles from "./SortSelect.module.css";
 
 // 1) Единый тип сортировки
@@ -29,17 +29,15 @@ export const SortSelect = ({ value, onChange }: Props) => {
 
   return (
     <Select.Root value={value} onValueChange={(v) => onChange(v as SortKey)}>
-      <GlassSurface>
-        <Select.Trigger
-          className={`${styles.selectTrigger}`}
-          aria-label={t("projects.filters.sort")}
-        >
-          <Select.Value placeholder={t("projects.filters.sort")} />
-          <Select.Icon className={styles.selectIcon}>
-            <BsChevronDown className={styles.chevronIcon} aria-hidden="true" />
-          </Select.Icon>
-        </Select.Trigger>
-      </GlassSurface>
+      <Select.Trigger
+        className={`${styles.selectTrigger}`}
+        aria-label={t("projects.filters.sort")}
+      >
+        <Select.Value placeholder={t("projects.filters.sort")} />
+        <Select.Icon className={styles.selectIcon}>
+          <BsChevronDown className={styles.chevronIcon} aria-hidden="true" />
+        </Select.Icon>
+      </Select.Trigger>
 
       <Select.Portal>
         <Select.Content

@@ -3,14 +3,14 @@
 }
 
 .clearButton {
-  display: inline-flex;
+  width: 100%;
+  display: flex;
   align-items: center;
-
-  aspect-ratio: 1 / 1;
+  justify-content: center;
   padding: var(--space-3);
   border-radius: var(--full-radius);
   color: var(--text-color);
-  font-size: 14px;
+  font-size: var(--text-sm);
   cursor: pointer;
   background-color: transparent;
   border: none;

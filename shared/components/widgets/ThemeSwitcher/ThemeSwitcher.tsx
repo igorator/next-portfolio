@@ -2,7 +2,6 @@
 
 import * as Switch from "@radix-ui/react-switch";
 import { BsMoon, BsSun } from "react-icons/bs";
-import { GlassSurface } from "@/shared/components/ui/GlassSurface/GlassSurface";
 import { useThemeStore } from "@/shared/state/store/useThemeStore";
 import styles from "./ThemeSwitcher.module.css";
 
@@ -14,18 +13,16 @@ export const ThemeSwitch = () => {
   };
 
   return (
-    <GlassSurface>
-      <div className={`${styles.themeSwitch}`}>
-        <BsMoon className={styles.themeIcon} />
-        <Switch.Root
-          className={styles.switchRoot}
-          checked={theme === "light"}
-          onCheckedChange={handleThemeToggle}
-        >
-          <Switch.Thumb className={styles.switchThumb} />
-        </Switch.Root>
-        <BsSun className={styles.themeIcon} />
-      </div>
-    </GlassSurface>
+    <div className={`${styles.themeSwitch}`}>
+      <BsMoon className={styles.themeIcon} />
+      <Switch.Root
+        className={styles.switchRoot}
+        checked={theme === "light"}
+        onCheckedChange={handleThemeToggle}
+      >
+        <Switch.Thumb className={styles.switchThumb} />
+      </Switch.Root>
+      <BsSun className={styles.themeIcon} />
+    </div>
   );
 };

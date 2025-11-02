@@ -1,5 +1,6 @@
 .triggerButton {
-  display: inline-flex;
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: transparent;
@@ -21,7 +22,6 @@
 }
 
 .menuContent {
-  min-width: 280px;
   max-height: 320px;
   overflow: auto;
   padding: var(--space-2);

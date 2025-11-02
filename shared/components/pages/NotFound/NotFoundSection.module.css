@@ -17,7 +17,7 @@
 .code {
   font-size: clamp(4rem, 10vw, 8rem);
   font-weight: 700;
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  background: linear-gradient(180deg, var(--foreground), var(--background));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -160,3 +160,9 @@
     transform: translateY(0);
   }
 }
+
+@media (max-width: 720px) {
+  .projectCard {
+    padding: var(--space-3);
+  }
+}

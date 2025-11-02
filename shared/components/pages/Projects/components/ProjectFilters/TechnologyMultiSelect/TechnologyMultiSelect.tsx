@@ -2,7 +2,6 @@
 
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { BsCheckLg, BsChevronDown } from "react-icons/bs";
-import { GlassSurface } from "@/shared/components/ui/GlassSurface/GlassSurface";
 import type { Technology } from "@/shared/types/technology";
 import styles from "./TechnologyMultiSelect.module.css";
 
@@ -17,7 +16,6 @@ export const TechnologyMultiSelect = ({
   selectedTechnologies,
   onToggle,
 }: Props) => {
-  // translations
   const { useTranslations } = require("next-intl");
   const t = useTranslations();
 
@@ -33,18 +31,14 @@ export const TechnologyMultiSelect = ({
 
   return (
     <DropdownMenu.Root>
-      <GlassSurface>
-        <DropdownMenu.Trigger>
-          <div className={`${styles.triggerButton}`}>
-            <span className={styles.triggerLabel}>{triggerLabel}</span>
-            <BsChevronDown className={styles.chevronIcon} aria-hidden />
-          </div>
-        </DropdownMenu.Trigger>
-      </GlassSurface>
+      <DropdownMenu.Trigger className={`${styles.triggerButton}`}>
+        <span className={styles.triggerLabel}>{triggerLabel}</span>
+        <BsChevronDown className={styles.chevronIcon} aria-hidden />
+      </DropdownMenu.Trigger>
 
       <DropdownMenu.Portal>
         <DropdownMenu.Content
-          className={`${styles.menuContent} glass-wrapper`}
+          className={`${styles.menuContent}`}
           sideOffset={20}
           align="start"
         >
