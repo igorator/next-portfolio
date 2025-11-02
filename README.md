@@ -5,7 +5,7 @@ Modern multilingual portfolio built with **Next.js 15** and **motion/react** ani
 **Live site:** https://igorator.site
 
 ## Tech Stack
-- **Next.js 15** (App Router, RSC)
+- **Next.js 15** (App Router)
 - **TypeScript**
 - **CSS modules**
 - **motion/react** (Framer Motion v11 API)
