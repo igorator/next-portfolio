@@ -1,0 +1,41 @@
+.hiddenMenuButtonWrapper {
+  position: fixed;
+  top: var(--space-3);
+  right: var(--space-3);
+  z-index: 1000;
+
+  /* по умолчанию показываем */
+  display: flex;
+}
+
+/* скрыть на планшетах и десктопах */
+@media (min-width: 768px) {
+  .hiddenMenuButtonWrapper {
+    display: none;
+  }
+}
+
+.hiddenMenuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--foreground);
+  border-radius: var(--radius-full);
+
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.hiddenMenuButton:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.05);
+}
+
+.hiddenMenuButton:active {
+  transform: scale(0.95);
+}

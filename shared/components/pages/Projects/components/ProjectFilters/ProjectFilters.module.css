@@ -71,8 +71,7 @@
     grid-template-columns: 1fr;
     grid-template-areas:
       "tech"
-      "comm"
-      "sort"
+      "comm" "sort"
       "clear";
   }
 }

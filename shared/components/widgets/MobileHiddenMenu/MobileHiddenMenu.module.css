@@ -1,15 +1,148 @@
-.menu {
+.layer {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 2147483646;
+  display: block;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.4);
+  cursor: default;
+  animation: mhm-fade-in 0.25s ease forwards;
+}
+
+.layer {
+  backdrop-filter: blur(var(--backdrop-blur));
+}
+
+.closeIcon {
+  color: var(--foreground);
+}
+
+.menu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 100%;
+
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  background: var(--background);
+
+  z-index: 2147483647;
+  margin-inline: auto;
+  width: 100%;
+  max-width: 720px;
+
   color: var(--foreground);
+
   padding: var(--space-6);
-  overflow-y: auto;
+  padding-bottom: calc(var(--space-6) + env(safe-area-inset-bottom, 0px));
+
+  overflow: auto;
+
+  transform: translateY(16px);
+  opacity: 0;
+  animation: mhm-slide-up 0.25s ease forwards;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.closeBtn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: var(--text-xl);
+  padding: var(--space-2);
+  border-radius: var(--radius-full);
+
   transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
+    background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+.closeBtn:active {
+  transform: scale(0.96);
+}
+
+/* Видимый фокус для клавиатуры */
+.closeBtn:focus-visible,
+.menu :where(button, a, [role="button"]):focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--foreground) 60%, transparent);
+  outline-offset: 2px;
+  border-radius: var(--radius-md);
+}
+
+/* Контент меню */
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: var(--space-4);
+  flex-grow: 1;
+}
+
+/* Анимации */
+
+@keyframes mhm-slide-up {
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Уважение reduce-motion */
+@media (prefers-reduced-motion: reduce) {
+  .layer {
+    animation: none;
+  }
+  .menu {
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* (Опционально) чуть более «десктопное» поведение после 768px:
+   делаем меню уже и приподнимаем от низа */
+@media (min-width: 768px) {
+  .menu {
+    max-width: 560px;
+    bottom: var(--space-6);
+    border-bottom-left-radius: var(--radius-2xl);
+    border-bottom-right-radius: var(--radius-2xl);
+  }
+}
+
+/* Скрытый заголовок, если используешь .sr-only в разметке */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

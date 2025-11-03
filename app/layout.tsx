@@ -3,6 +3,7 @@ import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { AppPortal } from "@/shared/components/layout/AppPortal/AppPortal";
 
 const fontHeading = Manrope({
   variable: "--font-headings",
@@ -26,8 +27,8 @@ export default function RootLayout({
       <body className={`${fontHeading.variable} ${fontText.variable}`}>
         <Analytics />
         <SpeedInsights />
-
         {children}
+        <AppPortal />
       </body>
     </html>
   );

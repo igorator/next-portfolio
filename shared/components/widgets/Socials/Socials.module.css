@@ -1,6 +1,7 @@
 .socialBar {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   padding: var(--inner-padding);
   margin: 0 10px 0 10px;
