@@ -1,4 +1,3 @@
-// app/[locale]/layout.tsx
 import { type Locale, NextIntlClientProvider } from "next-intl";
 import { AppBackground } from "@/shared/components/layout/AppBackground/AppBackground";
 import { MobileHiddenMenuButton } from "@/shared/components/widgets/MobileHiddenMenu/MobileHiddenMenuButton/MobileHiddenMenuButton";
@@ -9,9 +8,10 @@ export default async function LocaleLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }) {
-  const { locale } = params;
+  const { locale } = await params;
+
   const messages = (await import(`../../messages/${locale}.json`)).default;
 
   return (

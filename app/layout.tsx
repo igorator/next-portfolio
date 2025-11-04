@@ -34,14 +34,12 @@ export default async function RootLayout({
   const theme =
     (cookieStore.get(THEME_COOKIE)?.value as ThemeSetting) ?? "system";
 
-  // При 'system' НЕ ставим data-theme — пусть решит CSS через prefers-color-scheme
   const htmlAttrs =
     theme === "system" ? {} : ({ "data-theme": theme } as const);
 
   return (
     <html lang="en" {...htmlAttrs} suppressHydrationWarning>
       <head>
-        {/* Чтобы нативные контролы/скроллбары совпадали с темой */}
         <meta
           name="color-scheme"
           content={
@@ -49,7 +47,7 @@ export default async function RootLayout({
               ? "dark light"
               : theme === "light"
                 ? "light dark"
-                : "light dark" // для 'system' оставляем оба
+                : "light dark"
           }
         />
       </head>
