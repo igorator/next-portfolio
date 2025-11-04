@@ -5,19 +5,8 @@
   display: grid;
   place-items: center;
   min-height: 100dvh;
-  --bg: color-mix(in oklab, var(--foreground) 88%, var(--background));
-  background:
-    radial-gradient(
-      1200px 800px at 60% 20%,
-      color-mix(in oklab, var(--accent) 35%, transparent),
-      transparent 60%
-    ),
-    radial-gradient(
-      1000px 700px at 20% 80%,
-      color-mix(in oklab, var(--accent) 22%, transparent),
-      transparent 60%
-    ), var(--bg);
-  background-color: var(--background);
+  background-color: color-mix(in oklab, var(--background) 65%, transparent);
+  backdrop-filter: blur(6px) saturate(120%);
   isolation: isolate;
   pointer-events: all;
   transform: none !important;
@@ -28,34 +17,41 @@
   position: absolute;
   inset: 0;
   filter: blur(40px) saturate(140%);
-  opacity: 0.9;
+  opacity: 0.6;
   pointer-events: none;
   z-index: 0;
 }
 
-.blob,
-.blob2 {
+.halo {
   position: absolute;
-  width: 50vmax;
-  height: 50vmax;
+  top: 50%;
+  left: 50%;
+  width: 44vmin;
+  height: 44vmin;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(
-    closest-side,
-    color-mix(in oklab, var(--accent) 55%, transparent) 0%,
-    transparent 70%
-  );
+  background:
+    radial-gradient(
+      closest-side,
+      color-mix(in oklab, var(--accent) 35%, transparent) 0%,
+      transparent 70%
+    ),
+    conic-gradient(
+      from 0deg,
+      color-mix(in srgb, var(--accent) 60%, transparent),
+      transparent 40%
+    );
+  filter: blur(12px) saturate(160%);
   mix-blend-mode: screen;
-}
-.blob2 {
-  background: radial-gradient(
-    closest-side,
-    color-mix(in oklab, var(--accent) 45%, white 8%) 0%,
-    transparent 70%
-  );
 }
 
 .card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
   width: min(520px, 92vw);
   padding: 28px;
   border-radius: 16px;
@@ -76,42 +72,13 @@
   letter-spacing: 0.2px;
 }
 
-.progressWrap {
-  position: relative;
-  height: 12px;
-  border-radius: 999px;
-  background: color-mix(in oklab, var(--accent) 8%, transparent);
-  overflow: hidden;
-  border: 1px solid color-mix(in oklab, var(--accent) 18%, transparent);
-}
+.spinnerWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-.progress {
-  appearance: none;
-  width: 100%;
-  height: 12px;
-  background: transparent;
-}
-.progress::-webkit-progress-bar {
-  background: transparent;
-}
-.progress::-webkit-progress-value {
-  background: transparent;
-}
-.progress::-moz-progress-bar {
-  background: transparent;
-}
-
-.fill {
-  position: absolute;
-  inset: 0 auto 0 0;
-  height: 100%;
-  width: 0%;
-  background: var(--accent);
-  transition: width 0.25s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.gloss {
-  display: none;
+  margin-bottom: 12px;
 }
 
 .hint {

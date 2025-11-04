@@ -118,10 +118,10 @@ export function ProjectSection({
           <Link
             href={routes.projects.path}
             className={styles.back}
-            aria-label="Back to projects"
+            aria-label={t("backToProjectsAria")}
           >
             <BsArrowLeft aria-hidden size={16} />
-            <span>Back</span>
+            <span>{t("back")}</span>
           </Link>
         </GlassSurface>
       </div>
@@ -140,15 +140,15 @@ export function ProjectSection({
           <h1 className={styles.projectTitle}>{title}</h1>
           <ul className={styles.kvList}>
             <li className={styles.kv}>
-              <span className={styles.kvKey}>Type</span>
+              <span className={styles.kvKey}>{t("type")}</span>
               <span className={styles.kvVal}>{type}</span>
             </li>
             <li className={styles.kv}>
-              <span className={styles.kvKey}>Category</span>
+              <span className={styles.kvKey}>{t("category")}</span>
               <span className={styles.kvVal}>{category}</span>
             </li>
             <li className={styles.kv}>
-              <span className={styles.kvKey}>Date</span>
+              <span className={styles.kvKey}>{t("date")}</span>
               <time className={styles.kvVal} dateTime={date}>
                 {date}
               </time>
@@ -160,7 +160,7 @@ export function ProjectSection({
           className={`${styles.card} ${styles.stackCard}`}
           variants={cardItem}
         >
-          <h2 className={styles.cardTitle}>Technologies</h2>
+          <h2 className={styles.cardTitle}>{t("technologiesTitle")}</h2>
           {technologies?.length ? (
             <ul className={styles.techList} aria-label="Technology stack">
               {technologies.map((t) => {
@@ -184,7 +184,7 @@ export function ProjectSection({
               })}
             </ul>
           ) : (
-            <p className={styles.muted}>No technologies listed.</p>
+            <p className={styles.muted}>{t("noTechnologies")}</p>
           )}
         </motion.article>
 
@@ -192,7 +192,7 @@ export function ProjectSection({
           className={`${styles.card} ${styles.linksCard}`}
           variants={cardItem}
         >
-          <h2 className={styles.cardTitle}>Links</h2>
+          <h2 className={styles.cardTitle}>{t("linksTitle")}</h2>
 
           <div className={styles.links}>
             {demoUrl ? (
@@ -202,7 +202,7 @@ export function ProjectSection({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Live Demo
+                {t("links.liveDemo")}
               </a>
             ) : null}
 
@@ -213,7 +213,7 @@ export function ProjectSection({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                GitHub
+                {t("links.github")}
               </a>
             ) : null}
 
@@ -247,12 +247,12 @@ export function ProjectSection({
                 exit="exit"
                 className={styles.imageAnimLayer}
                 onClick={() => openLightbox(idx)}
-                aria-label="Open image in lightbox"
+                aria-label={t("openImageAria")}
               >
                 <Image
                   className={styles.image}
                   src={images[idx]}
-                  alt={`${title} — cover`}
+                  alt={t("imageAltCover", { title })}
                   fill
                   sizes="(min-width: 980px) 66vw, 100vw"
                   priority
@@ -302,7 +302,7 @@ export function ProjectSection({
           className={`${styles.card} ${styles.descFull}`}
           variants={cardItem}
         >
-          <h2 className={styles.cardTitle}>Description</h2>
+          <h2 className={styles.cardTitle}>{t("descriptionTitle")}</h2>
           <p className={styles.description}>{description}</p>
         </motion.article>
       </motion.section>

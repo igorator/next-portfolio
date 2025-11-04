@@ -30,6 +30,17 @@
     }
   },
   "projects_ui": {
+    "back": "Назад",
+    "backToProjectsAria": "Назад до проєктів",
+    "technologiesTitle": "Технології",
+    "linksTitle": "Посилання",
+    "type": "Тип",
+    "category": "Категорія",
+    "date": "Дата",
+    "descriptionTitle": "Опис",
+    "noTechnologies": "Технології не вказані.",
+    "openImageAria": "Відкрити зображення в лайтбоксі",
+    "imageAltCover": "{title} — обкладинка",
     "noMatches": "Жоден проект не відповідає фільтрам",
     "links": {
       "github": "GitHub",

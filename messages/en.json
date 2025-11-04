@@ -48,7 +48,18 @@
     "noLinks": "No links data",
     "noImages": "No image data",
     "commercial": "Commercial",
-    "onlyCommercialProjects": "Commercial only"
+    "onlyCommercialProjects": "Commercial only",
+    "back": "Back",
+    "backToProjectsAria": "Back to projects",
+    "technologiesTitle": "Technologies",
+    "linksTitle": "Links",
+    "type": "Type",
+    "category": "Category",
+    "date": "Date",
+    "descriptionTitle": "Description",
+    "noTechnologies": "No technologies listed.",
+    "openImageAria": "Open image in lightbox",
+    "imageAltCover": "{title} — cover"
   },
   "cv": {
     "title": "CV",
