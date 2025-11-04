@@ -4,7 +4,6 @@ import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { GlassSurface } from "../../ui/GlassSurface/GlassSurface";
 import styles from "./LanguageSelect.module.css";
 
 const localeLabels = { en: "English", uk: "Українська" } as const;

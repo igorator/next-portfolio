@@ -3,7 +3,6 @@
 import { useEffect, useId } from "react";
 import { BsX } from "react-icons/bs";
 import { AppPortal } from "@/shared/components/layout/AppPortal/AppPortal";
-import { LanguageSelect } from "../LanguageSelect/LanguageSelect";
 import { Socials } from "../Socials/Socials";
 import { ThemeSwitch } from "../ThemeSwitcher/ThemeSwitcher";
 import styles from "./MobileHiddenMenu.module.css";
@@ -64,7 +63,6 @@ export const MobileHiddenMenu: React.FC<Props> = ({ open, onClose }) => {
         </div>
 
         <div className={styles.content}>
-          <LanguageSelect />
           <ThemeSwitch />
           <Socials />
         </div>
