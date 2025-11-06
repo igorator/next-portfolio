@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { useLocale } from "next-intl";
@@ -21,7 +21,7 @@ export function LanguageSelect() {
     <DropdownMenu.Root modal={false}>
       <DropdownMenu.Trigger
         className={styles.selectTrigger}
-        aria-label="Language"
+        aria-label='Language'
       >
         <div className={styles.selectLabel}>{locale.toUpperCase()}</div>
       </DropdownMenu.Trigger>
@@ -29,8 +29,8 @@ export function LanguageSelect() {
       <DropdownMenu.Portal>
         <DropdownMenu.Content
           className={styles.selectContent}
-          side="top"
-          align="end"
+          side='top'
+          align='end'
           sideOffset={12}
         >
           {routing.locales.map((loc) => (
