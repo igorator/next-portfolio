@@ -21,13 +21,13 @@
     "id": "3mpq-studio",
     "company": "3mpq Studio",
     "period": "2023 — 2024",
-    "projects": ["3mpq-studio", "studio-dashboard", "zycsel-store-bot"]
+    "projects": ["3mpq-studio-lite", "studio-dashboard", "zycsel-store-bot"]
   },
   {
     "id": "logics7",
     "company": "Logics7",
     "period": "2022 - 2023",
-    "projects": ["pss", "dovira", "easm", "webwise"]
+    "projects": ["pss", "dovira", "easm", "webwise", "turbota-liqpay"]
   },
   {
     "id": "upwork-freelance",

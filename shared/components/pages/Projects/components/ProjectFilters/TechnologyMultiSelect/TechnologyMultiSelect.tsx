@@ -9,34 +9,40 @@ type Props = {
   technologies: Technology[];
   selectedTechnologies: string[];
   onToggle: (id: string) => void;
+  loading?: boolean;
 };
 
 export const TechnologyMultiSelect = ({
   technologies,
   selectedTechnologies,
   onToggle,
+  loading = false,
 }: Props) => {
   const { useTranslations } = require("next-intl");
   const t = useTranslations();
 
-  const triggerLabel =
-    selectedTechnologies.length === 0
+  const triggerLabel = loading
+    ? t("loading.loading", { default: "Loading..." })
+    : selectedTechnologies.length === 0
       ? t("projects.filters.selected", { count: 0 })
       : selectedTechnologies.length === 1
         ? (technologies.find((tec) => tec.id === selectedTechnologies[0])
             ?.name ?? t("projects.filters.selected", { count: 1 }))
-        : t("projects.filters.selected", {
-            count: selectedTechnologies.length,
-          });
+        : t("projects.filters.selected", { count: selectedTechnologies.length });
 
   return (
-    <DropdownMenu.Root>
-      <DropdownMenu.Trigger className={`${styles.triggerButton}`}>
+    <DropdownMenu.Root open={loading ? false : undefined}>
+      <DropdownMenu.Trigger
+        className={`${styles.triggerButton} ${loading ? styles.disabled : ""}`}
+        disabled={loading}
+        aria-disabled={loading}
+      >
         <span className={styles.triggerLabel}>{triggerLabel}</span>
         <BsChevronDown className={styles.chevronIcon} aria-hidden />
       </DropdownMenu.Trigger>
 
-      <DropdownMenu.Portal>
+      {!loading && (
+        <DropdownMenu.Portal>
         <DropdownMenu.Content
           className={`${styles.menuContent}`}
           sideOffset={20}
@@ -63,7 +69,8 @@ export const TechnologyMultiSelect = ({
             );
           })}
         </DropdownMenu.Content>
-      </DropdownMenu.Portal>
+        </DropdownMenu.Portal>
+      )}
     </DropdownMenu.Root>
   );
 };

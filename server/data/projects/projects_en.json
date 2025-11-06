@@ -30,7 +30,7 @@
     "category": "landing"
   },
   "webwise": {
-    "title": "Webwise (Logics7)",
+    "title": "Webwise by Logics7",
     "description": "Marketing landing page built with Next.js, Tailwind, and Spline 3D; integrated with Zoho CRM.",
     "type": "business",
     "category": "landing"
@@ -72,19 +72,19 @@
     "category": "frontend"
   },
   "easm": {
-    "title": "EASM — Logics7",
+    "title": "EASM by Logics7",
     "description": "Corporate landing page in Webflow for the EASM service by Logics7.",
     "type": "digital security",
     "category": "landing"
   },
   "pss": {
-    "title": "PSS — Logics7",
+    "title": "PSS by Logics7",
     "description": "Business website for parking and security systems with Google Maps API, built in Webflow.",
     "type": "business",
     "category": "landing"
   },
   "dovira": {
-    "title": "Dovira",
+    "title": "Dovira by Logics7",
     "description": "Website for the Dovira initiative in the UK, built in Webflow with custom animations.",
     "type": "psychology",
     "category": "landing"

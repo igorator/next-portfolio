@@ -114,6 +114,59 @@
   line-height: 1.55;
 }
 
+.projectsBlock {
+  margin-top: 18px;
+}
+
+.projectsLabel {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.projects {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+}
+
+.projectBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 9999px;
+  background: color-mix(in oklab, var(--surface) 35%, transparent);
+  border: 1px solid color-mix(in oklab, var(--separator) 60%, transparent);
+  color: var(--text);
+  font-size: var(--text-sm);
+  line-height: 1;
+  text-decoration: none;
+  transition: background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.projectBadge:hover {
+  background: color-mix(in oklab, var(--surface) 55%, transparent);
+  border-color: color-mix(in oklab, var(--separator) 80%, transparent);
+}
+
+.projectBadge:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 30%, transparent);
+}
+
+.projectBadgeIcon {
+  width: 14px;
+  height: 14px;
+  color: var(--accent);
+}
+
 @media (min-width: 720px) {
   .employment {
     --tl-gap-y: 32px;

@@ -17,6 +17,11 @@
     box-shadow 0.2s ease;
 }
 
+.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
 .selectSortTriggerInner {
   display: flex;
   justify-content: space-between;

@@ -30,8 +30,7 @@
   height: 44vmin;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background:
-    radial-gradient(
+  background: radial-gradient(
       closest-side,
       color-mix(in oklab, var(--accent) 35%, transparent) 0%,
       transparent 70%
@@ -51,24 +50,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 36px;
-  width: min(520px, 92vw);
-  padding: 28px;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(16px) saturate(140%);
-  z-index: 1;
 }
 
 .title {
   margin: 0 0 14px;
-  font:
-    600 18px / 1.2 system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
+  font: 600 18px / 1.2 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   letter-spacing: 0.2px;
 }
 
@@ -84,12 +70,7 @@
 .hint {
   display: block;
   margin-top: 10px;
-  font:
-    500 12px / 1.3 system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
+  font: 500 12px / 1.3 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   letter-spacing: 0.2px;
   text-align: right;
 }

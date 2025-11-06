@@ -6,7 +6,6 @@ import { BsCheckLg, BsChevronDown } from "react-icons/bs";
 
 import styles from "./SortSelect.module.css";
 
-// 1) Единый тип сортировки
 export type SortKey = "newest" | "oldest" | "az" | "za";
 
 // 2) Опции с жёсткими id (юнион)
@@ -21,30 +20,36 @@ const makeSortOptions = (t: ReturnType<typeof useTranslations>) =>
 type Props = {
   value: SortKey;
   onChange: (val: SortKey) => void;
+  disabled?: boolean;
 };
 
-export const SortSelect = ({ value, onChange }: Props) => {
+export const SortSelect = ({ value, onChange, disabled = false }: Props) => {
   const t = useTranslations();
   const options = makeSortOptions(t);
 
   return (
-    <Select.Root value={value} onValueChange={(v) => onChange(v as SortKey)}>
+    <Select.Root
+      value={value}
+      onValueChange={(v) => onChange(v as SortKey)}
+      disabled={disabled}
+    >
       <Select.Trigger
-        className={`${styles.selectTrigger}`}
+        className={`${styles.selectTrigger} ${disabled ? styles.disabled : ""}`}
+        disabled={disabled}
         aria-label={t("projects.filters.sort")}
       >
         <Select.Value placeholder={t("projects.filters.sort")} />
         <Select.Icon className={styles.selectIcon}>
-          <BsChevronDown className={styles.chevronIcon} aria-hidden="true" />
+          <BsChevronDown className={styles.chevronIcon} aria-hidden='true' />
         </Select.Icon>
       </Select.Trigger>
 
       <Select.Portal>
         <Select.Content
           className={`${styles.selectContent} glass-wrapper`}
-          position="popper"
+          position='popper'
           sideOffset={20}
-          align="start"
+          align='start'
         >
           <Select.Viewport className={styles.selectViewport}>
             {options.map((opt) => (
@@ -55,7 +60,7 @@ export const SortSelect = ({ value, onChange }: Props) => {
               >
                 <Select.ItemText>{opt.name}</Select.ItemText>
                 <Select.ItemIndicator className={styles.selectCheck}>
-                  <BsCheckLg aria-hidden="true" />
+                  <BsCheckLg aria-hidden='true' />
                 </Select.ItemIndicator>
               </Select.Item>
             ))}

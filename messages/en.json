@@ -67,6 +67,7 @@
     "view": "View in Browser"
   },
   "employment": {
-    "title": "Employment History"
+    "title": "Employment History",
+    "linkedProjects": "Linked projects"
   }
 }

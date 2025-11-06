@@ -5,4 +5,8 @@ export type Employment = {
   type: string;
   roles: string[];
   projects: string[];
+  linkedProjects?: Array<{
+    slug: string;
+    title: string;
+  }>;
 };

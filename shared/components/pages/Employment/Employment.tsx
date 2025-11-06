@@ -8,6 +8,8 @@ import {
 } from "motion/react";
 import { useTranslations } from "next-intl";
 import { Section } from "@/shared/components/layout/Section/Section";
+import { Link } from "@/i18n/navigation";
+import { BsFolder2 } from "react-icons/bs";
 import type { Employment } from "@/shared/types";
 import styles from "./Employment.module.css";
 
@@ -74,6 +76,24 @@ export const EmploymentSection = ({
                   </li>
                 ))}
               </ul>
+
+              {itemData.linkedProjects && itemData.linkedProjects.length > 0 && (
+                <div className={styles.projectsBlock}>
+                  <div className={styles.projectsLabel}>
+                    {t("employment.linkedProjects", { default: "Linked projects" })}
+                  </div>
+                  <ul className={styles.projects}>
+                    {itemData.linkedProjects.map((p) => (
+                      <li key={p.slug}>
+                        <Link className={styles.projectBadge} href={`/projects/${p.slug}`}>
+                          <BsFolder2 className={styles.projectBadgeIcon} aria-hidden="true" />
+                          <span>{p.title}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </article>
           </motion.li>
         ))}

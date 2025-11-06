@@ -15,6 +15,11 @@
   transition: all var(--transition-fast);
 }
 
+.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
 .triggerButton:focus {
   outline: none;
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 25%, transparent);

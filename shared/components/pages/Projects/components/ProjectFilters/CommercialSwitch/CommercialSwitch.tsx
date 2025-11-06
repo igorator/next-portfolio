@@ -7,16 +7,14 @@ import styles from "./CommercialSwitch.module.css";
 type CommercialSwitchProps = {
   value: boolean;
   onChange: (value: boolean) => void;
+  disabled?: boolean;
 };
 
-export const CommercialSwitch = ({
-  value,
-  onChange,
-}: CommercialSwitchProps) => {
+export const CommercialSwitch = ({ value, onChange, disabled = false }: CommercialSwitchProps) => {
   const t = useTranslations();
 
   return (
-    <div className={styles.commercialSwitch}>
+    <div className={`${styles.commercialSwitch} ${disabled ? styles.disabled : ""}`}>
       <span className={styles.text}>
         {t("projects_ui.onlyCommercialProjects")}
       </span>
@@ -25,6 +23,7 @@ export const CommercialSwitch = ({
         checked={value}
         onCheckedChange={onChange}
         className={styles.switchRoot}
+        disabled={disabled}
       >
         <Switch.Thumb className={styles.switchThumb} />
       </Switch.Root>

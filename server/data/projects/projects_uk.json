@@ -30,7 +30,7 @@
     "category": "лендінг"
   },
   "webwise": {
-    "title": "Webwise (Logics7)",
+    "title": "Webwise by Logics7",
     "description": "Маркетинговий лендінг на Next.js, Tailwind і Spline 3D; інтеграція із CRM Zoho.",
     "type": "бізнес",
     "category": "лендінг"
@@ -73,19 +73,19 @@
     "category": "фронтенд"
   },
   "easm": {
-    "title": "EASM — Logics7",
+    "title": "EASM by Logics7",
     "description": "Корпоративний лендінг у Webflow для сервісу EASM від компанії Logics7.",
     "type": "Цифрова безпека",
     "category": "лендінг"
   },
   "pss": {
-    "title": "PSS — Logics7",
+    "title": "PSS by Logics7",
     "description": "Бізнес-сайт для систем паркування та безпеки з Google Maps API, створений у Webflow.",
     "type": "бізнес",
     "category": "лендінг"
   },
   "dovira": {
-    "title": "Dovira",
+    "title": "Dovira by Logics7",
     "description": "Сайт ініціативи Dovira у Великій Британії, створений у Webflow з кастомними анімаціями.",
     "type": "психологія",
     "category": "лендінг"

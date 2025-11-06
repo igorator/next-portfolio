@@ -29,6 +29,7 @@ export const ProjectFilters = ({
   onSortChange,
   onCommercialChange,
 }: ProjectFiltersProps) => {
+  const loading = !technologies || technologies.length === 0;
   const handleClear = () => {
     if (sortBy !== "newest") onSortChange("newest");
 
@@ -43,28 +44,30 @@ export const ProjectFilters = ({
     selectedTechnologies.length === 0 && sortBy === "newest" && !commercialOnly;
 
   return (
-    <div className={styles.filtersBar}>
+    <div className={styles.filtersBar} aria-busy={loading}>
       <GlassSurface className={styles.technologySelectWrapper}>
         <TechnologyMultiSelect
           technologies={technologies}
           selectedTechnologies={selectedTechnologies}
           onToggle={onTechnologySelect}
+          loading={loading}
         />
       </GlassSurface>
 
       <GlassSurface className={styles.sortSelectWrapper}>
-        <SortSelect value={sortBy} onChange={onSortChange} />
+        <SortSelect value={sortBy} onChange={onSortChange} disabled={loading} />
       </GlassSurface>
 
       <GlassSurface className={styles.commercialSwitchWrapper}>
         <CommercialSwitch
           value={commercialOnly}
           onChange={onCommercialChange}
+          disabled={loading}
         />
       </GlassSurface>
 
       <GlassSurface className={styles.filterClearButtonWrapper}>
-        <FilterClearButton onClear={handleClear} disabled={isPristine} />
+        <FilterClearButton onClear={handleClear} disabled={isPristine || loading} />
       </GlassSurface>
     </div>
   );
