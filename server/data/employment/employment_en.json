@@ -2,19 +2,24 @@
   "doido-market": {
     "type": "startup",
     "roles": [
-      "Developed the full client-side and server-side logic from scratch",
-      "Designed and implemented API architecture for data exchange",
-      "Integrated authentication, payments, and chat features",
-      "Improved performance and ensured reliable, secure transactions"
+      "Designed application architecture",
+      "Developed client-side with TON payments integration",
+      "Developed backend and payment processing logic",
+      "Integrated Telegram Mini Apps",
+      "Developed Telegram bot",
+      "Deployed the application"
     ]
   },
   "tresor-tech": {
     "type": "outsource",
     "roles": [
-      "Created and maintained interactive websites for clients",
-      "Enhanced user experience through dynamic content and integrations",
-      "Delivered custom web solutions tailored to project requirements",
-      "Built marketing landing pages and optimized site performance"
+      "Developed React / Next.js websites",
+      "Built Webflow websites",
+      "Optimized existing projects and implemented new features",
+      "Integrated APIs, CRMs",
+      "Communicated with clients and provided consulting",
+      "Passed Webflow Partner verification",
+      "Collaborated with UI/UX and backend developers"
     ]
   },
   "3mpq-studio": {
@@ -27,9 +32,9 @@
     ]
   },
   "nocorny-agency": {
-    "type": "few projects",
+    "type": "freelance",
     "roles": [
-      "Developed 2 websites",
+      "Webflow Developed websites",
       "Collaborated on client projects and implemented design ideas"
     ]
   },
