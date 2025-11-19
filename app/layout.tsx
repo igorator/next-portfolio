@@ -38,6 +38,23 @@ export const metadata: Metadata = {
       uk: "/uk",
     },
   },
+  openGraph: {
+    title: "Ihor's Portfolio",
+    description:
+      "Portfolio by Ihor Kliushnyk - design-driven, fast, and functional.",
+    url: "/",
+    siteName: "Ihor's Portfolio",
+    images: ["/opengraph-image"],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ihor's Portfolio",
+    description:
+      "Portfolio by Ihor Kliushnyk - design-driven, fast, and functional.",
+    images: ["/opengraph-image"],
+  },
 };
 
 // Если читаем cookies() здесь — layout становится динамическим (это нормально для темы)
