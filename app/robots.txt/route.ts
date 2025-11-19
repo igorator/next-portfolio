@@ -5,11 +5,12 @@ const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
   "https://igorator.site";
 
-export default function robots(): MetadataRoute.Robots {
+export const runtime = "edge";
+
+export function GET(): MetadataRoute.Robots {
   const locales = routing.locales;
-  const sitemapUrls = locales.map(
-    (locale) =>
-      `${siteUrl}${locale === routing.defaultLocale ? "" : `/${locale}`}/sitemap.xml`,
+  const sitemapUrls = locales.map((locale) =>
+    `${siteUrl}${locale === routing.defaultLocale ? "" : `/${locale}`}/sitemap.xml`,
   );
 
   return {
