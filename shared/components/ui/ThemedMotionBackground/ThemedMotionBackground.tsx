@@ -4,7 +4,7 @@ import { useTheme } from "../../widgets/ThemeSwitcher/hooks/useTheme";
 import styles from "./ThemedMotionBackground.module.css";
 
 export function ThemedMotionBackground() {
-  const { effective, isDark } = useTheme(); // effective = 'light' | 'dark'
+  const { effective, isDark } = useTheme();
 
   return (
     <div className={styles.oceanWrapper} data-theme-effective={effective}>
