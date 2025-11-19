@@ -1,4 +1,3 @@
-import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 
 const siteUrl =
@@ -7,19 +6,22 @@ const siteUrl =
 
 export const runtime = "edge";
 
-export function GET(): MetadataRoute.Robots {
+export function GET() {
   const locales = routing.locales;
-  const sitemapUrls = locales.map((locale) =>
-    `${siteUrl}${locale === routing.defaultLocale ? "" : `/${locale}`}/sitemap.xml`,
+  const sitemaps = locales.map(
+    (locale) =>
+      `${siteUrl}${locale === routing.defaultLocale ? "" : `/${locale}`}/sitemap.xml`,
   );
 
-  return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-      disallow: [],
-    },
-    sitemap: sitemapUrls,
-    host: siteUrl,
-  };
+  const lines = [
+    "User-agent: *",
+    "Allow: /",
+    ...sitemaps.map((url) => `Sitemap: ${url}`),
+    `Host: ${siteUrl}`,
+  ];
+
+  return new Response(lines.join("\n"), {
+    status: 200,
+    headers: { "Content-Type": "text/plain" },
+  });
 }
