@@ -40,16 +40,16 @@ export const SortSelect = ({ value, onChange, disabled = false }: Props) => {
       >
         <Select.Value placeholder={t("projects.filters.sort")} />
         <Select.Icon className={styles.selectIcon}>
-          <BsChevronDown className={styles.chevronIcon} aria-hidden='true' />
+          <BsChevronDown className={styles.chevronIcon} aria-hidden="true" />
         </Select.Icon>
       </Select.Trigger>
 
       <Select.Portal>
         <Select.Content
           className={`${styles.selectContent} glass-wrapper`}
-          position='popper'
+          position="popper"
           sideOffset={20}
-          align='start'
+          align="start"
         >
           <Select.Viewport className={styles.selectViewport}>
             {options.map((opt) => (
@@ -60,7 +60,7 @@ export const SortSelect = ({ value, onChange, disabled = false }: Props) => {
               >
                 <Select.ItemText>{opt.name}</Select.ItemText>
                 <Select.ItemIndicator className={styles.selectCheck}>
-                  <BsCheckLg aria-hidden='true' />
+                  <BsCheckLg aria-hidden="true" />
                 </Select.ItemIndicator>
               </Select.Item>
             ))}

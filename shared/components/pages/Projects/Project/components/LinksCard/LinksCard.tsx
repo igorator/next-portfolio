@@ -34,8 +34,8 @@ export function LinksCard({ demoUrl, githubUrl }: Props) {
           <a
             className={`${styles.btn} ${styles.btnGhost}`}
             href={demoUrl}
-            target='_blank'
-            rel='noopener noreferrer'
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {t("links.liveDemo")}
           </a>
@@ -45,8 +45,8 @@ export function LinksCard({ demoUrl, githubUrl }: Props) {
           <a
             className={`${styles.btn} ${styles.btnGhost}`}
             href={githubUrl}
-            target='_blank'
-            rel='noopener noreferrer'
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {t("links.github")}
           </a>

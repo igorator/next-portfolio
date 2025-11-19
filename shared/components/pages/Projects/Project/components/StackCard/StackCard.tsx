@@ -38,7 +38,7 @@ export function StackCard({ technologies }: Props) {
     >
       <h2 className={layout.cardTitle}>{t("technologiesTitle")}</h2>
       {technologies?.length ? (
-        <ul className={styles.techList} aria-label='Technology stack'>
+        <ul className={styles.techList} aria-label="Technology stack">
           {technologies.map((t) => {
             const tw = t as TechWithColor;
             const c = tw.color ?? colorFromString(t.name);

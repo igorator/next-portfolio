@@ -26,9 +26,7 @@ const I18N_BY_LOCALE: Record<
   >,
 };
 
-type RouteContext = {
-  params: Promise<{ slug: string }>;
-};
+type RouteContext = { params: Promise<{ slug: string }> };
 
 export async function GET(request: NextRequest, { params }: RouteContext) {
   const { slug } = await params;

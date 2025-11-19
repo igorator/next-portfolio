@@ -10,11 +10,17 @@ type CommercialSwitchProps = {
   disabled?: boolean;
 };
 
-export const CommercialSwitch = ({ value, onChange, disabled = false }: CommercialSwitchProps) => {
+export const CommercialSwitch = ({
+  value,
+  onChange,
+  disabled = false,
+}: CommercialSwitchProps) => {
   const t = useTranslations();
 
   return (
-    <div className={`${styles.commercialSwitch} ${disabled ? styles.disabled : ""}`}>
+    <div
+      className={`${styles.commercialSwitch} ${disabled ? styles.disabled : ""}`}
+    >
       <span className={styles.text}>
         {t("projects_ui.onlyCommercialProjects")}
       </span>

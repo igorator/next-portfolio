@@ -92,6 +92,12 @@
   color: transparent;
 }
 
+:global(:root[data-theme="light"]) .name {
+  background: none;
+  -webkit-text-fill-color: color-mix(in srgb, var(--foreground, #1f2937) 92%, #000);
+  color: color-mix(in srgb, var(--foreground, #1f2937) 92%, #000);
+}
+
 .role {
   color: var(--fg-strong);
   font-weight: 700;

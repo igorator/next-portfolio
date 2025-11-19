@@ -60,4 +60,3 @@ export async function GET(request: Request) {
   const employment = mergeEmployment(locale);
   return NextResponse.json(employment);
 }
-

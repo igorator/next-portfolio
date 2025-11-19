@@ -18,8 +18,10 @@
   text-decoration: none;
   font-size: var(--text-sm);
   color: var(--foreground);
-  transition: transform var(--transition-fast),
-    background var(--transition-normal), border-color var(--transition-normal);
+  transition:
+    transform var(--transition-fast),
+    background var(--transition-normal),
+    border-color var(--transition-normal);
 }
 
 .cardsGrid {
@@ -175,8 +177,10 @@
   font-weight: 600;
   font-size: 13.5px;
   letter-spacing: 0.01em;
-  transition: transform var(--transition-fast),
-    background var(--transition-normal), border-color var(--transition-normal);
+  transition:
+    transform var(--transition-fast),
+    background var(--transition-normal),
+    border-color var(--transition-normal);
 }
 
 .techChip:hover {
@@ -208,8 +212,11 @@
   font-size: var(--text-sm);
   text-decoration: none;
   border: 1px solid var(--btn-brd);
-  transition: transform var(--transition-fast), filter var(--transition-normal),
-    background var(--transition-normal), border-color var(--transition-normal);
+  transition:
+    transform var(--transition-fast),
+    filter var(--transition-normal),
+    background var(--transition-normal),
+    border-color var(--transition-normal);
   color: var(--foreground);
   background: transparent;
 }
@@ -261,7 +268,8 @@
   border-radius: var(--radius);
   overflow: clip;
   box-shadow: 0 1px 4px color-mix(in srgb, var(--foreground) 10%, transparent);
-  transition: transform var(--transition-fast),
+  transition:
+    transform var(--transition-fast),
     box-shadow var(--transition-normal);
 }
 .screenImg {
@@ -318,8 +326,10 @@
   place-items: center;
   backdrop-filter: var(--backdrop-blur) saturate(140%);
   box-shadow: 0 4px 16px color-mix(in srgb, var(--foreground) 10%, transparent);
-  transition: transform var(--transition-fast),
-    background var(--transition-normal), border-color var(--transition-normal);
+  transition:
+    transform var(--transition-fast),
+    background var(--transition-normal),
+    border-color var(--transition-normal);
 }
 
 .navBtn:hover {
@@ -353,7 +363,8 @@
   border-radius: 999px;
   background: color-mix(in srgb, var(--foreground) 22%, transparent);
   border: 1px solid color-mix(in srgb, var(--foreground) 35%, transparent);
-  transition: transform var(--transition-fast),
+  transition:
+    transform var(--transition-fast),
     background var(--transition-normal);
 }
 .dotActive {

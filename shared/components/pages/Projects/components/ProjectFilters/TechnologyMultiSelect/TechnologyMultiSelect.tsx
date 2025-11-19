@@ -28,7 +28,9 @@ export const TechnologyMultiSelect = ({
       : selectedTechnologies.length === 1
         ? (technologies.find((tec) => tec.id === selectedTechnologies[0])
             ?.name ?? t("projects.filters.selected", { count: 1 }))
-        : t("projects.filters.selected", { count: selectedTechnologies.length });
+        : t("projects.filters.selected", {
+            count: selectedTechnologies.length,
+          });
 
   return (
     <DropdownMenu.Root open={loading ? false : undefined}>
@@ -43,32 +45,32 @@ export const TechnologyMultiSelect = ({
 
       {!loading && (
         <DropdownMenu.Portal>
-        <DropdownMenu.Content
-          className={`${styles.menuContent}`}
-          sideOffset={20}
-          align="start"
-        >
-          {technologies.map((t) => {
-            const checked = selectedTechnologies.includes(t.id);
-            return (
-              <DropdownMenu.CheckboxItem
-                key={t.id}
-                checked={checked}
-                onCheckedChange={() => onToggle(t.id)}
-                onSelect={(e) => e.preventDefault()}
-                className={styles.menuItem}
-              >
-                <span className={styles.menuItemLabel}>{t.name}</span>
-                <span className={styles.menuItemHint}>{t.category}</span>
-                <span className={styles.rightSlot}>
-                  <DropdownMenu.ItemIndicator>
-                    <BsCheckLg className={styles.checkIcon} aria-hidden />
-                  </DropdownMenu.ItemIndicator>
-                </span>
-              </DropdownMenu.CheckboxItem>
-            );
-          })}
-        </DropdownMenu.Content>
+          <DropdownMenu.Content
+            className={`${styles.menuContent}`}
+            sideOffset={20}
+            align="start"
+          >
+            {technologies.map((t) => {
+              const checked = selectedTechnologies.includes(t.id);
+              return (
+                <DropdownMenu.CheckboxItem
+                  key={t.id}
+                  checked={checked}
+                  onCheckedChange={() => onToggle(t.id)}
+                  onSelect={(e) => e.preventDefault()}
+                  className={styles.menuItem}
+                >
+                  <span className={styles.menuItemLabel}>{t.name}</span>
+                  <span className={styles.menuItemHint}>{t.category}</span>
+                  <span className={styles.rightSlot}>
+                    <DropdownMenu.ItemIndicator>
+                      <BsCheckLg className={styles.checkIcon} aria-hidden />
+                    </DropdownMenu.ItemIndicator>
+                  </span>
+                </DropdownMenu.CheckboxItem>
+              );
+            })}
+          </DropdownMenu.Content>
         </DropdownMenu.Portal>
       )}
     </DropdownMenu.Root>

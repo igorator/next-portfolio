@@ -30,7 +30,8 @@
   height: 44vmin;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       closest-side,
       color-mix(in oklab, var(--accent) 35%, transparent) 0%,
       transparent 70%
@@ -54,7 +55,12 @@
 
 .title {
   margin: 0 0 14px;
-  font: 600 18px / 1.2 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font:
+    600 18px / 1.2 system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   letter-spacing: 0.2px;
 }
 
@@ -70,7 +76,12 @@
 .hint {
   display: block;
   margin-top: 10px;
-  font: 500 12px / 1.3 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font:
+    500 12px / 1.3 system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   letter-spacing: 0.2px;
   text-align: right;
 }

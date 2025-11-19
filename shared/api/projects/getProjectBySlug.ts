@@ -1,12 +1,15 @@
 // server side
 import type { Locale } from "next-intl";
+import { cache } from "react";
 import { listProjectImages } from "../assets/listProjectImages";
 
-export const getProjectBySlug = async (slug: string, locale: Locale) => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/projects/${slug}?locale=${locale}`,
-    { next: { revalidate: 60 } },
-  );
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+const fetchProjectBySlug = async (slug: string, locale: Locale) => {
+  const res = await fetch(`${API_URL}/projects/${slug}?locale=${locale}`, {
+    next: { revalidate: 300 },
+    cache: "force-cache",
+  });
   if (!res.ok) throw new Error("Project not found");
 
   const project = await res.json();
@@ -14,3 +17,5 @@ export const getProjectBySlug = async (slug: string, locale: Locale) => {
 
   return { ...project, cover, screens };
 };
+
+export const getProjectBySlug = cache(fetchProjectBySlug);

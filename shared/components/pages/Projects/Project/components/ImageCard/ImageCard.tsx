@@ -55,19 +55,19 @@ export function ImageCard({
   return (
     <motion.article className={`${layout.card} ${layout.imageCard}`}>
       {images.length === 0 ? (
-        <div className={styles.noImages} role='img' aria-label={t("noImages")}>
+        <div className={styles.noImages} role="img" aria-label={t("noImages")}>
           <span>{t("noImages")}</span>
         </div>
       ) : (
         <div className={styles.imageWrap}>
           <motion.button
-            type='button'
+            type="button"
             key={images[idx]}
             custom={dir}
             variants={slideVariants}
-            initial='enter'
-            animate='center'
-            exit='exit'
+            initial="enter"
+            animate="center"
+            exit="exit"
             className={styles.imageAnimLayer}
             onClick={() => onOpenLightbox(idx)}
             aria-label={t("openImageAria")}
@@ -77,10 +77,10 @@ export function ImageCard({
               src={images[idx]}
               alt={t("imageAltCover", { title })}
               fill
-              sizes='(min-width: 980px) 66vw, 100vw'
+              sizes="(min-width: 980px) 66vw, 100vw"
               priority
-              placeholder='blur'
-              blurDataURL='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNSIgZmlsbD0iI2NjYyIgLz4='
+              placeholder="blur"
+              blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNSIgZmlsbD0iI2NjYyIgLz4="
             />
             <div className={styles.imageShade} aria-hidden />
           </motion.button>
@@ -88,17 +88,17 @@ export function ImageCard({
           {hasMany && (
             <>
               <button
-                type='button'
+                type="button"
                 className={`${styles.navBtn} ${styles.navPrev}`}
-                aria-label='Previous image'
+                aria-label="Previous image"
                 onClick={onPrev}
               >
                 <BsArrowLeft />
               </button>
               <button
-                type='button'
+                type="button"
                 className={`${styles.navBtn} ${styles.navNext}`}
-                aria-label='Next image'
+                aria-label="Next image"
                 onClick={onNext}
               >
                 <BsArrowRight />
@@ -108,7 +108,7 @@ export function ImageCard({
                 {images.map((src, i) => (
                   <button
                     key={`${src}-dot`}
-                    type='button'
+                    type="button"
                     className={`${styles.dot} ${
                       i === idx ? styles.dotActive : ""
                     }`}

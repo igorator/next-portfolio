@@ -67,7 +67,10 @@ export const ProjectFilters = ({
       </GlassSurface>
 
       <GlassSurface className={styles.filterClearButtonWrapper}>
-        <FilterClearButton onClear={handleClear} disabled={isPristine || loading} />
+        <FilterClearButton
+          onClear={handleClear}
+          disabled={isPristine || loading}
+        />
       </GlassSurface>
     </div>
   );

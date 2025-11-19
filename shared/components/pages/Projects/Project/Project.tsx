@@ -117,7 +117,12 @@ export function ProjectSection({
         animate="show"
         transition={{ ease }}
       >
-        <OverviewCard title={title} type={type} category={category} date={date} />
+        <OverviewCard
+          title={title}
+          type={type}
+          category={category}
+          date={date}
+        />
 
         <StackCard technologies={technologies} />
 
