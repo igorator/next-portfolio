@@ -34,9 +34,9 @@ export const MobileHiddenMenu: React.FC<Props> = ({ open, onClose }) => {
   return (
     <AppPortal>
       <button
-        type="button"
+        type='button'
         className={styles.layer}
-        aria-label="Close menu"
+        aria-label='Close menu'
         onClick={onClose}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") onClose();
@@ -45,18 +45,18 @@ export const MobileHiddenMenu: React.FC<Props> = ({ open, onClose }) => {
 
       {/** biome-ignore lint/a11y/useKeyWithClickEvents: <biome> */}
       <div
-        role="dialog"
-        aria-modal="true"
+        role='dialog'
+        aria-modal='true'
         aria-labelledby={titleId}
         className={styles.menu}
         onClick={(e) => e.stopPropagation()}
       >
         <div className={styles.header}>
           <button
-            type="button"
+            type='button'
             className={styles.closeBtn}
             onClick={onClose}
-            aria-label="Close menu"
+            aria-label='Close menu'
           >
             <BsX className={styles.closeIcon} size={30} />
           </button>

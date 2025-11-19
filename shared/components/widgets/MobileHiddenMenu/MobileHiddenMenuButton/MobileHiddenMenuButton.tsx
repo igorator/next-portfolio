@@ -13,10 +13,11 @@ export const MobileHiddenMenuButton = () => {
     <>
       <GlassSurface className={styles.hiddenMenuButtonWrapper}>
         <button
-          type="button"
+          type='button'
           className={styles.hiddenMenuButton}
-          aria-haspopup="dialog"
+          aria-haspopup='dialog'
           aria-expanded={open}
+          aria-label='Open menu'
           onClick={() => setOpen(true)} // открываем меню
         >
           <MdMenu size={20} />
