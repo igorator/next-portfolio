@@ -11,11 +11,11 @@ import styles from "./Home.module.css";
 
 const getHeroLinks = (t: ReturnType<typeof useTranslations>) => ({
   projects: { label: t("navigation.projects"), href: routes.projects.path },
-  cv: { label: t("navigation.cv"), href: routes.cv.path },
   employment: {
     label: t("navigation.employment"),
     href: routes.employment.path,
   },
+  cv: { label: t("navigation.cv"), href: routes.cv.path },
 });
 
 const titleContainer: Variants = {
