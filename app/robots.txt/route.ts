@@ -1,17 +1,9 @@
-import { routing } from "@/i18n/routing";
-
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
   "https://igorator.site";
 
-export const runtime = "edge";
-
 export function GET() {
-  const locales = routing.locales;
-  const sitemaps = locales.map(
-    (locale) =>
-      `${siteUrl}${locale === routing.defaultLocale ? "" : `/${locale}`}/sitemap.xml`,
-  );
+  const sitemaps = [`${siteUrl}/sitemap.xml`];
 
   const lines = [
     "User-agent: *",

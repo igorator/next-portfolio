@@ -46,6 +46,7 @@ export const ProjectsGrid = ({
                 title={project.title}
                 description={project.description}
                 type={project.type}
+                date={project.date}
                 category={project.category}
                 technologies={project.technologies}
                 githubUrl={project.githubUrl}

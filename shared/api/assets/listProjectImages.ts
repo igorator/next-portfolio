@@ -1,9 +1,9 @@
 // shared/lib/assets.ts
 const OWNER = "igorator";
 const REPO = "protfolio-assets";
-const REF = "main";
-const CDN = `https://cdn.jsdelivr.net/gh/${OWNER}/${REPO}@${REF}`;
-const DATA = `https://data.jsdelivr.com/v1/package/gh/${OWNER}/${REPO}@${REF}`;
+const DEFAULT_REF = "main";
+const CDN_ROOT = `https://cdn.jsdelivr.net/gh/${OWNER}/${REPO}`;
+const GITHUB_COMMITS_API = `https://api.github.com/repos/${OWNER}/${REPO}/commits/${DEFAULT_REF}`;
 
 const exts = new Set(["webp", "png", "jpg", "jpeg"]);
 
@@ -13,10 +13,34 @@ type JsDelivrNode = {
   files?: JsDelivrNode[];
 };
 
-async function fetchTree(): Promise<JsDelivrNode> {
-  const res = await fetch(DATA, { next: { revalidate: 3600 } });
+type JsDelivrTree = JsDelivrNode & { version?: string; hash?: string };
+
+async function fetchTree(ref: string): Promise<JsDelivrTree> {
+  const dataUrl = `https://data.jsdelivr.com/v1/package/gh/${OWNER}/${REPO}@${ref}`;
+  const res = await fetch(dataUrl, { cache: "no-store" });
   if (!res.ok) throw new Error("Failed to load jsDelivr package tree");
   return res.json();
+}
+
+async function resolveRef(): Promise<string> {
+  const headers: Record<string, string> = {};
+  const token =
+    process.env.GITHUB_TOKEN ??
+    process.env.GH_TOKEN ??
+    process.env.NEXT_PUBLIC_GITHUB_TOKEN;
+  if (token) headers.Authorization = `Bearer ${token}`;
+
+  try {
+    const res = await fetch(GITHUB_COMMITS_API, {
+      headers,
+      cache: "no-store",
+    });
+    if (!res.ok) throw new Error("Failed to resolve ref");
+    const data = await res.json();
+    return typeof data?.sha === "string" ? data.sha : DEFAULT_REF;
+  } catch {
+    return DEFAULT_REF;
+  }
 }
 
 function findDir(root: JsDelivrNode, path: string[]): JsDelivrNode | null {
@@ -29,7 +53,9 @@ function findDir(root: JsDelivrNode, path: string[]): JsDelivrNode | null {
 }
 
 export async function listProjectImages(slug: string) {
-  const tree = await fetchTree();
+  const ref = await resolveRef();
+  const tree = await fetchTree(ref);
+  const cdn = (file: string) => `${CDN_ROOT}@${ref}/Projects/${slug}/${file}`;
 
   const dir = findDir(tree, ["Projects", slug]);
   if (!dir || !dir.files)
@@ -48,7 +74,7 @@ export async function listProjectImages(slug: string) {
     files.find(
       (f) => f.name.toLowerCase().startsWith("cover.") && withExt(f.name),
     ) ?? null;
-  const cover = coverFile ? `${CDN}/Projects/${slug}/${coverFile.name}` : null;
+  const cover = coverFile ? cdn(coverFile.name) : null;
 
   const screenFiles = files
     .filter((f) => /^screen-\d+\./i.test(f.name) && withExt(f.name))
@@ -58,7 +84,7 @@ export async function listProjectImages(slug: string) {
       return na - nb;
     });
 
-  const screens = screenFiles.map((f) => `${CDN}/Projects/${slug}/${f.name}`);
+  const screens = screenFiles.map((f) => cdn(f.name));
 
   return { cover, screens };
 }

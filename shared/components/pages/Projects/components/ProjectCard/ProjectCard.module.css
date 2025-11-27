@@ -88,6 +88,20 @@
   margin-bottom: var(--space-2);
 }
 
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  color: color-mix(in srgb, var(--foreground) 70%, transparent);
+  font-size: var(--text-sm);
+  letter-spacing: 0.01em;
+}
+
+.date {
+  font-weight: 300;
+}
+
 .badge {
   padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-full);
@@ -106,9 +120,6 @@
 }
 
 .commercialBadge {
-  position: absolute;
-  top: var(--space-3);
-  right: var(--space-3);
   display: flex;
   align-items: center;
   justify-content: center;

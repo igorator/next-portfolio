@@ -12,6 +12,7 @@ export type ProjectCardProps = {
   description: string;
   type: string;
   category: string;
+  date?: string;
   technologies?: Array<{ id: string; name: string; color?: string }>;
   githubUrl?: string | null;
   demoUrl?: string | null;
@@ -25,6 +26,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   type,
   category,
+  date,
   technologies,
   githubUrl,
   demoUrl,
@@ -35,7 +37,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <div className={styles.projectCard}>
-      <ProjectCardTooltip isCommercial={isCommercial} />
+      {(date || isCommercial) && (
+        <div className={styles.meta}>
+          {date ? (
+            <time className={styles.date} dateTime={date}>
+              {date}
+            </time>
+          ) : (
+            <span />
+          )}
+          <ProjectCardTooltip isCommercial={isCommercial} />
+        </div>
+      )}
 
       <h3 className={styles.title}>{title}</h3>
 
