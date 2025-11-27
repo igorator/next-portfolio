@@ -63,7 +63,6 @@
   {
     "slug": "studio-dashboard",
     "date": "2024-11",
-    "githubUrl": "https://github.com/igorator/studio-dashboard",
     "demoUrl": null,
     "isCommercial": true,
     "technologiesIds": [
@@ -79,7 +78,6 @@
   {
     "slug": "3mpq-studio-lite",
     "date": "2024-09",
-    "githubUrl": "https://github.com/igorator/3mpq-Studio-lite",
     "demoUrl": null,
     "isCommercial": true,
     "technologiesIds": [

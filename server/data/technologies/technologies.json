@@ -214,7 +214,7 @@
     "name": "Vue",
     "color": "#3eb27c",
     "category": "Frameworks",
-    "priority": 4
+    "priority": 1
   },
   {
     "id": "vite",
