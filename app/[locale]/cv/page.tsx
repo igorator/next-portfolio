@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const cvFilePath = "/cv/cv_kliushnyk.pdf";
+const cvFilePath = "/cv/CV_KLIUSHNYK_FRONTEND.pdf";
 
 export default function CV() {
   return <CVSection cvFile={cvFilePath} />;
