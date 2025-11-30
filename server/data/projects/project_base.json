@@ -2,7 +2,6 @@
   {
     "slug": "this-website",
     "date": "2025-10",
-
     "isCommercial": false,
     "technologiesIds": ["nextjs", "css", "framer-motion", "i18n"],
     "demoUrl": "https://www.igorator.site",
@@ -35,7 +34,8 @@
       "tailwind",
       "shadcn",
       "framer-motion",
-      "jest"
+      "jest",
+      "grammy"
     ]
   },
   {
@@ -55,7 +55,6 @@
   {
     "slug": "zycsel-store-bot",
     "date": "2025-03",
-    "githubUrl": "https://github.com/igorator/zycsel_bot",
     "demoUrl": "https://t.me/zycsel_bot",
     "isCommercial": true,
     "technologiesIds": ["nodejs", "supabase", "telegram", "grammy"]
@@ -63,6 +62,7 @@
   {
     "slug": "studio-dashboard",
     "date": "2024-11",
+    "githubUrl": "https://github.com/igorator/studio-dashboard",
     "demoUrl": null,
     "isCommercial": true,
     "technologiesIds": [
@@ -78,6 +78,7 @@
   {
     "slug": "3mpq-studio-lite",
     "date": "2024-09",
+    "githubUrl": "https://github.com/igorator/3mpq-Studio-lite",
     "demoUrl": null,
     "isCommercial": true,
     "technologiesIds": [
