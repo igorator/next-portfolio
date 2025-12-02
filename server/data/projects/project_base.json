@@ -64,7 +64,7 @@
     "date": "2024-11",
     "githubUrl": "https://github.com/igorator/studio-dashboard",
     "demoUrl": null,
-    "isCommercial": true,
+    "isCommercial": false,
     "technologiesIds": [
       "react",
       "typescript",
