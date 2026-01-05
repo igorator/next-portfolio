@@ -1,4 +1,10 @@
 {
+  "webspark-test":{
+    "title": "Тестове завдання WEBSPARK",
+    "description": "Тестовий проєкт для WEBSPARK, створений на React, CSS та Vite.",
+    "type": "тестове завдання",
+    "category": "фронтенд"
+  },
   "this-website": {
     "title": "Цей вебсайт",
     "description": "Мій портфоліо-сайт",
