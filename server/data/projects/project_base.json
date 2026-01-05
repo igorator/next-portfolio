@@ -3,14 +3,9 @@
     "slug": "webspark-test",
     "date": "2025-11",
     "isCommercial": false,
-    "technologiesIds": [
-      "react",
-      "css",
-      "vite"
-    ],
+    "technologiesIds": ["react", "css", "vite"],
     "demoUrl": "https://webspark-test-smoky.vercel.app/",
     "githubUrl": "https://github.com/igorator/WEBSPARK-test"
-
   },
   {
     "slug": "this-website",

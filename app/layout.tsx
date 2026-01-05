@@ -74,13 +74,13 @@ export default async function RootLayout({
     <html lang={locale} {...htmlAttrs} suppressHydrationWarning>
       <head>
         <meta
-          name='color-scheme'
+          name="color-scheme"
           content={
             theme === "dark"
               ? "dark light"
               : theme === "light"
-              ? "light dark"
-              : "light dark"
+                ? "light dark"
+                : "light dark"
           }
         />
       </head>

@@ -61,8 +61,8 @@ export const HomeSection = () => {
         <motion.h1
           className={styles.title}
           variants={titleContainer}
-          initial='hidden'
-          whileInView='visible'
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, amount: 0.6 }}
         >
           <motion.span className={styles.fade} variants={titleLine}>
@@ -78,8 +78,8 @@ export const HomeSection = () => {
 
         <motion.div
           variants={buttonsWrap}
-          initial='hidden'
-          whileInView='visible'
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, amount: 0.6 }}
           className={styles.homeLinksWrapper}
         >

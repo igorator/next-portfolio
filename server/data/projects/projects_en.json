@@ -1,6 +1,6 @@
 {
-  "webspark-test":{
-    "title": "WEBSPARK Test task",
+  "webspark-test": {
+    "title": "WEBSPARK Test",
     "description": "A test project for WEBSPARK built with React, CSS, and Vite.",
     "type": "test task",
     "category": "frontend"
