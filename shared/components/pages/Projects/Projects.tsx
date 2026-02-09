@@ -44,7 +44,7 @@ export const ProjectsSection = ({
 
       <AnimatePresence mode="popLayout">
         <ProjectsGrid
-          projects={filteredProjects as ProjectWithTechnologies[]}
+          projects={filteredProjects}
           onTechnologyClick={setOnlyTechnology}
         />
       </AnimatePresence>

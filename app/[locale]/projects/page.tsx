@@ -1,52 +1,36 @@
 import type { Metadata } from "next";
-import type { Locale } from "next-intl";
-import { cache } from "react";
 import { getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import { getProjects } from "@/shared/api/projects/getProjects";
-import { getTechnologies } from "@/shared/api/technologies/getTechnologies";
+import { getProjects } from "@/server/lib/projects";
+import { getTechnologies } from "@/server/lib/technologies";
 import { ProjectsSection } from "@/shared/components/pages/Projects/Projects";
+import { siteConfig } from "@/shared/config/site";
+import type { LocalePageProps } from "@/shared/types/page";
 
-export const revalidate = 300;
-
-const getProjectsCached = cache(getProjects);
-const getTechnologiesCached = cache(getTechnologies);
-
-type Params = { locale: Locale };
-type Props = { params: Promise<Params> };
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: LocalePageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "projects" });
 
   const title = t("title");
-  const description = "Selected projects and case studies by Ihor Kliushnyk.";
   const canonical =
     locale === routing.defaultLocale ? "/projects" : `/${locale}/projects`;
 
   return {
     title,
-    description,
+    description: siteConfig.pages.projects.description,
     alternates: { canonical },
-    openGraph: {
-      title,
-      description,
-      url: canonical,
-    },
-    twitter: {
-      title,
-      description,
-      card: "summary_large_image",
-    },
+    openGraph: { url: canonical },
   };
 }
 
-export default async function Projects({ params }: Props) {
+export default async function Projects({ params }: LocalePageProps) {
   const { locale } = await params;
 
   const [projects, technologies] = await Promise.all([
-    getProjectsCached(locale),
-    getTechnologiesCached(),
+    getProjects(locale),
+    getTechnologies(),
   ]);
 
   return <ProjectsSection projects={projects} technologies={technologies} />;

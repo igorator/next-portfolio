@@ -95,7 +95,11 @@
 }
 
 .type {
-  color: color-mix(in oklab, var(--text) 90%, transparent); /* немного менее прозрачный */
+  color: color-mix(
+    in oklab,
+    var(--text) 90%,
+    transparent
+  ); /* немного менее прозрачный */
   font-size: var(--text-sm);
   font-weight: 600; /* жирный */
   text-transform: capitalize; /* первая буква заглавная */

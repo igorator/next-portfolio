@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import { routing } from "@/i18n/routing";
+import { siteConfig } from "@/shared/config/site";
 
 export const runtime = "edge";
 export const size = {
@@ -8,13 +9,7 @@ export const size = {
 };
 export const contentType = "image/png";
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-  "https://igorator.site";
-
 export default function OgImage() {
-  const brand = "Ihor Kliushnyk";
-  const subtitle = "Design-driven, fast, functional.";
 
   return new ImageResponse(
     <div
@@ -29,7 +24,7 @@ export default function OgImage() {
           "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
       }}
     >
-      <div tw="text-3xl mb-5 opacity-90">{siteUrl}</div>
+      <div tw="text-3xl mb-5 opacity-90">{siteConfig.url}</div>
       <div
         tw="text-7xl font-bold"
         style={{
@@ -37,9 +32,9 @@ export default function OgImage() {
           textShadow: "0 10px 40px rgba(0,0,0,0.35)",
         }}
       >
-        {brand}
+        {siteConfig.og.brand}
       </div>
-      <div tw="text-4xl mt-4 text-indigo-100 opacity-90">{subtitle}</div>
+      <div tw="text-4xl mt-4 text-indigo-100 opacity-90">{siteConfig.og.subtitle}</div>
       <div
         tw="mt-10 inline-flex items-center text-2xl font-semibold"
         style={{

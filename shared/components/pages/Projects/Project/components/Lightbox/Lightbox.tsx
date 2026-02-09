@@ -1,5 +1,3 @@
-/** biome-ignore-all lint/a11y/useKeyWithClickEvents: <Becauseeeee> */
-
 import Image from "next/image";
 import type { Dispatch, SetStateAction } from "react";
 import { useCallback, useEffect } from "react";
@@ -17,13 +15,12 @@ export const Lightbox = ({
 }: {
   images: string[];
   index: number;
-  setIndex: Dispatch<SetStateAction<number>>; // ← вот так
+  setIndex: Dispatch<SetStateAction<number>>;
   onClose: () => void;
   title: string;
 }) => {
   const total = images.length;
 
-  // безопасная смена индекса с оборачиванием
   const go = useCallback(
     (delta: number) => {
       setIndex((i) => {
@@ -53,13 +50,15 @@ export const Lightbox = ({
     e.stopPropagation();
 
   return createPortal(
-    // biome-ignore lint/a11y/useKeyWithClickEvents: <>
     <div
       className={styles.lbRoot}
       role="dialog"
       aria-modal="true"
       aria-label={title}
-      onClick={onClose} // ← клик по фону закрывает
+      onClick={onClose}
+      onKeyDown={(e) => {
+        if (e.key === "Escape") onClose();
+      }}
     >
       <button
         type="button"
@@ -112,8 +111,12 @@ export const Lightbox = ({
         </div>
       </div>
 
-      {/** biome-ignore lint/a11y/noStaticElementInteractions: <Because> */}
-      <div className={styles.lbMeta} onClick={stop}>
+      <div
+        className={styles.lbMeta}
+        role="toolbar"
+        onClick={stop}
+        onKeyDown={(e) => e.stopPropagation()}
+      >
         <span className={styles.lbCaption}>{title}</span>
         <span className={styles.lbCount}>
           {index + 1} / {total}

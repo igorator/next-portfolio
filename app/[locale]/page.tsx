@@ -1,34 +1,21 @@
 import type { Metadata } from "next";
-import type { Locale } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { HomeSection } from "@/shared/components/pages/Home/Home";
+import { siteConfig } from "@/shared/config/site";
+import type { LocalePageProps } from "@/shared/types/page";
 
-type Params = { locale: Locale };
-type Props = { params: Promise<Params> };
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: LocalePageProps): Promise<Metadata> {
   const { locale } = await params;
-
-  const title = "Ihor Kliushnyk - Developer";
-  const description =
-    "Design-driven, fast, and functional web experiences portfolio.";
 
   const canonical = locale === routing.defaultLocale ? "/" : `/${locale}`;
 
   return {
-    title,
-    description,
+    title: siteConfig.pages.home.title,
+    description: siteConfig.pages.home.description,
     alternates: { canonical },
-    openGraph: {
-      title,
-      description,
-      url: canonical,
-    },
-    twitter: {
-      title,
-      description,
-      card: "summary_large_image",
-    },
+    openGraph: { url: canonical },
   };
 }
 

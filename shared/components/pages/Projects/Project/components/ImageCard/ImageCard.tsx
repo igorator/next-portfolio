@@ -3,7 +3,9 @@
 import { motion, type Variants } from "motion/react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import { Spinner } from "@/shared/components/loading/Spinner/Spinner";
 import layout from "../../Project.module.css";
 import styles from "./ImageCard.module.css";
 
@@ -51,6 +53,11 @@ export function ImageCard({
   onOpenLightbox,
 }: Props) {
   const t = useTranslations("projects_ui");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+  }, [idx]);
 
   return (
     <motion.article className={`${layout.card} ${layout.imageCard}`}>
@@ -60,6 +67,11 @@ export function ImageCard({
         </div>
       ) : (
         <div className={styles.imageWrap}>
+          {loading && (
+            <div className={styles.spinnerOverlay}>
+              <Spinner size={28} />
+            </div>
+          )}
           <motion.button
             type="button"
             key={images[idx]}
@@ -81,6 +93,7 @@ export function ImageCard({
               priority
               placeholder="blur"
               blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNSIgZmlsbD0iI2NjYyIgLz4="
+              onLoad={() => setLoading(false)}
             />
             <div className={styles.imageShade} aria-hidden />
           </motion.button>

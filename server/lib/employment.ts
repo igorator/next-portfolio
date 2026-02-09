@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { cache } from "react";
 import type { Locale } from "next-intl";
 
 import employmentBase from "@/server/data/employment/employment_base.json";
@@ -11,19 +11,20 @@ import projectsUk from "@/server/data/projects/projects_uk.json";
 
 import type { Employment } from "@/shared/types";
 import type { Project } from "@/shared/types/projects/project";
+import { resolveLocale } from "./locale";
 
 type LocalizedMap = Record<string, { type: string; roles: string[] }>;
 
 const EMPLOYMENT_BY_LANG: Record<Locale, LocalizedMap> = {
   en: employmentEn as LocalizedMap,
   uk: employmentUk as LocalizedMap,
-} as const;
+};
 
-function mergeEmployment(locale: Locale): Employment[] {
-  const map = EMPLOYMENT_BY_LANG[locale] ?? EMPLOYMENT_BY_LANG.en;
+function fetchEmployment(locale: Locale): Employment[] {
+  const safeLocale = resolveLocale(locale);
+  const map = EMPLOYMENT_BY_LANG[safeLocale];
   const enMap = EMPLOYMENT_BY_LANG.en;
 
-  // Build set of existing project slugs for safe linking
   const availableProjectSlugs = new Set(
     (
       projectBase as Array<
@@ -32,7 +33,9 @@ function mergeEmployment(locale: Locale): Employment[] {
     ).map((p) => p.slug),
   );
 
-  const projectsI18n = (locale === "uk" ? projectsUk : projectsEn) as Record<
+  const projectsI18n = (
+    safeLocale === "uk" ? projectsUk : projectsEn
+  ) as Record<
     string,
     Pick<Project, "title" | "description" | "type" | "category">
   >;
@@ -53,10 +56,4 @@ function mergeEmployment(locale: Locale): Employment[] {
   });
 }
 
-export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const locale = (searchParams.get("locale") as Locale) || "en";
-
-  const employment = mergeEmployment(locale);
-  return NextResponse.json(employment);
-}
+export const getEmployment = cache(fetchEmployment);

@@ -21,7 +21,6 @@ export const GlassSurface = ({
   contentClassName,
   style,
 }: GlassSurfaceProps) => {
-  // фиксированный ID — без useId
   const filterId = "glass-surface-filter";
 
   return (

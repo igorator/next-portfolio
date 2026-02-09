@@ -8,7 +8,6 @@ import styles from "./SortSelect.module.css";
 
 export type SortKey = "newest" | "oldest" | "az" | "za";
 
-// 2) Опции с жёсткими id (юнион)
 const makeSortOptions = (t: ReturnType<typeof useTranslations>) =>
   [
     { id: "newest", name: t("projects.filters.options.newest") },

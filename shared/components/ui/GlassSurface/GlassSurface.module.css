@@ -1,13 +1,10 @@
-:root {
+.glass {
   --gs-radius: 9999px;
   --gs-padding: 0;
   --gs-blur: 6px;
   --gs-tint: rgba(255, 255, 255, 0.08);
   --gs-shadow: 0 2px 2px rgba(0, 0, 0, 0.2), 0 0 50px rgba(0, 0, 0, 0.1);
   --gs-shine: 1;
-}
-
-.glass {
   position: relative;
   display: flex;
   align-items: center;

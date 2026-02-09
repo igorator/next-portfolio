@@ -1,13 +1,10 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
-import { useTranslations } from "next-intl";
+import { motion } from "motion/react";
 import Spinner from "@/shared/components/loading/Spinner/Spinner";
 import styles from "./AppLoading.module.css";
 
 export function AppLoading() {
-  const t = useTranslations("loading");
-
   return (
     <div
       className={styles.screen}

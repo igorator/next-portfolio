@@ -1,4 +1,3 @@
-// shared/components/layout/Navbar/NavbarLinks.tsx
 "use client";
 
 import Link from "next/link";
@@ -6,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { useMemo } from "react";
 import { routing } from "@/i18n/routing";
-import { GlassSurface } from "@/shared/components/ui/GlassSurface/GlassSurface";
 import { routes } from "@/shared/config/routes";
 import styles from "./NavbarLinks.module.css";
 
@@ -17,13 +15,11 @@ export const NavbarLinks = () => {
   const locale = useLocale();
   const t = useTranslations();
 
-  // Уберём возможный слэш в конце
   const normalized =
     pathname !== "/" && pathname.endsWith("/")
       ? pathname.slice(0, -1)
       : pathname;
 
-  // Стрип локали из начала пути: /ua/..., /en/..., /de-CH/...
   const stripLocale = (p: string) => {
     const locales = routing.locales;
     const re = new RegExp(`^/(?:${locales.join("|")})(?=/|$)`, "i");

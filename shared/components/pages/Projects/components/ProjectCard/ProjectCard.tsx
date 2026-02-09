@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { BsArrowRight } from "react-icons/bs";
 import { Link } from "@/i18n/navigation";
-import { ProjectCardTooltip } from "./PojectCardTooltip/ProjectCardTooltip";
+import { ProjectCardTooltip } from "./ProjectCardTooltip/ProjectCardTooltip";
 import styles from "./ProjectCard.module.css";
 
 export type ProjectCardProps = {

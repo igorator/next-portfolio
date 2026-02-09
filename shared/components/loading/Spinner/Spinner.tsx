@@ -4,7 +4,7 @@ import type { CSSProperties } from "react";
 import styles from "./Spinner.module.css";
 
 type SpinnerProps = {
-  size?: number | string; // e.g. 14, '16px', '1rem'
+  size?: number | string;
   className?: string;
 };
 
@@ -13,7 +13,6 @@ export function Spinner({ size = 12, className }: SpinnerProps) {
     typeof size === "number" ? `${size}px` : size;
 
   return (
-    // biome-ignore lint/a11y/useSemanticElements: <explanation>
     <span
       className={`${styles.wrap} ${className ?? ""}`}
       role="status"

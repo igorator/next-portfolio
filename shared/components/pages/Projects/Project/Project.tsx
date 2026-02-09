@@ -37,8 +37,6 @@ const cardsContainer: Variants = {
   show: { transition: { staggerChildren: 0.06, delayChildren: 0.04 } },
 };
 
-// Sub-cards define their own animation variants; keep only container here
-
 export function ProjectSection({
   title,
   description,

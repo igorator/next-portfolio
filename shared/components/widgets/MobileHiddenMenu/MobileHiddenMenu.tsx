@@ -43,13 +43,13 @@ export const MobileHiddenMenu: React.FC<Props> = ({ open, onClose }) => {
         }}
       />
 
-      {/** biome-ignore lint/a11y/useKeyWithClickEvents: <biome> */}
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
         className={styles.menu}
         onClick={(e) => e.stopPropagation()}
+        onKeyDown={(e) => e.stopPropagation()}
       >
         <div className={styles.header}>
           <button

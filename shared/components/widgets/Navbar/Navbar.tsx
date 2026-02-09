@@ -1,5 +1,3 @@
-"use client";
-
 import { LanguageSelect } from "@/shared/components/widgets/LanguageSelect/LanguageSelect";
 import { NavbarLinks } from "@/shared/components/widgets/Navbar/NavbarLinks/NavbarLinks";
 import { ThemeSwitch } from "@/shared/components/widgets/ThemeSwitcher/ThemeSwitcher";

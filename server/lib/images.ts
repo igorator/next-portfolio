@@ -1,11 +1,12 @@
-// shared/lib/assets.ts
+import { cache } from "react";
+
 const OWNER = "igorator";
 const REPO = "protfolio-assets";
 const DEFAULT_REF = "main";
 const CDN_ROOT = `https://cdn.jsdelivr.net/gh/${OWNER}/${REPO}`;
 const GITHUB_COMMITS_API = `https://api.github.com/repos/${OWNER}/${REPO}/commits/${DEFAULT_REF}`;
 
-const exts = new Set(["webp", "png", "jpg", "jpeg"]);
+const IMAGE_EXTS = new Set(["webp", "png", "jpg", "jpeg"]);
 
 type JsDelivrNode = {
   name: string;
@@ -17,7 +18,7 @@ type JsDelivrTree = JsDelivrNode & { version?: string; hash?: string };
 
 async function fetchTree(ref: string): Promise<JsDelivrTree> {
   const dataUrl = `https://data.jsdelivr.com/v1/package/gh/${OWNER}/${REPO}@${ref}`;
-  const res = await fetch(dataUrl, { cache: "no-store" });
+  const res = await fetch(dataUrl, { next: { revalidate: 300 } });
   if (!res.ok) throw new Error("Failed to load jsDelivr package tree");
   return res.json();
 }
@@ -52,7 +53,13 @@ function findDir(root: JsDelivrNode, path: string[]): JsDelivrNode | null {
   return node ?? null;
 }
 
-export async function listProjectImages(slug: string) {
+function hasImageExt(name: string): boolean {
+  const dot = name.lastIndexOf(".");
+  if (dot === -1) return false;
+  return IMAGE_EXTS.has(name.slice(dot + 1).toLowerCase());
+}
+
+async function fetchProjectImages(slug: string) {
   const ref = await resolveRef();
   const tree = await fetchTree(ref);
   const cdn = (file: string) => `${CDN_ROOT}@${ref}/Projects/${slug}/${file}`;
@@ -63,21 +70,14 @@ export async function listProjectImages(slug: string) {
 
   const files = dir.files.filter((f) => f.type === "file");
 
-  const withExt = (name: string) => {
-    const dot = name.lastIndexOf(".");
-    if (dot === -1) return false;
-    const ext = name.slice(dot + 1).toLowerCase();
-    return exts.has(ext);
-  };
-
   const coverFile =
     files.find(
-      (f) => f.name.toLowerCase().startsWith("cover.") && withExt(f.name),
+      (f) => f.name.toLowerCase().startsWith("cover.") && hasImageExt(f.name),
     ) ?? null;
   const cover = coverFile ? cdn(coverFile.name) : null;
 
   const screenFiles = files
-    .filter((f) => /^screen-\d+\./i.test(f.name) && withExt(f.name))
+    .filter((f) => /^screen-\d+\./i.test(f.name) && hasImageExt(f.name))
     .sort((a, b) => {
       const na = parseInt(a.name.match(/\d+/)?.[0] ?? "0", 10);
       const nb = parseInt(b.name.match(/\d+/)?.[0] ?? "0", 10);
@@ -88,3 +88,5 @@ export async function listProjectImages(slug: string) {
 
   return { cover, screens };
 }
+
+export const listProjectImages = cache(fetchProjectImages);

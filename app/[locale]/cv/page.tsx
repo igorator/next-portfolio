@@ -1,34 +1,24 @@
 import type { Metadata } from "next";
-import type { Locale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { CVSection } from "@/shared/components/pages/CV/CV";
+import { siteConfig } from "@/shared/config/site";
+import type { LocalePageProps } from "@/shared/types/page";
 
-type Params = { locale: Locale };
-type Props = { params: Promise<Params> };
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: LocalePageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "cv" });
 
   const title = t("title");
-  const description = "Download or view the CV of Ihor Kliushnyk.";
   const canonical = locale === routing.defaultLocale ? "/cv" : `/${locale}/cv`;
 
   return {
     title,
-    description,
+    description: siteConfig.pages.cv.description,
     alternates: { canonical },
-    openGraph: {
-      title,
-      description,
-      url: canonical,
-    },
-    twitter: {
-      title,
-      description,
-      card: "summary_large_image",
-    },
+    openGraph: { url: canonical },
   };
 }
 

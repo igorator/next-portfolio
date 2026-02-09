@@ -13,7 +13,7 @@ export const useProjectFilters = (
     "newest",
   );
   const [matchMode, setMatchMode] = useState<MatchMode>("all");
-  const [commercialOnly, setCommercialOnly] = useState(false); // <-- добавлено
+  const [commercialOnly, setCommercialOnly] = useState(false);
 
   const toggleTech = (id: string) => {
     setSelectedTechs((prev) =>
@@ -35,19 +35,15 @@ export const useProjectFilters = (
         const projectTechIds = toIdArray(project);
 
         if (matchMode === "all") {
-          // И: проект должен содержать каждую из выбранных технологий
           return selectedTechs.every((id) => projectTechIds.includes(id));
         } else {
-          // ИЛИ: достаточно хотя бы одной
           return selectedTechs.some((id) => projectTechIds.includes(id));
         }
       });
     }
 
     if (commercialOnly) {
-      filtered = filtered.filter((project) =>
-        Boolean((project as ProjectWithTechnologies).isCommercial),
-      );
+      filtered = filtered.filter((project) => Boolean(project.isCommercial));
     }
 
     return [...filtered].sort((a, b) => {

@@ -18,7 +18,7 @@ export const MobileHiddenMenuButton = () => {
           aria-haspopup="dialog"
           aria-expanded={open}
           aria-label="Open menu"
-          onClick={() => setOpen(true)} // открываем меню
+          onClick={() => setOpen(true)}
         >
           <MdMenu size={20} />
         </button>

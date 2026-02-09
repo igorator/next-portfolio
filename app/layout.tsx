@@ -1,4 +1,3 @@
-// app/layout.tsx
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { Inter, Manrope } from "next/font/google";
@@ -7,6 +6,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { routing } from "@/i18n/routing";
 import { AppPortal } from "@/shared/components/layout/AppPortal/AppPortal";
+import { siteConfig } from "@/shared/config/site";
 
 type ThemeSetting = "light" | "dark" | "system";
 const THEME_COOKIE = "theme";
@@ -22,15 +22,10 @@ const fontText = Inter({
   display: "swap",
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-  "https://igorator.site";
-
 export const metadata: Metadata = {
-  title: "Ihor's Portfolio",
-  description:
-    "Portfolio by Ihor Kliushnyk - design-driven, fast, and functional.",
-  metadataBase: new URL(siteUrl),
+  title: siteConfig.name,
+  description: siteConfig.description,
+  metadataBase: new URL(siteConfig.url),
   alternates: {
     canonical: "/",
     languages: {
@@ -39,21 +34,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Ihor's Portfolio",
-    description:
-      "Portfolio by Ihor Kliushnyk - design-driven, fast, and functional.",
-    url: "/",
-    siteName: "Ihor's Portfolio",
-    images: ["/opengraph-image"],
+    siteName: siteConfig.name,
     locale: "en_US",
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ihor's Portfolio",
-    description:
-      "Portfolio by Ihor Kliushnyk - design-driven, fast, and functional.",
-    images: ["/opengraph-image"],
   },
 };
 
@@ -75,13 +58,7 @@ export default async function RootLayout({
       <head>
         <meta
           name="color-scheme"
-          content={
-            theme === "dark"
-              ? "dark light"
-              : theme === "light"
-                ? "light dark"
-                : "light dark"
-          }
+          content={theme === "dark" ? "dark light" : "light dark"}
         />
       </head>
       <body className={`${fontHeading.variable} ${fontText.variable}`}>

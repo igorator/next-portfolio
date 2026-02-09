@@ -1,62 +1,47 @@
 import type { Metadata } from "next";
-import type { Locale } from "next-intl";
+import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { getProjectBySlug } from "@/shared/api/projects/getProjectBySlug";
+import { getProjectBySlug } from "@/server/lib/projects";
 import { ProjectSection } from "@/shared/components/pages/Projects/Project/Project";
+import { siteConfig } from "@/shared/config/site";
+import type { SlugPageProps } from "@/shared/types/page";
 
 export const revalidate = 60;
 
-type Params = { slug: string; locale: Locale };
-type Props = { params: Promise<Params> };
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: SlugPageProps): Promise<Metadata> {
   const { slug, locale } = await params;
+  const project = await getProjectBySlug(slug, locale);
 
-  try {
-    const project = await getProjectBySlug(slug, locale);
-
-    const title = project.title || slug;
-    const description =
-      project.description || "Project details from Ihor Kliushnyk's portfolio.";
-    const canonical =
-      locale === routing.defaultLocale
-        ? `/projects/${slug}`
-        : `/${locale}/projects/${slug}`;
-
-    return {
-      title,
-      description,
-      alternates: { canonical },
-      openGraph: {
-        title,
-        description,
-        url: canonical,
-        images: project.cover ? [project.cover] : undefined,
-      },
-      twitter: {
-        title,
-        description,
-        card: "summary_large_image",
-        images: project.cover ? [project.cover] : undefined,
-      },
-    };
-  } catch (error) {
-    const canonical =
-      locale === routing.defaultLocale
-        ? `/projects/${slug}`
-        : `/${locale}/projects/${slug}`;
-    return {
-      title: slug,
-      description: "Project details",
-      alternates: { canonical },
-    };
+  if (!project) {
+    return { title: "Not Found" };
   }
+
+  const title = project.title || slug;
+  const description =
+    project.description || siteConfig.pages.project.fallbackDescription;
+  const canonical =
+    locale === routing.defaultLocale
+      ? `/projects/${slug}`
+      : `/${locale}/projects/${slug}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      url: canonical,
+      images: project.cover ? [project.cover] : undefined,
+    },
+  };
 }
 
-export default async function ProjectPage({ params }: Props) {
+export default async function ProjectPage({ params }: SlugPageProps) {
   const { slug, locale } = await params;
-
   const project = await getProjectBySlug(slug, locale);
+
+  if (!project) notFound();
 
   return (
     <ProjectSection

@@ -1,7 +1,6 @@
-// shared/hooks/useTheme.ts
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 export type ThemeSetting = "light" | "dark" | "system";
 type Effective = "light" | "dark";
@@ -26,14 +25,12 @@ export function useTheme() {
   const [setting, setSetting] = useState<ThemeSetting>("system");
   const [effective, setEffective] = useState<Effective>("light");
 
-  // init
   useEffect(() => {
     const s = readSetting();
     setSetting(s);
     setEffective(readEffective(s));
   }, []);
 
-  // react to changes of data-theme attribute on <html>
   useEffect(() => {
     const html = document.documentElement;
     const obs = new MutationObserver(() => {
@@ -46,7 +43,6 @@ export function useTheme() {
     return () => obs.disconnect();
   }, []);
 
-  // if system -> react to OS theme changes
   useEffect(() => {
     if (setting !== "system") return;
     const mq = window.matchMedia?.("(prefers-color-scheme: dark)");
@@ -57,7 +53,7 @@ export function useTheme() {
     return () => mq.removeEventListener?.("change", onChange);
   }, [setting]);
 
-  const isDark = useMemo(() => effective === "dark", [effective]);
+  const isDark = effective === "dark";
 
   return { setting, effective, isDark };
 }
