@@ -1,28 +1,95 @@
-import { useMemo, useState } from "react";
+import { useCallback, useMemo } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import type { ProjectWithTechnologies } from "@/shared/types/projects/project";
 import type { Technology } from "@/shared/types/technology";
 
+type SortKey = "newest" | "oldest" | "az" | "za";
 type MatchMode = "any" | "all";
+
+const SORT_VALUES = new Set<SortKey>(["newest", "oldest", "az", "za"]);
+const MATCH_VALUES = new Set<MatchMode>(["any", "all"]);
+
+function parseSortKey(value: string | null): SortKey {
+  return value && SORT_VALUES.has(value as SortKey)
+    ? (value as SortKey)
+    : "newest";
+}
+
+function parseMatchMode(value: string | null): MatchMode {
+  return value && MATCH_VALUES.has(value as MatchMode)
+    ? (value as MatchMode)
+    : "all";
+}
 
 export const useProjectFilters = (
   projects: ProjectWithTechnologies[],
   technologies: Technology[],
 ) => {
-  const [selectedTechs, setSelectedTechs] = useState<string[]>([]);
-  const [sortBy, setSortBy] = useState<"newest" | "oldest" | "az" | "za">(
-    "newest",
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const selectedTechs = useMemo(() => {
+    const param = searchParams.get("tech");
+    return param ? param.split(",").filter(Boolean) : [];
+  }, [searchParams]);
+
+  const sortBy = parseSortKey(searchParams.get("sort"));
+  const matchMode = parseMatchMode(searchParams.get("match"));
+  const commercialOnly = searchParams.get("commercial") === "true";
+
+  const updateParams = useCallback(
+    (updates: Record<string, string | null>) => {
+      const params = new URLSearchParams(searchParams.toString());
+      for (const [key, value] of Object.entries(updates)) {
+        if (value === null) {
+          params.delete(key);
+        } else {
+          params.set(key, value);
+        }
+      }
+      const qs = params.toString();
+      router.replace(`${pathname}${qs ? `?${qs}` : ""}`, { scroll: false });
+    },
+    [searchParams, router, pathname],
   );
-  const [matchMode, setMatchMode] = useState<MatchMode>("all");
-  const [commercialOnly, setCommercialOnly] = useState(false);
 
-  const toggleTech = (id: string) => {
-    setSelectedTechs((prev) =>
-      prev.includes(id) ? prev.filter((t) => t !== id) : [...prev, id],
-    );
-  };
+  const toggleTech = useCallback(
+    (id: string) => {
+      const next = selectedTechs.includes(id)
+        ? selectedTechs.filter((t) => t !== id)
+        : [...selectedTechs, id];
+      updateParams({ tech: next.length > 0 ? next.join(",") : null });
+    },
+    [selectedTechs, updateParams],
+  );
 
-  const setOnlyTechnology = (id: string) => setSelectedTechs([id]);
-  const clearTechnologies = () => setSelectedTechs([]);
+  const setOnlyTechnology = useCallback(
+    (id: string) => updateParams({ tech: id }),
+    [updateParams],
+  );
+
+  const clearTechnologies = useCallback(
+    () => updateParams({ tech: null }),
+    [updateParams],
+  );
+
+  const setSortBy = useCallback(
+    (value: SortKey) =>
+      updateParams({ sort: value === "newest" ? null : value }),
+    [updateParams],
+  );
+
+  const setMatchMode = useCallback(
+    (value: MatchMode) =>
+      updateParams({ match: value === "all" ? null : value }),
+    [updateParams],
+  );
+
+  const setCommercialOnly = useCallback(
+    (value: boolean) => updateParams({ commercial: value ? "true" : null }),
+    [updateParams],
+  );
 
   const filteredProjects = useMemo(() => {
     const toIdArray = (p: ProjectWithTechnologies): string[] =>

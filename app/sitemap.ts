@@ -18,26 +18,41 @@ const localePath = (locale: string, path: string) => {
   return normalized === "/" ? `/${locale}` : `/${locale}${normalized}`;
 };
 
+function alternatesForPath(path: string) {
+  return {
+    languages: Object.fromEntries(
+      routing.locales.map((l) => [
+        l,
+        new URL(localePath(l, path), siteConfig.url).toString(),
+      ]),
+    ),
+  };
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const urls: MetadataRoute.Sitemap = [];
 
-  for (const locale of routing.locales) {
-    for (const path of STATIC_PATHS) {
-      urls.push({
-        url: new URL(localePath(locale, path), siteConfig.url).toString(),
-        lastModified: new Date(),
-      });
-    }
+  for (const path of STATIC_PATHS) {
+    urls.push({
+      url: new URL(
+        localePath(routing.defaultLocale, path),
+        siteConfig.url,
+      ).toString(),
+      lastModified: new Date(),
+      alternates: alternatesForPath(path),
+    });
+  }
 
-    for (const project of projectEntries) {
-      urls.push({
-        url: new URL(
-          localePath(locale, `/projects/${project.slug}`),
-          siteConfig.url,
-        ).toString(),
-        lastModified: project.lastModified ?? new Date(),
-      });
-    }
+  for (const project of projectEntries) {
+    const projectPath = `/projects/${project.slug}`;
+    urls.push({
+      url: new URL(
+        localePath(routing.defaultLocale, projectPath),
+        siteConfig.url,
+      ).toString(),
+      lastModified: project.lastModified ?? new Date(),
+      alternates: alternatesForPath(projectPath),
+    });
   }
 
   return urls;

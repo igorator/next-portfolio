@@ -4,6 +4,10 @@ import { HomeSection } from "@/shared/components/pages/Home/Home";
 import { siteConfig } from "@/shared/config/site";
 import type { LocalePageProps } from "@/shared/types/page";
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 export async function generateMetadata({
   params,
 }: LocalePageProps): Promise<Metadata> {

@@ -1,7 +1,7 @@
 .wrap {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--space-3);
   height: 100%;
 }
 
@@ -13,8 +13,8 @@
 .back {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
+  gap: var(--element-gap);
+  padding: var(--space-2) var(--space-3);
   text-decoration: none;
   font-size: var(--text-sm);
   color: var(--foreground);
@@ -78,7 +78,7 @@
   );
   border: 1px solid var(--glass-border);
   box-shadow: var(--shadow-md);
-  padding: 14px;
+  padding: var(--space-3);
 }
 
 .cardTitle {
@@ -86,7 +86,7 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: color-mix(in srgb, var(--foreground) 60%, transparent);
-  margin-bottom: 10px;
+  margin-bottom: var(--space-2);
 }
 
 .projectTitle {
@@ -94,7 +94,7 @@
   font-size: clamp(22px, 2.2vw, 34px);
   line-height: 1.15;
   letter-spacing: -0.02em;
-  margin: 2px 0 12px;
+  margin: 2px 0 var(--space-3);
 }
 
 .imageCard {
@@ -140,17 +140,17 @@
 
 .kvList {
   display: grid;
-  gap: 8px;
+  gap: var(--element-gap);
 }
 .kv {
   display: grid;
   grid-template-columns: 110px 1fr;
-  gap: 8px;
+  gap: var(--element-gap);
   align-items: baseline;
 }
 .kvKey {
   color: color-mix(in srgb, var(--foreground) 60%, transparent);
-  font-size: 13px;
+  font-size: var(--text-xs);
 }
 .kvVal {
   color: var(--foreground);
@@ -160,7 +160,7 @@
 .techList {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--element-gap);
 }
 
 .techChip {
@@ -169,13 +169,13 @@
   --chip-brd: color-mix(in srgb, var(--chip-fg) 42%, transparent);
   display: inline-flex;
   align-items: center;
-  padding: 6px 10px;
-  border-radius: 999px;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-full);
   border: 1px solid var(--chip-brd);
   background: var(--chip-bg);
   color: var(--chip-fg);
   font-weight: 600;
-  font-size: 13.5px;
+  font-size: var(--text-xs);
   letter-spacing: 0.01em;
   transition:
     transform var(--transition-fast),
@@ -194,8 +194,8 @@
 .links {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 12px;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
 }
 
 .btn {
@@ -204,9 +204,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--element-gap);
   height: 36px;
-  padding: 0 12px;
+  padding: 0 var(--space-3);
   border-radius: var(--radius-sm);
   font-weight: 600;
   font-size: var(--text-sm);
@@ -318,7 +318,7 @@
   z-index: 2;
   width: 36px;
   height: 36px;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   border: 1px solid color-mix(in srgb, var(--foreground) 18%, transparent);
   background: color-mix(in srgb, var(--background) 70%, transparent);
   color: var(--foreground);
@@ -336,22 +336,22 @@
   transform: translateY(-1px);
 }
 .navPrev {
-  left: 10px;
+  left: var(--space-2);
 }
 .navNext {
-  right: 10px;
+  right: var(--space-2);
 }
 
 .dots {
   position: absolute;
   left: 50%;
-  bottom: 10px;
+  bottom: var(--space-2);
   translate: -50% 0;
   display: inline-flex;
-  gap: 6px;
+  gap: var(--space-1);
   z-index: 2;
-  padding: 6px 8px;
-  border-radius: 999px;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-full);
   background: color-mix(in srgb, var(--background) 70%, transparent);
   border: 1px solid color-mix(in srgb, var(--foreground) 14%, transparent);
   backdrop-filter: var(--backdrop-blur) saturate(140%);
@@ -360,7 +360,7 @@
 .dot {
   width: 8px;
   height: 8px;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: color-mix(in srgb, var(--foreground) 22%, transparent);
   border: 1px solid color-mix(in srgb, var(--foreground) 35%, transparent);
   transition:
@@ -385,19 +385,19 @@
 /* ====== Mobile ≤ 720px ====== */
 @media (max-width: 720px) {
   .wrap {
-    gap: 10px;
+    gap: var(--space-2);
   }
 
   .card {
-    padding: 12px;
+    padding: var(--space-3);
   }
 
   /* кнопки-линки — удобнее тапать */
   .links {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-top: 10px;
+    gap: var(--element-gap);
+    margin-top: var(--space-2);
   }
   .btn {
     height: 44px;
@@ -408,7 +408,7 @@
   /* список ключ-значение компактнее */
   .kv {
     grid-template-columns: 90px 1fr;
-    gap: 6px;
+    gap: var(--space-1);
   }
   .kvKey {
     font-size: 12px;
@@ -419,7 +419,7 @@
 
   /* tech chips — плотнее сетка и кликабельность */
   .techList {
-    gap: 6px;
+    gap: var(--space-1);
   }
   .techChip {
     padding: 6px 10px;
@@ -440,9 +440,9 @@
 
   /* точки-индикаторы компактнее */
   .dots {
-    padding: 4px 6px;
+    padding: var(--space-1) var(--space-1);
     gap: 5px;
-    bottom: 8px;
+    bottom: var(--space-2);
   }
   .dot {
     width: 7px;
@@ -454,7 +454,7 @@
 @media (max-width: 420px) {
   .projectTitle {
     letter-spacing: -0.01em;
-    margin: 2px 0 10px;
+    margin: 2px 0 var(--space-2);
   }
 
   /* ключ-значение в одну колонку */
@@ -473,7 +473,7 @@
   /* ссылки-кнопки — в один столбец */
   .links {
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: var(--element-gap);
   }
 
   /* сетка скриншотов — ещё меньше минимальная ширина */

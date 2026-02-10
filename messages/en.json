@@ -59,7 +59,20 @@
     "descriptionTitle": "Description",
     "noTechnologies": "No technologies listed.",
     "openImageAria": "Open image in lightbox",
-    "imageAltCover": "{title} — cover"
+    "imageAltCover": "{title} — cover",
+    "previousImageAria": "Previous image",
+    "nextImageAria": "Next image",
+    "goToImageAria": "Go to image {index}",
+    "technologyStackAria": "Technology stack",
+    "stackHighlightsAria": "Stack highlights",
+    "commercialProjectAria": "Commercial project",
+    "lightbox": {
+      "closeAria": "Close",
+      "previousAria": "Previous",
+      "nextAria": "Next",
+      "openOriginal": "Open original",
+      "imageAlt": "{title} — image {current} of {total}"
+    }
   },
   "cv": {
     "title": "CV",

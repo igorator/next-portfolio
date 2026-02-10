@@ -91,7 +91,7 @@
 
   .navbar {
     inset-inline: 0;
-    padding: 0 24px 0 24px;
+    padding: 0 var(--space-5);
     bottom: calc(var(--space-3) + env(safe-area-inset-bottom));
     justify-content: center;
     gap: 0;

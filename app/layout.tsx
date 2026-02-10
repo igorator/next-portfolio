@@ -13,12 +13,12 @@ const THEME_COOKIE = "theme";
 
 const fontHeading = Manrope({
   variable: "--font-headings",
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic"],
   display: "swap",
 });
 const fontText = Inter({
   variable: "--font-text",
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic"],
   display: "swap",
 });
 

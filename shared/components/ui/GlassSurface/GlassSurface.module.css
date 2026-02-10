@@ -1,5 +1,5 @@
 .glass {
-  --gs-radius: 9999px;
+  --gs-radius: var(--radius-full);
   --gs-padding: 0;
   --gs-blur: 6px;
   --gs-tint: rgba(255, 255, 255, 0.08);
@@ -15,9 +15,9 @@
   width: fit-content;
 
   transition:
-    box-shadow 400ms,
-    transform 400ms,
-    filter 400ms;
+    box-shadow var(--transition-slow),
+    transform var(--transition-slow),
+    filter var(--transition-slow);
   overflow: hidden;
 }
 
@@ -31,9 +31,7 @@
 }
 
 .effect {
-  /* Весь blur и SVG-эффект здесь */
   backdrop-filter: blur(var(--gs-blur));
-  /* Ссылка на фильтр приходит из TS через --gs-filter */
   filter: var(--gs-filter, none);
   overflow: hidden;
 }
@@ -43,11 +41,10 @@
 }
 
 .shine {
-  /* Показываем блики только когда --gs-shine = 1 */
   box-shadow:
     inset 2px 2px 1px 0 rgba(255, 255, 255, 0.5),
     inset -1px -1px 1px 1px rgba(255, 255, 255, 0.5);
-  opacity: calc(var(--gs-shine) * 1); /* 0 или 1 */
+  opacity: calc(var(--gs-shine) * 1);
   pointer-events: none;
 }
 
@@ -66,7 +63,6 @@
   display: none;
 }
 
-/* Удобный модификатор для отключения бликов классом */
 .glass.noShine {
   --gs-shine: 0;
 }

@@ -1,4 +1,4 @@
-.notFound {
+.error {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,6 +27,11 @@
   color: var(--muted-foreground, #888);
 }
 
+.actions {
+  display: flex;
+  gap: var(--space-4);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -37,13 +42,10 @@
   font-weight: 500;
   text-decoration: none;
   color: var(--foreground);
-  backdrop-filter: blur(var(--backdrop-blur));
-  transition: all var(--transition-slow);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all var(--transition-fast);
 }
 
 .btn:hover {
   transform: translateY(-2px);
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.25);
 }

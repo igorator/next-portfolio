@@ -3,24 +3,24 @@
   font-size: clamp(22px, 2.2vw, 34px);
   line-height: 1.15;
   letter-spacing: -0.02em;
-  margin: 2px 0 12px;
+  margin: 2px 0 var(--space-3);
 }
 
 .kvList {
   display: grid;
-  gap: 8px;
+  gap: var(--element-gap);
 }
 
 .kv {
   display: grid;
   grid-template-columns: 110px 1fr;
-  gap: 8px;
+  gap: var(--element-gap);
   align-items: baseline;
 }
 
 .kvKey {
   color: color-mix(in srgb, var(--foreground) 60%, transparent);
-  font-size: 13px;
+  font-size: var(--text-xs);
 }
 
 .kvVal {

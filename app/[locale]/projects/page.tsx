@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { getProjects } from "@/server/lib/projects";
@@ -6,6 +7,10 @@ import { getTechnologies } from "@/server/lib/technologies";
 import { ProjectsSection } from "@/shared/components/pages/Projects/Projects";
 import { siteConfig } from "@/shared/config/site";
 import type { LocalePageProps } from "@/shared/types/page";
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export async function generateMetadata({
   params,
@@ -33,5 +38,9 @@ export default async function Projects({ params }: LocalePageProps) {
     getTechnologies(),
   ]);
 
-  return <ProjectsSection projects={projects} technologies={technologies} />;
+  return (
+    <Suspense>
+      <ProjectsSection projects={projects} technologies={technologies} />
+    </Suspense>
+  );
 }

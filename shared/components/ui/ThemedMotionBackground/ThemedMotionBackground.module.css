@@ -5,48 +5,71 @@
 }
 
 .ocean {
-  height: 5%;
+  --wave-svg: url("/wave.svg");
+  --wave-tile-w: 1600px;
+  --wave-tile-h: 198px;
+  --wave-depth: 5%;
+  --wave-duration: 12s;
+  --wave-easing: cubic-bezier(0.36, 0.45, 0.63, 0.53);
+  --wave-opacity-top: 25%;
+  --swell-up: -25px;
+  --swell-down: 5px;
+
+  height: var(--wave-depth);
   width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
-  background: #015871;
+  background: var(--wave-color);
 }
 
 .wave {
-  background: url("/wave.svg") repeat-x;
   position: absolute;
-  top: -198px;
-  width: 6400px;
-  height: 198px;
-  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  top: calc(var(--wave-tile-h) * -1);
+  width: calc(var(--wave-tile-w) * 4);
+  height: var(--wave-tile-h);
+  animation: wave var(--wave-duration) var(--wave-easing) infinite;
   transform: translate3d(0, 0, 0);
-  will-change: background-position, transform;
+  will-change: mask-position, transform;
+
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--wave-color) var(--wave-opacity-top), transparent),
+    var(--wave-color)
+  );
+  -webkit-mask-image: var(--wave-svg);
+  -webkit-mask-repeat: repeat-x;
+  -webkit-mask-size: var(--wave-tile-w) var(--wave-tile-h);
+  mask-image: var(--wave-svg);
+  mask-repeat: repeat-x;
+  mask-size: var(--wave-tile-w) var(--wave-tile-h);
 }
 
 .wave:nth-of-type(2) {
   top: -175px;
   animation:
-    wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
-    swell 7s ease -1.25s infinite;
+    wave var(--wave-duration) var(--wave-easing) -0.125s infinite,
+    swell var(--wave-duration) ease -1.25s infinite;
   opacity: 1;
 }
 
 @keyframes wave {
   from {
-    background-position-x: 0;
+    -webkit-mask-position-x: 0;
+    mask-position-x: 0;
   }
   to {
-    background-position-x: -1600px;
+    -webkit-mask-position-x: calc(var(--wave-tile-w) * -1);
+    mask-position-x: calc(var(--wave-tile-w) * -1);
   }
 }
 
 @keyframes swell {
   0%,
   100% {
-    transform: translate3d(0, -25px, 0);
+    transform: translate3d(0, var(--swell-up), 0);
   }
   50% {
-    transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, var(--swell-down), 0);
   }
 }

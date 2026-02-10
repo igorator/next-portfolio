@@ -16,13 +16,13 @@
   --fz-name: clamp(40px, 8vw, 92px);
   --fz-role: clamp(36px, 4.5vw, 48px);
 
-  --buttons-pad: 12px;
-  --buttons-gap: 10px;
+  --buttons-pad: var(--space-3);
+  --buttons-gap: var(--space-2);
 
   --btn-min-w: 120px;
-  --btn-radius: 14px;
-  --btn-pad-y: 12px;
-  --btn-pad-x: 16px;
+  --btn-radius: var(--radius-lg);
+  --btn-pad-y: var(--space-3);
+  --btn-pad-x: var(--space-4);
   --btn-fz: 15px;
   --btn-fw: 700;
 
@@ -130,8 +130,8 @@
   color: var(--foreground, #111);
   text-decoration: none;
   transition:
-    transform 180ms ease,
-    filter 180ms ease;
+    transform var(--transition-fast),
+    filter var(--transition-fast);
   touch-action: manipulation;
 }
 

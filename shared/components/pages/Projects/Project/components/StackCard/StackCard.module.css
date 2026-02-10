@@ -1,7 +1,7 @@
 .techList {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--element-gap);
 }
 
 .techChip {
@@ -10,13 +10,13 @@
   --chip-brd: color-mix(in srgb, var(--chip-fg) 42%, transparent);
   display: inline-flex;
   align-items: center;
-  padding: 6px 10px;
-  border-radius: 999px;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-full);
   border: 1px solid var(--chip-brd);
   background: var(--chip-bg);
   color: var(--chip-fg);
   font-weight: 600;
-  font-size: 13.5px;
+  font-size: var(--text-xs);
   letter-spacing: 0.01em;
   transition:
     transform var(--transition-fast),
@@ -31,7 +31,7 @@
 .techDot {
   width: 8px;
   height: 8px;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
 }
 
 .noTechnologies {

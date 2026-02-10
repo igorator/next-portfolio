@@ -2,7 +2,7 @@
   display: flex;
   align-items: stretch;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: var(--space-3);
   font-weight: 500;
 }
 
@@ -34,7 +34,7 @@
       "tech tech"
       "comm sort"
       "clear clear";
-    gap: 10px;
+    gap: var(--space-2);
   }
 
   .technologySelectWrapper {

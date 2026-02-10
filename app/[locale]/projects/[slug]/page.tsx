@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import projectBase from "@/server/data/projects/project_base.json";
 import { getProjectBySlug } from "@/server/lib/projects";
 import { ProjectSection } from "@/shared/components/pages/Projects/Project/Project";
 import { siteConfig } from "@/shared/config/site";
 import type { SlugPageProps } from "@/shared/types/page";
+
+export function generateStaticParams() {
+  const bases = projectBase as Array<{ slug: string }>;
+  return routing.locales.flatMap((locale) =>
+    bases.map((p) => ({ locale, slug: p.slug })),
+  );
+}
 
 export const revalidate = 60;
 

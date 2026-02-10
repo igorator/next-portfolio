@@ -1,7 +1,7 @@
 import { cache } from "react";
 
 const OWNER = "igorator";
-const REPO = "protfolio-assets";
+const REPO = "portfolio-assets";
 const DEFAULT_REF = "main";
 const CDN_ROOT = `https://cdn.jsdelivr.net/gh/${OWNER}/${REPO}`;
 const GITHUB_COMMITS_API = `https://api.github.com/repos/${OWNER}/${REPO}/commits/${DEFAULT_REF}`;

@@ -21,7 +21,7 @@
   --tl-period-fs: var(--text-sm);
   --tl-role-gap: 6px;
 
-  padding: 6rem 1rem;
+  padding: var(--section-gap) var(--space-4);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,7 +30,7 @@
 .title {
   font-size: var(--tl-title-fs);
   font-weight: 700;
-  margin-bottom: 3rem;
+  margin-bottom: var(--section-gap);
   text-align: center;
 }
 
@@ -70,9 +70,9 @@
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: baseline;
-  column-gap: 12px;
+  column-gap: var(--space-3);
   row-gap: 4px;
-  margin-bottom: 8px;
+  margin-bottom: var(--space-2);
 }
 
 /* ИЗМЕНЕНО: защита от переполнения */
@@ -103,7 +103,7 @@
   font-size: var(--text-sm);
   font-weight: 600; /* жирный */
   text-transform: capitalize; /* первая буква заглавная */
-  margin-bottom: 16px;
+  margin-bottom: var(--space-4);
 }
 
 .roles {
@@ -119,13 +119,13 @@
 }
 
 .projectsBlock {
-  margin-top: 18px;
+  margin-top: var(--space-4);
 }
 
 .projectsLabel {
   font-size: var(--text-sm);
   color: var(--text-muted);
-  margin-bottom: 8px;
+  margin-bottom: var(--space-2);
 }
 
 .projects {
@@ -134,15 +134,15 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 14px;
+  gap: var(--space-2) var(--space-3);
 }
 
 .projectBadge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 10px;
-  border-radius: 9999px;
+  gap: var(--element-gap);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-full);
   background: color-mix(in oklab, var(--surface) 35%, transparent);
   border: 1px solid color-mix(in oklab, var(--separator) 60%, transparent);
   color: var(--text);
