@@ -43,7 +43,8 @@
         "React & Next.js",
         "Some test tasks",
         "Certifications"
-      ]
+      ],
+      "stackHighlightsAria": "Stack highlights"
     },
     "noLinks": "No links data",
     "noImages": "No image data",
@@ -82,5 +83,20 @@
   "employment": {
     "title": "Employment History",
     "linkedProjects": "Linked projects"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "tryAgain": "Try again",
+    "backHome": "Back to Home"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "backHome": "Back to Home"
+  },
+  "a11y": {
+    "toggleTheme": "Toggle color theme",
+    "language": "Language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   }
 }

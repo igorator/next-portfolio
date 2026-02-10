@@ -46,7 +46,13 @@ body {
   --default-font-weight: 400;
   --default-max-width: 1440px;
   --navbar-height: 56px;
-  --wave-color: #015871;
+  --wave-color-light: #1a1a1a;
+  --wave-color-dark: #e5e5e5;
+  --wave-color: var(--wave-color-dark);
+
+  --glass-tint-light: rgba(255, 255, 255, 0.12);
+  --glass-tint-dark: rgba(0, 0, 0, 0.25);
+  --glass-tint: var(--glass-tint-dark);
 
   --space-1: 4px;
   --space-2: 8px;
@@ -114,6 +120,8 @@ body {
     --accent: var(--accent-light);
     --muted: var(--muted-light);
     --border: var(--border-light);
+    --wave-color: var(--wave-color-light);
+    --glass-tint: var(--glass-tint-light);
   }
 }
 
@@ -123,6 +131,8 @@ body {
   --accent: var(--accent-light);
   --muted: var(--muted-light);
   --border: var(--border-light);
+  --wave-color: var(--wave-color-light);
+  --glass-tint: var(--glass-tint-light);
 }
 :root[data-theme="dark"] {
   --background: var(--background-dark);
@@ -130,6 +140,8 @@ body {
   --accent: var(--accent-dark);
   --muted: var(--muted-dark);
   --border: var(--border-dark);
+  --wave-color: var(--wave-color-dark);
+  --glass-tint: var(--glass-tint-dark);
 }
 
 html[data-theme="light"] {

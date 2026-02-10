@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import type { Dispatch, SetStateAction } from "react";
 import { useCallback, useEffect } from "react";
 import { createPortal } from "react-dom";
@@ -19,6 +20,7 @@ export const Lightbox = ({
   onClose: () => void;
   title: string;
 }) => {
+  const t = useTranslations("projects_ui.lightbox");
   const total = images.length;
 
   const go = useCallback(
@@ -63,7 +65,7 @@ export const Lightbox = ({
       <button
         type="button"
         className={`${styles.lbBtn} ${styles.lbClose}`}
-        aria-label="Close"
+        aria-label={t("closeAria")}
         onClick={onClose}
         onPointerDown={stop}
       >
@@ -73,7 +75,7 @@ export const Lightbox = ({
       <button
         type="button"
         className={`${styles.lbBtn} ${styles.lbPrev}`}
-        aria-label="Previous"
+        aria-label={t("previousAria")}
         onClick={(e) => {
           e.stopPropagation();
           go(-1);
@@ -86,7 +88,7 @@ export const Lightbox = ({
       <button
         type="button"
         className={`${styles.lbBtn} ${styles.lbNext}`}
-        aria-label="Next"
+        aria-label={t("nextAria")}
         onClick={(e) => {
           e.stopPropagation();
           go(1);
@@ -101,7 +103,7 @@ export const Lightbox = ({
           <Image
             key={images[index]}
             src={images[index]}
-            alt={`${title} — image ${index + 1} of ${total}`}
+            alt={t("imageAlt", { title, current: index + 1, total })}
             fill
             sizes="100vw"
             className={styles.lbImg}
@@ -128,7 +130,7 @@ export const Lightbox = ({
           rel="noopener noreferrer"
           onClick={stop}
         >
-          Open original
+          {t("openOriginal")}
         </a>
       </div>
     </div>,

@@ -18,6 +18,7 @@ type ProjectFiltersProps = {
   onTechnologySelect: (id: string) => void;
   onSortChange: (value: SortKey) => void;
   onCommercialChange: (value: boolean) => void;
+  onClearAll: () => void;
 };
 
 export const ProjectFilters = ({
@@ -28,17 +29,9 @@ export const ProjectFilters = ({
   onTechnologySelect,
   onSortChange,
   onCommercialChange,
+  onClearAll,
 }: ProjectFiltersProps) => {
   const loading = !technologies || technologies.length === 0;
-  const handleClear = () => {
-    if (sortBy !== "newest") onSortChange("newest");
-
-    if (selectedTechnologies.length) {
-      selectedTechnologies.map((id) => onTechnologySelect(id));
-    }
-
-    if (commercialOnly) onCommercialChange(false);
-  };
 
   const isPristine =
     selectedTechnologies.length === 0 && sortBy === "newest" && !commercialOnly;
@@ -68,7 +61,7 @@ export const ProjectFilters = ({
 
       <GlassSurface className={styles.filterClearButtonWrapper}>
         <FilterClearButton
-          onClear={handleClear}
+          onClear={onClearAll}
           disabled={isPristine || loading}
         />
       </GlassSurface>

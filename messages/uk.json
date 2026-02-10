@@ -54,12 +54,26 @@
         "React & Next.js проєкти",
         "Деякі тестові завдання",
         "Сертифікації"
-      ]
+      ],
+      "stackHighlightsAria": "Основні технології"
     },
     "noLinks": "Нема посилань",
     "noImages": "Ще нема зображень",
     "commercial": "Комерційний",
-    "onlyCommercialProjects": "Тільки комерційні"
+    "onlyCommercialProjects": "Тільки комерційні",
+    "previousImageAria": "Попереднє зображення",
+    "nextImageAria": "Наступне зображення",
+    "goToImageAria": "Перейти до зображення {index}",
+    "technologyStackAria": "Стек технологій",
+    "stackHighlightsAria": "Основні технології",
+    "commercialProjectAria": "Комерційний проєкт",
+    "lightbox": {
+      "closeAria": "Закрити",
+      "previousAria": "Попереднє",
+      "nextAria": "Наступне",
+      "openOriginal": "Відкрити оригінал",
+      "imageAlt": "{title} — зображення {current} з {total}"
+    }
   },
   "cv": {
     "title": "Резюме",
@@ -69,5 +83,20 @@
   "employment": {
     "title": "Досвід роботи",
     "linkedProjects": "Пов'язані проєкти"
+  },
+  "error": {
+    "title": "Щось пішло не так",
+    "tryAgain": "Спробувати знову",
+    "backHome": "На головну"
+  },
+  "notFound": {
+    "title": "Сторінку не знайдено",
+    "backHome": "На головну"
+  },
+  "a11y": {
+    "toggleTheme": "Змінити тему оформлення",
+    "language": "Мова",
+    "openMenu": "Відкрити меню",
+    "closeMenu": "Закрити меню"
   }
 }

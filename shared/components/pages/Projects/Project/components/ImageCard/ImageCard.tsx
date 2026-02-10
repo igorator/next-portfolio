@@ -103,7 +103,7 @@ export function ImageCard({
               <button
                 type="button"
                 className={`${styles.navBtn} ${styles.navPrev}`}
-                aria-label="Previous image"
+                aria-label={t("previousImageAria")}
                 onClick={onPrev}
               >
                 <BsArrowLeft />
@@ -111,7 +111,7 @@ export function ImageCard({
               <button
                 type="button"
                 className={`${styles.navBtn} ${styles.navNext}`}
-                aria-label="Next image"
+                aria-label={t("nextImageAria")}
                 onClick={onNext}
               >
                 <BsArrowRight />
@@ -125,7 +125,7 @@ export function ImageCard({
                     className={`${styles.dot} ${
                       i === idx ? styles.dotActive : ""
                     }`}
-                    aria-label={`Go to image ${i + 1}`}
+                    aria-label={t("goToImageAria", { index: i + 1 })}
                     onClick={() => onGoTo(i)}
                   />
                 ))}

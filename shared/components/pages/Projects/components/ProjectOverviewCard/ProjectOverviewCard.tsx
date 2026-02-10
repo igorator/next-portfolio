@@ -25,7 +25,7 @@ export const ProjectOverviewCard = () => {
         })}
       </p>
 
-      <ul className={styles.metaList} aria-label="Stack highlights">
+      <ul className={styles.metaList} aria-label={t("stackHighlightsAria")}>
         {t.raw("tags").map((tag: string) => (
           <li key={tag} className={styles.metaItem}>
             {tag}

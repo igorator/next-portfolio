@@ -91,6 +91,12 @@ export const useProjectFilters = (
     [updateParams],
   );
 
+  const clearAll = useCallback(
+    () =>
+      updateParams({ tech: null, sort: null, match: null, commercial: null }),
+    [updateParams],
+  );
+
   const filteredProjects = useMemo(() => {
     const toIdArray = (p: ProjectWithTechnologies): string[] =>
       (p.technologies ?? []).map((t) => t.id).filter(Boolean);
@@ -151,5 +157,6 @@ export const useProjectFilters = (
     setSortBy,
     setMatchMode,
     setCommercialOnly,
+    clearAll,
   };
 };

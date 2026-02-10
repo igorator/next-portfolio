@@ -28,6 +28,7 @@ export const ProjectsSection = ({
     availableTechnologies,
     commercialOnly,
     setCommercialOnly,
+    clearAll,
   } = useProjectFilters(projects, technologies);
 
   return (
@@ -40,6 +41,7 @@ export const ProjectsSection = ({
         onSortChange={setSortBy}
         commercialOnly={commercialOnly}
         onCommercialChange={setCommercialOnly}
+        onClearAll={clearAll}
       />
 
       <AnimatePresence mode="popLayout">

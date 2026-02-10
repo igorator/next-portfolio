@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId } from "react";
+import { useTranslations } from "next-intl";
 import { BsX } from "react-icons/bs";
 import { AppPortal } from "@/shared/components/layout/AppPortal/AppPortal";
 import { Socials } from "../Socials/Socials";
@@ -14,6 +15,7 @@ type Props = {
 
 export const MobileHiddenMenu: React.FC<Props> = ({ open, onClose }) => {
   const titleId = useId();
+  const t = useTranslations("a11y");
 
   useEffect(() => {
     if (!open) return;
@@ -36,7 +38,7 @@ export const MobileHiddenMenu: React.FC<Props> = ({ open, onClose }) => {
       <button
         type="button"
         className={styles.layer}
-        aria-label="Close menu"
+        aria-label={t("closeMenu")}
         onClick={onClose}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") onClose();
@@ -56,7 +58,7 @@ export const MobileHiddenMenu: React.FC<Props> = ({ open, onClose }) => {
             type="button"
             className={styles.closeBtn}
             onClick={onClose}
-            aria-label="Close menu"
+            aria-label={t("closeMenu")}
           >
             <BsX className={styles.closeIcon} size={30} />
           </button>

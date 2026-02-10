@@ -1,6 +1,7 @@
 "use client";
 
 import * as Switch from "@radix-ui/react-switch";
+import { useTranslations } from "next-intl";
 import { BsMoon, BsSun } from "react-icons/bs";
 import { useTheme } from "./hooks/useTheme";
 import styles from "./ThemeSwitcher.module.css";
@@ -25,6 +26,7 @@ function setHtmlTheme(next: Theme) {
 
 export const ThemeSwitch = () => {
   const { effective } = useTheme();
+  const t = useTranslations("a11y");
 
   const handleThemeToggle = (checked: boolean) => {
     setHtmlTheme(checked ? "light" : "dark");
@@ -37,7 +39,7 @@ export const ThemeSwitch = () => {
         className={styles.switchRoot}
         checked={effective === "light"}
         onCheckedChange={handleThemeToggle}
-        aria-label="Toggle color theme"
+        aria-label={t("toggleTheme")}
       >
         <Switch.Thumb className={styles.switchThumb} />
       </Switch.Root>
