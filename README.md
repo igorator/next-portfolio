@@ -4,9 +4,9 @@
 
 ## Tech Stack
 
-- **Next.js 15** (App Router)
+- **Next.js 16** (App Router)
 - **TypeScript**
 - **CSS modules**
-- **motion/react** (Framer Motion v11 API)
+- **motion/react**
 - **next-intl**
-- **JSON-based data** (merged via server utilities)
+- **JSON-based data**
