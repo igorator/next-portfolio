@@ -222,5 +222,12 @@
     "color": "#fdd027",
     "category": "Bundlers",
     "priority": 3
+  },
+  {
+    "id": "gsap",
+    "name": "GSAP",
+    "color": "#88CE02",
+    "category": "Animation",
+    "priority": 2
   }
 ]

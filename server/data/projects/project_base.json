@@ -1,5 +1,13 @@
 [
   {
+    "slug": "perion-test",
+    "date": "2026-02",
+    "isCommercial": false,
+    "technologiesIds": ["javascript", "css", "gsap"],
+    "demoUrl": "",
+    "githubUrl": ""
+  },
+  {
     "slug": "webspark-test",
     "date": "2025-11",
     "isCommercial": false,

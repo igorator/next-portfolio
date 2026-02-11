@@ -1,4 +1,10 @@
 {
+  "perion-test": {
+    "title": "Тестове завдання Perion",
+    "description": "Лендінг для тестового завдання з розширеними анімаціями за допомогою GSAP.",
+    "type": "фронтенд",
+    "category": "тестове завдання"
+  },
   "webspark-test": {
     "title": "Тестове завдання WEBSPARK",
     "description": "Тестовий проєкт для WEBSPARK, створений на React, CSS та Vite.",

@@ -1,4 +1,10 @@
 {
+  "perion-test": {
+    "title": "Perion Test",
+    "description": "Landing page for a test task with advanced animations using GSAP.",
+    "type": "frontend",
+    "category": "test task"
+  },
   "webspark-test": {
     "title": "WEBSPARK Test",
     "description": "A test project for WEBSPARK built with React, CSS, and Vite.",
