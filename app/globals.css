@@ -15,7 +15,6 @@ html {
 }
 
 body {
-  position: relative;
   color: var(--foreground);
   font-family: var(--font-text);
   font-weight: var(--default-font-weight);
