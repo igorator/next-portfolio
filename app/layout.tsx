@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { cookies } from "next/headers";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
@@ -21,6 +21,16 @@ const fontText = Inter({
   subsets: ["latin", "cyrillic"],
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
+};
 
 export const metadata: Metadata = {
   title: siteConfig.name,
@@ -60,6 +70,12 @@ export default async function RootLayout({
           name="color-scheme"
           content={theme === "dark" ? "dark light" : "light dark"}
         />
+        {theme !== "system" && (
+          <meta
+            name="theme-color"
+            content={theme === "dark" ? "#000000" : "#ffffff"}
+          />
+        )}
       </head>
       <body className={`${fontHeading.variable} ${fontText.variable}`}>
         <Analytics />

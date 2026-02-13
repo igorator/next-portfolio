@@ -21,7 +21,6 @@
   --tl-period-fs: var(--text-sm);
   --tl-role-gap: 6px;
 
-  padding: var(--section-gap) var(--space-4);
   display: flex;
   flex-direction: column;
   align-items: center;

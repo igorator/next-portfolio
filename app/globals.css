@@ -243,6 +243,7 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: stretch;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .content {
