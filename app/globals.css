@@ -11,11 +11,11 @@ body {
 
 html {
   color-scheme: light dark;
+  overflow-x: hidden;
 }
 
 body {
   position: relative;
-  overflow-x: hidden;
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-text);
@@ -171,7 +171,6 @@ html[data-theme="dark"] {
 body {
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-thumb) transparent;
-  overflow-y: overlay;
 }
 
 h1,
