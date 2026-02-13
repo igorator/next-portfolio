@@ -69,7 +69,7 @@ export function ImageCard({
         <div className={styles.imageWrap}>
           {loading && (
             <div className={styles.spinnerOverlay}>
-              <Spinner size={28} />
+              <Spinner size={16} />
             </div>
           )}
           <motion.button

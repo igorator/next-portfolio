@@ -18,7 +18,9 @@ export function Spinner({ size = 12, className }: SpinnerProps) {
       role="status"
       aria-live="polite"
     >
-      <span className={styles.spinner} style={{ fontSize }} aria-busy="true" />
+      <span className={styles.spinner} style={{ fontSize }} aria-busy="true">
+        <span className={styles.dot} />
+      </span>
     </span>
   );
 }
