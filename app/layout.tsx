@@ -66,12 +66,6 @@ export default async function RootLayout({
           name="color-scheme"
           content={theme === "dark" ? "dark light" : "light dark"}
         />
-        {theme !== "system" && (
-          <meta
-            name="theme-color"
-            content={theme === "dark" ? "#000000" : "#ffffff"}
-          />
-        )}
       </head>
       <body className={`${fontHeading.variable} ${fontText.variable}`}>
         <Analytics />
