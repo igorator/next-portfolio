@@ -46,6 +46,7 @@ body {
   --default-font-weight: 400;
   --default-max-width: 1440px;
   --navbar-height: 56px;
+  --full-height: 100vh;
   --wave-color-light: #1a1a1a;
   --wave-color-dark: #e5e5e5;
   --wave-color: var(--wave-color-dark);
@@ -238,7 +239,7 @@ a:hover {
 
 .page-wrapper {
   position: relative;
-  min-height: 100dvh;
+  min-height: var(--full-height);
   display: flex;
   justify-content: center;
   align-items: stretch;
