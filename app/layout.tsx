@@ -61,12 +61,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} {...htmlAttrs} suppressHydrationWarning>
-      <head>
-        <meta
-          name="color-scheme"
-          content={theme === "dark" ? "dark light" : "light dark"}
-        />
-      </head>
+      <head />
       <body className={`${fontHeading.variable} ${fontText.variable}`}>
         <Analytics />
         <SpeedInsights />
