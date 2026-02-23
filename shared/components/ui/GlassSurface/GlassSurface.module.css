@@ -12,7 +12,7 @@
   padding: var(--gs-padding);
   border-radius: var(--gs-radius);
   box-shadow: var(--gs-shadow);
-  width: fit-content;
+  width: var(--gs-width, fit-content);
 
   transition:
     box-shadow var(--transition-slow),

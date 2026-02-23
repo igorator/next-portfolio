@@ -10,19 +10,31 @@ export type SortKey = "newest" | "oldest" | "az" | "za";
 
 const makeSortOptions = (t: ReturnType<typeof useTranslations>) =>
   [
-    { id: "newest", name: t("projects.filters.options.newest") },
-    { id: "oldest", name: t("projects.filters.options.oldest") },
-    { id: "az", name: t("projects.filters.options.az") },
-    { id: "za", name: t("projects.filters.options.za") },
+    {
+      id: "newest",
+      name: t("projects.filters.options.newest", { default: "Newest First" }),
+    },
+    {
+      id: "oldest",
+      name: t("projects.filters.options.oldest", { default: "Oldest First" }),
+    },
+    { id: "az", name: t("projects.filters.options.az", { default: "A-Z" }) },
+    { id: "za", name: t("projects.filters.options.za", { default: "Z-A" }) },
   ] as const satisfies ReadonlyArray<{ id: SortKey; name: string }>;
 
 type Props = {
   value: SortKey;
   onChange: (val: SortKey) => void;
   disabled?: boolean;
+  loading?: boolean;
 };
 
-export const SortSelect = ({ value, onChange, disabled = false }: Props) => {
+export const SortSelect = ({
+  value,
+  onChange,
+  disabled = false,
+  loading = false,
+}: Props) => {
   const t = useTranslations();
   const options = makeSortOptions(t);
 
@@ -30,14 +42,22 @@ export const SortSelect = ({ value, onChange, disabled = false }: Props) => {
     <Select.Root
       value={value}
       onValueChange={(v) => onChange(v as SortKey)}
-      disabled={disabled}
+      disabled={disabled || loading}
     >
       <Select.Trigger
-        className={`${styles.selectTrigger} ${disabled ? styles.disabled : ""}`}
-        disabled={disabled}
-        aria-label={t("projects.filters.sort")}
+        className={`${styles.selectTrigger} ${loading ? styles.loading : disabled ? styles.disabled : ""}`}
+        disabled={disabled || loading}
+        aria-label={t("projects.filters.sort", { default: "Sort by" })}
       >
-        <Select.Value placeholder={t("projects.filters.sort")} />
+        {loading ? (
+          <span className={styles.skeletonText} aria-hidden />
+        ) : (
+          <Select.Value
+            placeholder={t("projects.filters.sort", { default: "Sort by" })}
+          >
+            {options.find((o) => o.id === value)?.name}
+          </Select.Value>
+        )}
         <Select.Icon className={styles.selectIcon}>
           <BsChevronDown className={styles.chevronIcon} aria-hidden="true" />
         </Select.Icon>

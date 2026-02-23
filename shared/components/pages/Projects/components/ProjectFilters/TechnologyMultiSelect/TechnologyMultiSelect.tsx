@@ -21,25 +21,33 @@ export const TechnologyMultiSelect = ({
   const { useTranslations } = require("next-intl");
   const t = useTranslations();
 
-  const triggerLabel = loading
-    ? t("loading.loading", { default: "Loading..." })
-    : selectedTechnologies.length === 0
-      ? t("projects.filters.selected", { count: 0 })
+  const triggerLabel =
+    selectedTechnologies.length === 0
+      ? t("projects.filters.selected", {
+          count: 0,
+          default: "Select Technologies",
+        })
       : selectedTechnologies.length === 1
         ? (technologies.find((tec) => tec.id === selectedTechnologies[0])
-            ?.name ?? t("projects.filters.selected", { count: 1 }))
+            ?.name ??
+          t("projects.filters.selected", { count: 1, default: "1 selected" }))
         : t("projects.filters.selected", {
             count: selectedTechnologies.length,
+            default: `${selectedTechnologies.length} selected`,
           });
 
   return (
     <DropdownMenu.Root open={loading ? false : undefined}>
       <DropdownMenu.Trigger
-        className={`${styles.triggerButton} ${loading ? styles.disabled : ""}`}
+        className={`${styles.triggerButton} ${loading ? styles.loading : ""}`}
         disabled={loading}
         aria-disabled={loading}
       >
-        <span className={styles.triggerLabel}>{triggerLabel}</span>
+        {loading ? (
+          <span className={styles.skeletonText} aria-hidden />
+        ) : (
+          <span className={styles.triggerLabel}>{triggerLabel}</span>
+        )}
         <BsChevronDown className={styles.chevronIcon} aria-hidden />
       </DropdownMenu.Trigger>
 

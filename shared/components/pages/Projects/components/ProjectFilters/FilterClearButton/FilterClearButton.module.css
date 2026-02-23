@@ -1,13 +1,14 @@
 .clearButtonWrapper {
   align-self: center;
+  aspect-ratio: 1/1;
+  padding: 0;
 }
 
 .clearButton {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-3);
+  padding: var(--space-3) var(--space-4);
   border-radius: var(--full-radius);
   color: var(--text-color);
   font-size: var(--text-sm);
@@ -22,6 +23,7 @@
   width: var(--space-4);
   height: var(--space-4);
   transition: transform var(--transition-fast);
+  aspect-ratio: 1 / 1;
 }
 
 .clearButton:hover:not(:disabled) .clearIcon {
@@ -32,4 +34,20 @@
 .clearButton:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.loading {
+  pointer-events: none;
+  cursor: default;
+  animation: pulse 1.5s ease-in-out infinite;
 }

@@ -36,7 +36,7 @@ export const useProjectFilters = (
 
   const sortBy = parseSortKey(searchParams.get("sort"));
   const matchMode = parseMatchMode(searchParams.get("match"));
-  const commercialOnly = searchParams.get("commercial") === "true";
+  const commercialOnly = searchParams.get("commercial") !== "false";
 
   const updateParams = useCallback(
     (updates: Record<string, string | null>) => {
@@ -87,7 +87,7 @@ export const useProjectFilters = (
   );
 
   const setCommercialOnly = useCallback(
-    (value: boolean) => updateParams({ commercial: value ? "true" : null }),
+    (value: boolean) => updateParams({ commercial: value ? null : "false" }),
     [updateParams],
   );
 

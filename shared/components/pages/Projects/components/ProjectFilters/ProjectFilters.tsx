@@ -34,7 +34,7 @@ export const ProjectFilters = ({
   const loading = !technologies || technologies.length === 0;
 
   const isPristine =
-    selectedTechnologies.length === 0 && sortBy === "newest" && !commercialOnly;
+    selectedTechnologies.length === 0 && sortBy === "newest" && commercialOnly;
 
   return (
     <div className={styles.filtersBar} aria-busy={loading}>
@@ -48,21 +48,25 @@ export const ProjectFilters = ({
       </GlassSurface>
 
       <GlassSurface className={styles.sortSelectWrapper}>
-        <SortSelect value={sortBy} onChange={onSortChange} disabled={loading} />
+        <SortSelect value={sortBy} onChange={onSortChange} loading={loading} />
       </GlassSurface>
 
       <GlassSurface className={styles.commercialSwitchWrapper}>
         <CommercialSwitch
           value={commercialOnly}
           onChange={onCommercialChange}
-          disabled={loading}
+          loading={loading}
         />
       </GlassSurface>
 
-      <GlassSurface className={styles.filterClearButtonWrapper}>
+      <GlassSurface
+        className={styles.filterClearButtonWrapper}
+        style={{ "--gs-width": "auto" }}
+      >
         <FilterClearButton
           onClear={onClearAll}
-          disabled={isPristine || loading}
+          disabled={isPristine}
+          loading={loading}
         />
       </GlassSurface>
     </div>

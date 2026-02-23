@@ -12,6 +12,7 @@ type GlassSurfaceProps = {
     ["--gs-tint"]?: string;
     ["--gs-shadow"]?: string;
     ["--gs-shine"]?: "0" | "1";
+    ["--gs-width"]?: string;
   };
 };
 

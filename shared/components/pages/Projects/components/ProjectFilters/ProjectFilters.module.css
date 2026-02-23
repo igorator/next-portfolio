@@ -13,7 +13,6 @@
 
 .filterClearButtonWrapper {
   min-width: unset;
-  width: fit-content;
   flex: 0 0 auto;
   aspect-ratio: 1 / 1;
 }
