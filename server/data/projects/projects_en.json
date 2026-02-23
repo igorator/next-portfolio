@@ -5,6 +5,12 @@
     "type": "frontend",
     "category": "test task"
   },
+  "atmosphere-school-test": {
+    "title": "Atmosphere School Test",
+    "description": "Frontend test task: interactive map-based application built with React, TypeScript, and Vite, featuring Leaflet for map rendering.",
+    "type": "test task",
+    "category": "frontend"
+  },
   "webspark-test": {
     "title": "WEBSPARK Test",
     "description": "A test project for WEBSPARK built with React, CSS, and Vite.",

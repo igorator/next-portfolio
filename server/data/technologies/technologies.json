@@ -229,5 +229,12 @@
     "color": "#88CE02",
     "category": "Animation",
     "priority": 2
+  },
+  {
+    "id": "leaflet",
+    "name": "Leaflet",
+    "color": "#199900",
+    "category": "Libraries",
+    "priority": 3
   }
 ]

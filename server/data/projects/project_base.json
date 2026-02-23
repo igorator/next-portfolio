@@ -8,6 +8,14 @@
     "githubUrl": ""
   },
   {
+    "slug": "atmosphere-school-test",
+    "date": "2025-12",
+    "isCommercial": false,
+    "technologiesIds": ["react", "typescript", "vite", "css", "leaflet"],
+    "demoUrl": "https://atmosphere-school-test.vercel.app",
+    "githubUrl": "https://github.com/igorator/Atmosphere-school-test"
+  },
+  {
     "slug": "webspark-test",
     "date": "2025-11",
     "isCommercial": false,

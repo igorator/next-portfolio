@@ -5,6 +5,12 @@
     "type": "фронтенд",
     "category": "тестове завдання"
   },
+  "atmosphere-school-test": {
+    "title": "Тестове завдання Atmosphere School",
+    "description": "Фронтенд тестове завдання: інтерактивний картографічний застосунок на React, TypeScript і Vite з відображенням карти через Leaflet.",
+    "type": "тестове завдання",
+    "category": "фронтенд"
+  },
   "webspark-test": {
     "title": "Тестове завдання WEBSPARK",
     "description": "Тестовий проєкт для WEBSPARK, створений на React, CSS та Vite.",
