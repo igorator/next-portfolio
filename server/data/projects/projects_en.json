@@ -5,6 +5,12 @@
     "type": "frontend",
     "category": "test task"
   },
+  "abp-test": {
+    "title": "ABP Test",
+    "description": "Frontend test task: VIN decoder web app built with React, TypeScript, Vite, and React Router v7; uses React Hook Form and the NHTSA API to decode vehicle identification numbers with request history.",
+    "type": "test task",
+    "category": "frontend"
+  },
   "atmosphere-school-test": {
     "title": "Atmosphere School Test",
     "description": "Frontend test task: interactive map-based application built with React, TypeScript, and Vite, featuring Leaflet for map rendering.",
