@@ -8,21 +8,6 @@
     "githubUrl": ""
   },
   {
-    "slug": "abp-test",
-    "date": "2026-02",
-    "isCommercial": false,
-    "technologiesIds": [
-      "react",
-      "typescript",
-      "react-router-v7",
-      "react-hook-form",
-      "vite",
-      "css"
-    ],
-    "demoUrl": "https://abp-test.vercel.app",
-    "githubUrl": "https://github.com/igorator/ABP-test"
-  },
-  {
     "slug": "atmosphere-school-test",
     "date": "2025-12",
     "isCommercial": false,
