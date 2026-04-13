@@ -2,32 +2,31 @@ export const siteConfig = {
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
     "https://igorator.site",
-  name: "Ihor's Portfolio",
+  name: "Ihor Kliushnyk",
   author: "Ihor Kliushnyk",
-  description:
-    "Portfolio by Ihor Kliushnyk - design-driven, fast, and functional.",
+  description: "Frontend Developer portfolio",
   pages: {
     home: {
-      title: "Ihor Kliushnyk - Developer",
+      title: "Home",
       description:
-        "Design-driven, fast, and functional web experiences portfolio.",
+        "Frontend Developer specializing in React, Next.js, and TypeScript.",
     },
     projects: {
-      description: "Selected projects and case studies by Ihor Kliushnyk.",
+      title: "Projects",
+      description: "Selected projects and case studies.",
     },
     project: {
-      fallbackDescription:
-        "Project details from Ihor Kliushnyk's portfolio.",
+      fallbackDescription: "Project details.",
     },
     employment: {
-      description: "Employment history and linked projects.",
+      description: "Employment history and work experience.",
     },
     cv: {
-      description: "Download or view the CV of Ihor Kliushnyk.",
+      description: "CV view or download.",
     },
   },
   og: {
     brand: "Ihor Kliushnyk",
-    subtitle: "Design-driven, fast, functional.",
+    subtitle: "Frontend Developer",
   },
 } as const;

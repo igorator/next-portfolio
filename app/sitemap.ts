@@ -38,7 +38,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         localePath(routing.defaultLocale, path),
         siteConfig.url,
       ).toString(),
-      lastModified: new Date(),
       alternates: alternatesForPath(path),
     });
   }

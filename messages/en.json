@@ -4,6 +4,7 @@
   },
 
   "home": {
+    "title": "Portfolio",
     "greeting": "Hello",
     "introduction": "I'm Ihor",
     "role": "Web Developer"

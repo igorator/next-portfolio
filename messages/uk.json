@@ -4,6 +4,7 @@
   },
 
   "home": {
+    "title": "Портфоліо",
     "greeting": "Вітаю",
     "introduction": "Я Ігор",
     "role": "Веб-розробник"

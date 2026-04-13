@@ -57,7 +57,11 @@ export const NavbarLinks = () => {
             aria-current={active ? "page" : undefined}
             prefetch
           >
-            <Icon className={styles.icon} aria-hidden="true" />
+            <Icon
+              strokeWidth={0.5}
+              className={styles.icon}
+              aria-hidden="true"
+            />
             <span className={styles.label}>{label}</span>
           </Link>
         );

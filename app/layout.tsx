@@ -1,7 +1,7 @@
+import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { cookies } from "next/headers";
 import { Inter, Manrope } from "next/font/google";
-import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { routing } from "@/i18n/routing";
@@ -29,19 +29,14 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: siteConfig.name,
+  title: {
+    default: siteConfig.name,
+    template: "%s",
+  },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
-  alternates: {
-    canonical: "/",
-    languages: {
-      en: "/",
-      uk: "/uk",
-    },
-  },
   openGraph: {
     siteName: siteConfig.name,
-    locale: "en_US",
     type: "website",
   },
 };
@@ -61,7 +56,6 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} {...htmlAttrs} suppressHydrationWarning>
-      <head />
       <body className={`${fontHeading.variable} ${fontText.variable}`}>
         <Analytics />
         <SpeedInsights />

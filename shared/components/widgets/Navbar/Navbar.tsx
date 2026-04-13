@@ -12,7 +12,9 @@ export const Navbar = () => {
         <Socials />
       </GlassSurface>
 
-      <GlassSurface className={styles.navbarLinksWrapper}>
+      <GlassSurface
+        className={`${styles.navbarLinksWrapper} ${styles.navbarLinksGlass}`}
+      >
         <NavbarLinks />
       </GlassSurface>
 
