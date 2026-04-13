@@ -48,7 +48,7 @@ body {
   --wave-color-dark: #e5e5e5;
   --wave-color: var(--wave-color-dark);
 
-  --glass-tint-light: rgba(255, 255, 255, 0.12);
+  --glass-tint-light: rgba(0, 0, 0, 0.1);
   --glass-tint-dark: rgba(0, 0, 0, 0.25);
   --glass-tint: var(--glass-tint-dark);
 
