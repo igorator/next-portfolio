@@ -38,14 +38,17 @@ export function StackCard({ technologies }: Props) {
     >
       <h2 className={layout.cardTitle}>{t("technologiesTitle")}</h2>
       {technologies?.length ? (
-        <ul className={styles.techList} aria-label={t("technologyStackAria")}>
+        <ul
+          className={styles.technologyList}
+          aria-label={t("technologyStackAria")}
+        >
           {technologies.map((t) => {
             const tw = t as TechWithColor;
             const c = tw.color ?? colorFromString(t.name);
             return (
               <li
                 key={t.id}
-                className={styles.techChip}
+                className={styles.technologyChip}
                 style={
                   {
                     "--chip-fg": c,
@@ -55,13 +58,13 @@ export function StackCard({ technologies }: Props) {
                 }
                 title={t.name}
               >
-                <span className={styles.techName}>{t.name}</span>
+                <span>{t.name}</span>
               </li>
             );
           })}
         </ul>
       ) : (
-        <span className={styles.noTechnologies}>{t("noTechnologies")}</span>
+        <span className={styles.emptyState}>{t("noTechnologies")}</span>
       )}
     </motion.article>
   );

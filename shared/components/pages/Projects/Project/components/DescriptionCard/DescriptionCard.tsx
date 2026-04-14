@@ -21,7 +21,7 @@ export function DescriptionCard({ description }: Props) {
   const t = useTranslations("projects_ui");
   return (
     <motion.article
-      className={`${layout.card} ${layout.descFull}`}
+      className={`${layout.card} ${layout.descriptionCard}`}
       variants={cardItem}
     >
       <h2 className={layout.cardTitle}>{t("descriptionTitle")}</h2>

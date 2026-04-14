@@ -8,7 +8,12 @@ import styles from "./LanguageSelect.module.css";
 
 const localeLabels = { en: "English", uk: "Українська" } as const;
 
-export function LanguageSelect() {
+type Props = {
+  side?: "top" | "bottom" | "left" | "right";
+  align?: "start" | "center" | "end";
+};
+
+export function LanguageSelect({ side = "top", align = "end" }: Props) {
   const locale = useLocale();
   const t = useTranslations("a11y");
   const router = useRouter();
@@ -30,8 +35,8 @@ export function LanguageSelect() {
       <DropdownMenu.Portal>
         <DropdownMenu.Content
           className={styles.selectContent}
-          side="top"
-          align="end"
+          side={side}
+          align={align}
           sideOffset={12}
         >
           {routing.locales.map((loc) => (

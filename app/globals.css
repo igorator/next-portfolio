@@ -250,3 +250,12 @@ a:hover {
   width: 100%;
   max-width: var(--default-max-width);
 }
+
+.proxy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}

@@ -3,7 +3,7 @@
   overflow: clip;
 }
 
-.imageWrap {
+.imageWrapper {
   position: relative;
   width: 100%;
   height: 100%;
@@ -13,7 +13,7 @@
 }
 
 @media (max-width: 979px) {
-  .imageWrap {
+  .imageWrapper {
     height: auto;
     aspect-ratio: 20 / 11;
   }
@@ -26,7 +26,7 @@
   display: block;
 }
 
-.imageShade {
+.imageGradient {
   color: var(--foreground);
   position: absolute;
   inset: 0;
@@ -39,14 +39,14 @@
   );
 }
 
-.imageAnimLayer {
+.imageButton {
   position: relative;
   width: 100%;
   height: 100%;
   cursor: zoom-in;
 }
 
-.navBtn {
+.navigationButton {
   position: absolute;
   top: 50%;
   translate: 0 -50%;
@@ -59,7 +59,7 @@
   color: var(--foreground);
   display: grid;
   place-items: center;
-  backdrop-filter: var(--backdrop-blur) saturate(140%);
+  backdrop-filter: blur(var(--backdrop-blur)) saturate(140%);
   box-shadow: 0 4px 16px color-mix(in srgb, var(--foreground) 10%, transparent);
   transition:
     transform var(--transition-fast),
@@ -67,17 +67,19 @@
     border-color var(--transition-normal);
 }
 
-.navBtn:hover {
+.navigationButton:hover {
   transform: translateY(-1px);
 }
-.navPrev {
+
+.previousButton {
   left: 10px;
 }
-.navNext {
+
+.nextButton {
   right: 10px;
 }
 
-.dots {
+.indicators {
   position: absolute;
   left: 50%;
   bottom: 10px;
@@ -89,10 +91,10 @@
   border-radius: 999px;
   background: color-mix(in srgb, var(--background) 70%, transparent);
   border: 1px solid color-mix(in srgb, var(--foreground) 14%, transparent);
-  backdrop-filter: var(--backdrop-blur) saturate(140%);
+  backdrop-filter: blur(var(--backdrop-blur)) saturate(140%);
 }
 
-.dot {
+.indicator {
   width: 8px;
   height: 8px;
   border-radius: 999px;
@@ -102,13 +104,14 @@
     transform var(--transition-fast),
     background var(--transition-normal);
 }
-.dotActive {
+
+.indicatorActive {
   transform: scale(1.2);
   background: var(--accent);
   border-color: color-mix(in srgb, var(--accent) 60%, transparent);
 }
 
-.spinnerOverlay {
+.loadingOverlay {
   position: absolute;
   inset: 0;
   z-index: 3;
@@ -118,7 +121,7 @@
   background: color-mix(in srgb, var(--background) 50%, transparent);
 }
 
-.noImages {
+.emptyState {
   width: 100%;
   height: 100%;
   display: flex;
@@ -127,23 +130,23 @@
 }
 
 @media (max-width: 720px) {
-  .navBtn {
+  .navigationButton {
     width: 40px;
     height: 40px;
   }
-  .dots {
+  .indicators {
     padding: 4px 6px;
     gap: 5px;
     bottom: 8px;
   }
-  .dot {
+  .indicator {
     width: 7px;
     height: 7px;
   }
 }
 
 @media (max-width: 420px) {
-  .imageWrap {
+  .imageWrapper {
     aspect-ratio: 16 / 10;
     min-height: 200px;
   }

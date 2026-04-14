@@ -62,13 +62,17 @@ export function ImageCard({
   return (
     <motion.article className={`${layout.card} ${layout.imageCard}`}>
       {images.length === 0 ? (
-        <div className={styles.noImages} role="img" aria-label={t("noImages")}>
+        <div
+          className={styles.emptyState}
+          role="img"
+          aria-label={t("noImages")}
+        >
           <span>{t("noImages")}</span>
         </div>
       ) : (
-        <div className={styles.imageWrap}>
+        <div className={styles.imageWrapper}>
           {loading && (
-            <div className={styles.spinnerOverlay}>
+            <div className={styles.loadingOverlay}>
               <Spinner size={16} />
             </div>
           )}
@@ -80,7 +84,7 @@ export function ImageCard({
             initial="enter"
             animate="center"
             exit="exit"
-            className={styles.imageAnimLayer}
+            className={styles.imageButton}
             onClick={() => onOpenLightbox(idx)}
             aria-label={t("openImageAria")}
           >
@@ -95,14 +99,14 @@ export function ImageCard({
               blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNSIgZmlsbD0iI2NjYyIgLz4="
               onLoad={() => setLoading(false)}
             />
-            <div className={styles.imageShade} aria-hidden />
+            <div className={styles.imageGradient} aria-hidden />
           </motion.button>
 
           {hasMany && (
             <>
               <button
                 type="button"
-                className={`${styles.navBtn} ${styles.navPrev}`}
+                className={`${styles.navigationButton} ${styles.previousButton}`}
                 aria-label={t("previousImageAria")}
                 onClick={onPrev}
               >
@@ -110,20 +114,20 @@ export function ImageCard({
               </button>
               <button
                 type="button"
-                className={`${styles.navBtn} ${styles.navNext}`}
+                className={`${styles.navigationButton} ${styles.nextButton}`}
                 aria-label={t("nextImageAria")}
                 onClick={onNext}
               >
                 <BsArrowRight />
               </button>
 
-              <div className={styles.dots}>
+              <div className={styles.indicators}>
                 {images.map((src, i) => (
                   <button
                     key={`${src}-dot`}
                     type="button"
-                    className={`${styles.dot} ${
-                      i === idx ? styles.dotActive : ""
+                    className={`${styles.indicator} ${
+                      i === idx ? styles.indicatorActive : ""
                     }`}
                     aria-label={t("goToImageAria", { index: i + 1 })}
                     onClick={() => onGoTo(i)}

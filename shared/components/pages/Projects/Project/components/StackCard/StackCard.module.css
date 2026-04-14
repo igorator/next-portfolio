@@ -1,18 +1,18 @@
-.techList {
+.technologyList {
   display: flex;
   flex-wrap: wrap;
   gap: var(--element-gap);
 }
 
-.techChip {
+.technologyChip {
   --chip-fg: var(--accent);
   --chip-bg: color-mix(in srgb, var(--chip-fg) 12%, transparent);
-  --chip-brd: color-mix(in srgb, var(--chip-fg) 42%, transparent);
+  --chip-border: color-mix(in srgb, var(--chip-fg) 42%, transparent);
   display: inline-flex;
   align-items: center;
   padding: var(--space-1) var(--space-2);
   border-radius: var(--radius-full);
-  border: 1px solid var(--chip-brd);
+  border: 1px solid var(--chip-border);
   background: var(--chip-bg);
   color: var(--chip-fg);
   font-weight: 600;
@@ -24,16 +24,16 @@
     border-color var(--transition-normal);
 }
 
-.techChip:hover {
+.technologyChip:hover {
   transform: translateY(-1px);
 }
 
-.techDot {
+.technologyDot {
   width: 8px;
   height: 8px;
   border-radius: var(--radius-full);
 }
 
-.noTechnologies {
+.emptyState {
   color: color-mix(in srgb, var(--foreground) 60%, transparent);
 }

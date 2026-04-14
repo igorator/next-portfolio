@@ -5,9 +5,13 @@
   margin-top: var(--space-3);
 }
 
-.btn {
-  --btn-brd: color-mix(in srgb, var(--foreground) 16%, transparent);
-  --btn-hover: color-mix(in srgb, var(--foreground) 6%, transparent);
+.link {
+  --link-border: color-mix(in srgb, var(--foreground) 16%, transparent);
+  --link-hover-background: color-mix(
+    in srgb,
+    var(--foreground) 6%,
+    transparent
+  );
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +20,7 @@
   padding: 0 var(--space-3);
   border-radius: var(--radius-sm);
   font-weight: 600;
-  border: 1px solid var(--btn-brd);
+  border: 1px solid var(--link-border);
   color: var(--foreground);
   background: transparent;
   text-decoration: none;
@@ -26,19 +30,19 @@
     border-color var(--transition-normal);
 }
 
-.btn:active {
+.link:active {
   transform: translateY(1px);
 }
 
-.btnGhost {
+.linkGhost {
   background: transparent;
 }
 
-.btnGhost:hover {
-  background: var(--btn-hover);
+.linkGhost:hover {
+  background: var(--link-hover-background);
 }
 
-.noLinks {
+.emptyState {
   color: color-mix(in srgb, var(--foreground) 60%, transparent);
 }
 
@@ -49,7 +53,7 @@
     gap: var(--element-gap);
     margin-top: var(--space-2);
   }
-  .btn {
+  .link {
     height: 44px;
     font-size: var(--text-sm);
     width: 100%;
