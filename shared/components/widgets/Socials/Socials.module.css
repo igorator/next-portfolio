@@ -14,7 +14,6 @@
   transition:
     transform var(--transition-slow),
     opacity var(--transition-slow);
-  color: white;
 }
 
 .iconLink:hover {

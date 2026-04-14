@@ -31,18 +31,18 @@ export function OverviewCard({ title, type, category, date }: Props) {
       variants={cardItem}
     >
       <h1 className={styles.projectTitle}>{title}</h1>
-      <ul className={styles.kvList}>
-        <li className={styles.kv}>
-          <span className={styles.kvKey}>{t("type")}</span>
-          <span className={styles.kvVal}>{type}</span>
+      <ul className={styles.metaList}>
+        <li className={styles.metaItem}>
+          <span className={styles.metaLabel}>{t("type")}</span>
+          <span className={styles.metaValue}>{type}</span>
         </li>
-        <li className={styles.kv}>
-          <span className={styles.kvKey}>{t("category")}</span>
-          <span className={styles.kvVal}>{category}</span>
+        <li className={styles.metaItem}>
+          <span className={styles.metaLabel}>{t("category")}</span>
+          <span className={styles.metaValue}>{category}</span>
         </li>
-        <li className={styles.kv}>
-          <span className={styles.kvKey}>{t("date")}</span>
-          <time className={styles.kvVal} dateTime={date}>
+        <li className={styles.metaItem}>
+          <span className={styles.metaLabel}>{t("date")}</span>
+          <time className={styles.metaValue} dateTime={date}>
             {date}
           </time>
         </li>

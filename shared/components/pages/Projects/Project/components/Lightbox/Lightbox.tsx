@@ -3,9 +3,17 @@ import { useTranslations } from "next-intl";
 import type { Dispatch, SetStateAction } from "react";
 import { useCallback, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
-import { MdClose } from "react-icons/md";
+import { LightboxButton } from "./LightboxButton";
+import { LightboxToolbar } from "./LightboxToolbar";
 import styles from "./Lightbox.module.css";
+
+type LightboxProps = {
+  images: string[];
+  index: number;
+  setIndex: Dispatch<SetStateAction<number>>;
+  onClose: () => void;
+  title: string;
+};
 
 export const Lightbox = ({
   images,
@@ -13,17 +21,11 @@ export const Lightbox = ({
   setIndex,
   onClose,
   title,
-}: {
-  images: string[];
-  index: number;
-  setIndex: Dispatch<SetStateAction<number>>;
-  onClose: () => void;
-  title: string;
-}) => {
+}: LightboxProps) => {
   const t = useTranslations("projects_ui.lightbox");
   const total = images.length;
 
-  const go = useCallback(
+  const navigate = useCallback(
     (delta: number) => {
       setIndex((i) => {
         const next = (i + delta) % total;
@@ -36,8 +38,8 @@ export const Lightbox = ({
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
-      if (e.key === "ArrowRight") go(1);
-      if (e.key === "ArrowLeft") go(-1);
+      if (e.key === "ArrowRight") navigate(1);
+      if (e.key === "ArrowLeft") navigate(-1);
     };
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -46,14 +48,14 @@ export const Lightbox = ({
       document.body.style.overflow = prevOverflow;
       window.removeEventListener("keydown", onKey);
     };
-  }, [go, onClose]);
+  }, [navigate, onClose]);
 
-  const stop = (e: React.PointerEvent | React.MouseEvent) =>
+  const stopPropagation = (e: React.PointerEvent | React.MouseEvent) =>
     e.stopPropagation();
 
   return createPortal(
     <div
-      className={styles.lbRoot}
+      className={styles.overlay}
       role="dialog"
       aria-modal="true"
       aria-label={title}
@@ -62,77 +64,55 @@ export const Lightbox = ({
         if (e.key === "Escape") onClose();
       }}
     >
-      <button
-        type="button"
-        className={`${styles.lbBtn} ${styles.lbClose}`}
-        aria-label={t("closeAria")}
+      <LightboxButton
+        variant="close"
+        ariaLabel={t("closeAria")}
         onClick={onClose}
-        onPointerDown={stop}
-      >
-        <MdClose />
-      </button>
+        onPointerDown={stopPropagation}
+      />
 
-      <button
-        type="button"
-        className={`${styles.lbBtn} ${styles.lbPrev}`}
-        aria-label={t("previousAria")}
+      <LightboxButton
+        variant="previous"
+        ariaLabel={t("previousAria")}
         onClick={(e) => {
           e.stopPropagation();
-          go(-1);
+          navigate(-1);
         }}
-        onPointerDown={stop}
-      >
-        <BsArrowLeft />
-      </button>
+        onPointerDown={stopPropagation}
+      />
 
-      <button
-        type="button"
-        className={`${styles.lbBtn} ${styles.lbNext}`}
-        aria-label={t("nextAria")}
+      <LightboxButton
+        variant="next"
+        ariaLabel={t("nextAria")}
         onClick={(e) => {
           e.stopPropagation();
-          go(1);
+          navigate(1);
         }}
-        onPointerDown={stop}
-      >
-        <BsArrowRight />
-      </button>
+        onPointerDown={stopPropagation}
+      />
 
-      <div className={styles.lbStage} aria-live="polite">
-        <div className={styles.lbFigure}>
+      <div className={styles.stage} aria-live="polite">
+        <div className={styles.figure}>
           <Image
             key={images[index]}
             src={images[index]}
             alt={t("imageAlt", { title, current: index + 1, total })}
             fill
             sizes="100vw"
-            className={styles.lbImg}
+            className={styles.image}
             priority
             onClick={onClose}
           />
         </div>
       </div>
 
-      <div
-        className={styles.lbMeta}
-        role="toolbar"
-        onClick={stop}
-        onKeyDown={(e) => e.stopPropagation()}
-      >
-        <span className={styles.lbCaption}>{title}</span>
-        <span className={styles.lbCount}>
-          {index + 1} / {total}
-        </span>
-        <a
-          className={styles.lbOpen}
-          href={images[index]}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={stop}
-        >
-          {t("openOriginal")}
-        </a>
-      </div>
+      <LightboxToolbar
+        title={title}
+        index={index}
+        total={total}
+        imageUrl={images[index]}
+        onInteraction={stopPropagation}
+      />
     </div>,
     document.body,
   );

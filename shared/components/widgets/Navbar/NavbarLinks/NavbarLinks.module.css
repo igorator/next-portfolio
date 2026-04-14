@@ -17,7 +17,6 @@
   align-items: center;
   flex-direction: column;
   gap: 0;
-  color: white;
   font-weight: 500;
   font-size: var(--text-sm);
   line-height: 1;
@@ -47,10 +46,10 @@
   bottom: calc(100% + 4px);
   left: 50%;
   transform: translateX(-50%) translateY(4px);
-  background: var(--background);
+  background: var(--foreground);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  color: var(--foreground);
+  color: var(--background);
   font-size: var(--text-xs);
   white-space: nowrap;
   padding: 4px 8px;
@@ -70,7 +69,7 @@
   left: 50%;
   transform: translateX(-50%);
   border: 5px solid transparent;
-  border-top-color: var(--background);
+  border-top-color: var(--foreground);
 }
 
 .navItem:hover .label {

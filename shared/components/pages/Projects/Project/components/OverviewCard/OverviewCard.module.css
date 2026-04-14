@@ -6,24 +6,24 @@
   margin: 2px 0 var(--space-3);
 }
 
-.kvList {
+.metaList {
   display: grid;
   gap: var(--element-gap);
 }
 
-.kv {
+.metaItem {
   display: grid;
   grid-template-columns: 110px 1fr;
   gap: var(--element-gap);
   align-items: baseline;
 }
 
-.kvKey {
+.metaLabel {
   color: color-mix(in srgb, var(--foreground) 60%, transparent);
   font-size: var(--text-xs);
 }
 
-.kvVal {
+.metaValue {
   color: var(--foreground);
   font-weight: 500;
 }

@@ -13,7 +13,7 @@
     color-mix(in srgb, var(--glass-bg, rgba(10, 12, 16, 0.6)) 40%, transparent)
       100%
   );
-  backdrop-filter: var(--backdrop-blur, blur(10px)) saturate(140%);
+  backdrop-filter: blur(var(--backdrop-blur)) saturate(140%);
   height: 100%;
   text-align: left;
   min-height: 40vh;

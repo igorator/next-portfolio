@@ -5,17 +5,14 @@
   gap: var(--space-1);
   padding: var(--space-3);
   border-radius: var(--full-radius);
-  color: white;
 }
 
 .themeIcon {
   width: 1rem;
   height: 1rem;
-  color: white;
 }
 
 .switchRoot {
-  color: white;
   all: unset;
   width: 42px;
   height: 25px;

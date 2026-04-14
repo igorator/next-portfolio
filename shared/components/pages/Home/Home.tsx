@@ -65,7 +65,7 @@ export const HomeSection = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.6 }}
         >
-          <motion.span className={styles.fade} variants={titleLine}>
+          <motion.span className={styles.greeting} variants={titleLine}>
             {t("home.greeting")}
           </motion.span>
           <motion.span className={styles.name} variants={titleLine}>
@@ -81,17 +81,17 @@ export const HomeSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.6 }}
-          className={styles.homeLinksWrapper}
+          className={styles.navigationWrapper}
         >
-          <GlassSurface>
-            <div className={styles.buttons}>
-              {Object.values(heroLinks).map(({ href, label }) => (
-                <Link key={href} href={href} className={styles.btn}>
+          <div className={styles.navigationList}>
+            {Object.values(heroLinks).map(({ href, label }) => (
+              <GlassSurface key={href}>
+                <Link href={href} className={styles.navigationLink}>
                   <span>{label}</span> <BsArrowRight />
                 </Link>
-              ))}
-            </div>
-          </GlassSurface>
+              </GlassSurface>
+            ))}
+          </div>
         </motion.div>
       </div>
     </Section>

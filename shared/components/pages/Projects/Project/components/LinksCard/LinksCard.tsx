@@ -32,7 +32,7 @@ export function LinksCard({ demoUrl, githubUrl }: Props) {
       <div className={styles.links}>
         {demoUrl ? (
           <a
-            className={`${styles.btn} ${styles.btnGhost}`}
+            className={`${styles.link} ${styles.linkGhost}`}
             href={demoUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -43,7 +43,7 @@ export function LinksCard({ demoUrl, githubUrl }: Props) {
 
         {githubUrl ? (
           <a
-            className={`${styles.btn} ${styles.btnGhost}`}
+            className={`${styles.link} ${styles.linkGhost}`}
             href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -53,7 +53,7 @@ export function LinksCard({ demoUrl, githubUrl }: Props) {
         ) : null}
 
         {!demoUrl && !githubUrl && (
-          <span className={styles.noLinks}>{t("noLinks")}</span>
+          <span className={styles.emptyState}>{t("noLinks")}</span>
         )}
       </div>
     </motion.article>
