@@ -78,12 +78,12 @@ export function ProjectSection({
   };
 
   return (
-    <Section className={styles.wrap}>
-      <div className={styles.topbar}>
-        <GlassSurface>
+    <Section className={styles.section}>
+      <div className={styles.header}>
+        <GlassSurface className={styles.backButtonWrapper}>
           <Link
             href={routes.projects.path}
-            className={styles.back}
+            className={styles.backLink}
             aria-label={t("backToProjectsAria")}
             onClick={(e) => {
               e.preventDefault();
@@ -140,6 +140,8 @@ export function ProjectSection({
 
         <DescriptionCard description={description} />
       </motion.section>
+
+      <div className="proxy"></div>
 
       {lightboxOpen && images.length > 0 && (
         <Lightbox
