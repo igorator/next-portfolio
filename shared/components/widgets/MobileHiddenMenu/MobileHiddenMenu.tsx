@@ -4,6 +4,7 @@ import { useEffect, useId } from "react";
 import { useTranslations } from "next-intl";
 import { BsX } from "react-icons/bs";
 import { AppPortal } from "@/shared/components/layout/AppPortal/AppPortal";
+import { LanguageSelect } from "../LanguageSelect/LanguageSelect";
 import { Socials } from "../Socials/Socials";
 import { ThemeSwitch } from "../ThemeSwitcher/ThemeSwitcher";
 import styles from "./MobileHiddenMenu.module.css";
@@ -54,6 +55,7 @@ export const MobileHiddenMenu: React.FC<Props> = ({ open, onClose }) => {
         onKeyDown={(e) => e.stopPropagation()}
       >
         <div className={styles.header}>
+          <LanguageSelect side="bottom" align="start" />
           <button
             type="button"
             className={styles.closeBtn}

@@ -24,6 +24,7 @@
   backdrop-filter: blur(var(--backdrop-blur));
   border: 1px solid var(--glass-border);
   box-shadow: var(--shadow-md);
+  z-index: 1003;
 }
 
 .selectItem {
