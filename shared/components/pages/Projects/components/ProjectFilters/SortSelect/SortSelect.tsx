@@ -65,9 +65,9 @@ export const SortSelect = ({
 
       <Select.Portal>
         <Select.Content
-          className={`${styles.selectContent} glass-wrapper`}
+          className={`${styles.selectContent} glass-card`}
           position="popper"
-          sideOffset={20}
+          sideOffset={8}
           align="start"
         >
           <Select.Viewport className={styles.selectViewport}>

@@ -70,14 +70,19 @@
 }
 
 .selectContent {
+  composes: glass-card from global;
   width: var(--radix-select-trigger-width);
   overflow: hidden;
   padding: var(--space-2);
   border-radius: var(--radius-md);
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--backdrop-blur));
-  border: 1px solid var(--glass-border);
   box-shadow: var(--shadow-md);
+  backdrop-filter: blur(var(--backdrop-blur)) saturate(140%);
+  background: linear-gradient(
+    135deg,
+    var(--glass-bg) 0%,
+    color-mix(in srgb, var(--glass-bg) 50%, transparent) 100%
+  );
+  border: 1px solid var(--glass-border);
 }
 
 .selectViewport {
@@ -104,8 +109,7 @@
 }
 
 .selectItem[data-state="checked"] {
-  background: color-mix(in srgb, var(--primary) 10%, transparent);
-  color: var(--text-color);
+  color: var(--accent);
 }
 
 /* Чек-иконка справа */
@@ -123,9 +127,4 @@
 
 .selectTrigger[data-state="open"] .chevronIcon {
   transform: rotate(180deg);
-}
-
-/* Меню = ширина триггера (Radix прокидывает переменную) */
-.selectContent {
-  width: var(--radix-select-trigger-width);
 }
