@@ -70,7 +70,6 @@
 }
 
 .selectContent {
-  composes: glass-card from global;
   width: var(--radix-select-trigger-width);
   overflow: hidden;
   padding: var(--space-2);

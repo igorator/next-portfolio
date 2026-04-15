@@ -34,7 +34,7 @@ export function LanguageSelect({ side = "top", align = "end" }: Props) {
 
       <DropdownMenu.Portal>
         <DropdownMenu.Content
-          className={styles.selectContent}
+          className={`${styles.selectContent} glass-card`}
           side={side}
           align={align}
           sideOffset={12}

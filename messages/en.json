@@ -12,7 +12,6 @@
   "navigation": {
     "root": "Home",
     "projects": "Projects",
-    "cv": "CV",
     "employment": "Employment"
   },
   "projects": {
@@ -75,11 +74,6 @@
       "openOriginal": "Open original",
       "imageAlt": "{title} — image {current} of {total}"
     }
-  },
-  "cv": {
-    "title": "CV",
-    "download": "Download CV",
-    "view": "View in Browser"
   },
   "employment": {
     "title": "Employment History",

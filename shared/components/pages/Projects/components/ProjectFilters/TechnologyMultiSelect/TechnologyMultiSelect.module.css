@@ -55,7 +55,6 @@
 }
 
 .menuContent {
-  composes: glass-card from global;
   width: 300px;
   max-height: 320px;
   overflow-y: auto;

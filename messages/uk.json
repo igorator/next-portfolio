@@ -12,7 +12,6 @@
   "navigation": {
     "root": "Головна",
     "projects": "Проекти",
-    "cv": "Резюме",
     "employment": "Досвід"
   },
   "projects": {
@@ -75,11 +74,6 @@
       "openOriginal": "Відкрити оригінал",
       "imageAlt": "{title} — зображення {current} з {total}"
     }
-  },
-  "cv": {
-    "title": "Резюме",
-    "download": "Завантажити резюме",
-    "view": "Переглянути в браузері"
   },
   "employment": {
     "title": "Досвід роботи",

@@ -48,7 +48,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <div
-      className={`${styles.projectCard}${isHighlighted ? ` ${styles.highlighted}` : ""}`}
+      className={`${styles.projectCard} glass-card${isHighlighted ? ` ${styles.highlighted}` : ""}`}
     >
       {(date || isCommercial) && (
         <div className={styles.meta}>

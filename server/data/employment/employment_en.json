@@ -7,6 +7,7 @@
       "Developed client-side with TON payments integration",
       "Developed backend and payment processing logic",
       "Integrated Telegram Mini Apps and Telegram bot",
+      "Developed and tested smart contracts with Jest",
       "Deployed the application"
     ]
   },
@@ -18,6 +19,7 @@
       "Optimized existing projects and implemented new features",
       "Integrated APIs, CRMs, and payment systems",
       "Communicated directly with clients and provided consulting",
+      "Performance optimization according to Web Vitals",
       "Passed Webflow Partner certification",
       "Collaborated with UI/UX and backend developers"
     ]
@@ -29,7 +31,8 @@
       "Developed Telegram bot with Supabase integration and deployment",
       "Built internal dashboard: client-side, server-side, and deployment",
       "Developed website with internationalization and form submission API",
-      "Collaborated with UI/UX designer"
+      "Collaborated with UI/UX designer",
+      "Performance optimization according to Web Vitals"
     ]
   },
   "nocorny-agency": {
@@ -46,7 +49,9 @@
     "roles": [
       "Developed Next.js website: client-side, Spline 3D integration, performance optimization, CRM integration",
       "Integrated payment API for a charity website",
-      "Designed Webflow websites"
+      "Designed Webflow websites",
+      "Cross-browser compatibility",
+      "Performance optimization according to Web Vitals"
     ]
   },
   "upwork-freelance": {

@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useMemo } from "react";
 import { routing } from "@/i18n/routing";
 import { routes } from "@/shared/config/routes";
+import { LinkTooltip } from "@/shared/components/ui/LinkTooltip/LinkTooltip";
 import styles from "./NavbarLinks.module.css";
 
 type Route = (typeof routes)[keyof typeof routes];
@@ -43,23 +44,26 @@ export const NavbarLinks = () => {
         const label =
           path === routes.root.path
             ? t("navigation.root")
-            : path === routes.cv.path
-              ? t("navigation.cv")
-              : path === routes.employment.path
-                ? t("navigation.employment")
-                : t("navigation.projects");
+            : path === routes.employment.path
+              ? t("navigation.employment")
+              : t("navigation.projects");
 
         return (
-          <Link
+          <LinkTooltip
             key={path}
-            href={href}
-            className={`${styles.navItem} ${active ? styles.isActive : ""}`}
-            aria-current={active ? "page" : undefined}
-            prefetch
-          >
-            <Icon className={styles.icon} aria-hidden="true" />
-            <span className={styles.label}>{label}</span>
-          </Link>
+            label={label}
+            className={styles.navItemWrapper}
+            trigger={
+              <Link
+                href={href}
+                className={`${styles.navItem} ${active ? styles.isActive : ""}`}
+                aria-current={active ? "page" : undefined}
+                prefetch
+              >
+                <Icon className={styles.icon} aria-hidden="true" />
+              </Link>
+            }
+          />
         );
       })}
     </nav>

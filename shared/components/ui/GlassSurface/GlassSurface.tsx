@@ -5,6 +5,7 @@ type GlassSurfaceProps = {
   children: ReactNode;
   className?: string;
   contentClassName?: string;
+  overflowVisible?: boolean;
   style?: CSSProperties & {
     ["--gs-radius"]?: string;
     ["--gs-padding"]?: string;
@@ -20,6 +21,7 @@ export const GlassSurface = ({
   children,
   className,
   contentClassName,
+  overflowVisible,
   style,
 }: GlassSurfaceProps) => {
   const filterId = "glass-surface-filter";
@@ -27,7 +29,11 @@ export const GlassSurface = ({
   return (
     <div
       className={`${styles.glass} ${className ?? ""}`}
-      style={{ ...(style ?? {}), ["--gs-filter" as any]: `url(#${filterId})` }}
+      style={{
+        ...(style ?? {}),
+        ["--gs-filter" as any]: `url(#${filterId})`,
+        ...(overflowVisible ? { overflow: "visible" } : {}),
+      }}
       data-shine="1"
     >
       <div className={styles.effect} />
