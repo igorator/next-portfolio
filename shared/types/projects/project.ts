@@ -13,6 +13,7 @@ export type Project = {
   githubUrl?: string | null;
   demoUrl?: string | null;
   isCommercial?: boolean;
+  isHighlighted?: boolean;
 };
 
 export type ProjectWithTechnologies = Omit<Project, "technologiesIds"> & {

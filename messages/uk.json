@@ -83,7 +83,8 @@
   },
   "employment": {
     "title": "Досвід роботи",
-    "linkedProjects": "Пов'язані проєкти"
+    "linkedProjects": "Пов'язані проєкти",
+    "present": "Донині"
   },
   "error": {
     "title": "Щось пішло не так",

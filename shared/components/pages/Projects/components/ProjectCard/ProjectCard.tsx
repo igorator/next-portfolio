@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useFormatter, useTranslations } from "next-intl";
 import { BsArrowRight } from "react-icons/bs";
 import { Link } from "@/i18n/navigation";
 import { ProjectCardTooltip } from "./ProjectCardTooltip/ProjectCardTooltip";
@@ -17,6 +17,7 @@ export type ProjectCardProps = {
   githubUrl?: string | null;
   demoUrl?: string | null;
   isCommercial?: boolean;
+  isHighlighted?: boolean;
   onTechnologyClick?: (techId: string) => void;
 };
 
@@ -31,17 +32,29 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   githubUrl,
   demoUrl,
   isCommercial,
+  isHighlighted,
   onTechnologyClick,
 }) => {
   const t = useTranslations();
+  const format = useFormatter();
+
+  const formatDate = (dateStr: string) => {
+    const [year, month] = dateStr.split("-").map(Number);
+    return format.dateTime(new Date(year, month - 1, 1), {
+      month: "short",
+      year: "numeric",
+    });
+  };
 
   return (
-    <div className={styles.projectCard}>
+    <div
+      className={`${styles.projectCard}${isHighlighted ? ` ${styles.highlighted}` : ""}`}
+    >
       {(date || isCommercial) && (
         <div className={styles.meta}>
           {date ? (
             <time className={styles.date} dateTime={date}>
-              {date}
+              {formatDate(date)}
             </time>
           ) : (
             <span />

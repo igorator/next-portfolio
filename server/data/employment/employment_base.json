@@ -2,13 +2,15 @@
   {
     "id": "doido-market",
     "company": "DOIDO Market",
-    "period": "2025",
+    "startDate": "2025-02",
+    "endDate": "2025-05",
     "projects": ["doido-market"]
   },
   {
     "id": "tresor-tech",
     "company": "Tresor.tech",
-    "period": "2024 - 2025",
+    "startDate": "2024-03",
+    "endDate": "2025-01",
     "projects": []
   },
   {
@@ -20,19 +22,21 @@
   {
     "id": "3mpq-studio",
     "company": "3mpq Studio",
-    "period": "2023 — 2024",
+    "startDate": "2023-07",
+    "endDate": "2023-12",
     "projects": ["3mpq-studio-lite", "studio-dashboard", "zycsel-store-bot"]
   },
   {
     "id": "logics7",
     "company": "Logics7",
-    "period": "2022 - 2023",
+    "startDate": "2022-11",
+    "endDate": "2023-06",
     "projects": ["pss", "dovira", "easm", "webwise", "turbota-liqpay"]
   },
   {
     "id": "upwork-freelance",
     "company": "Freelance",
-    "period": "~",
+    "period": "On & Off",
     "projects": ["anyway", "custom-globe"]
   }
 ]

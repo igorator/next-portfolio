@@ -98,7 +98,7 @@ export const Lightbox = ({
             src={images[index]}
             alt={t("imageAlt", { title, current: index + 1, total })}
             fill
-            sizes="100vw"
+            sizes="(min-width: 1158px) 1100px, 95vw"
             className={styles.image}
             priority
             onClick={onClose}

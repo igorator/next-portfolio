@@ -18,6 +18,12 @@
   transition: all var(--transition-normal);
 }
 
+.highlighted {
+  box-shadow:
+    0 0 16px 2px color-mix(in oklab, white 22%, transparent),
+    var(--shadow-md);
+}
+
 .title {
   margin-bottom: var(--space-3);
   font-size: var(--text-xl);

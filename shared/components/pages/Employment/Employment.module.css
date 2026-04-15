@@ -85,24 +85,35 @@
   white-space: nowrap;
 }
 
-/* ИЗМЕНЕНО: годы прижаты вправо и не переносятся */
-.period {
-  font-size: var(--tl-period-fs);
-  color: var(--text-muted);
-  white-space: nowrap;
+.typeBadge {
+  display: inline-flex;
+  align-items: center;
   justify-self: end;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid color-mix(in oklab, var(--accent) 35%, transparent);
+  background: color-mix(in oklab, var(--accent) 10%, transparent);
+  color: var(--accent);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+  line-height: 1.6;
 }
 
-.type {
-  color: color-mix(
-    in oklab,
-    var(--text) 90%,
-    transparent
-  ); /* немного менее прозрачный */
-  font-size: var(--text-sm);
-  font-weight: 600; /* жирный */
-  text-transform: capitalize; /* первая буква заглавная */
+.period {
+  font-size: var(--tl-period-fs);
+  font-weight: 300;
+  color: color-mix(in oklab, var(--text-muted) 70%, transparent);
+  white-space: nowrap;
   margin-bottom: var(--space-4);
+}
+
+.position {
+  grid-column: 1 / -1;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-muted);
 }
 
 .roles {
