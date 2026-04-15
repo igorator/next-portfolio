@@ -44,7 +44,7 @@ body {
   --default-font-weight: 400;
   --default-max-width: 1440px;
   --navbar-height: 56px;
-  --full-height: 100vh;
+  --full-height: 100dvh;
   --wave-color-light: #1a1a1a;
   --wave-color-dark: #e5e5e5;
   --wave-color: var(--wave-color-dark);
@@ -252,10 +252,17 @@ a:hover {
 }
 
 .proxy {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 0;
   height: 0;
   pointer-events: none;
+}
+
+.glass-card {
+  backdrop-filter: blur(var(--backdrop-blur)) saturate(140%);
+  background: linear-gradient(
+    135deg,
+    var(--glass-bg) 0%,
+    color-mix(in srgb, var(--glass-bg) 50%, transparent) 100%
+  );
+  border: 1px solid var(--glass-border);
 }

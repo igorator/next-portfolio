@@ -1,38 +1,40 @@
 {
   "doido-market": {
     "type": "startup",
+    "position": "Co-founder & Full-Stack Developer",
     "roles": [
-      "Designed application architecture",
+      "Designed Telegram NFT marketplace application architecture",
       "Developed client-side with TON payments integration",
       "Developed backend and payment processing logic",
-      "Integrated Telegram Mini Apps",
-      "Developed Telegram bot",
+      "Integrated Telegram Mini Apps and Telegram bot",
       "Deployed the application"
     ]
   },
   "tresor-tech": {
     "type": "outsource",
+    "position": "Front-End Developer",
     "roles": [
-      "Developed React / Next.js websites",
-      "Built Webflow websites",
+      "Developed React & Webflow websites",
       "Optimized existing projects and implemented new features",
-      "Integrated APIs, CRMs",
-      "Communicated with clients and provided consulting",
-      "Passed Webflow Partner verification",
+      "Integrated APIs, CRMs, and payment systems",
+      "Communicated directly with clients and provided consulting",
+      "Passed Webflow Partner certification",
       "Collaborated with UI/UX and backend developers"
     ]
   },
   "3mpq-studio": {
-    "type": "freelance",
+    "type": "startup",
+    "position": "Co-founder & Full-Stack Developer",
     "roles": [
-      "Designed and developed dashboards and internal tools",
-      "Created web applications and automated workflows",
-      "Built a Telegram-based product search and catalog system",
-      "Handled diverse freelance projects from fixes to full product builds"
+      "Developed Telegram bot with Supabase integration and deployment",
+      "Built internal dashboard: client-side, server-side, and deployment",
+      "Developed website with internationalization and form submission API",
+      "Collaborated with UI/UX designer"
     ]
   },
   "nocorny-agency": {
     "type": "freelance",
+    "position": "Front-End Developer",
     "roles": [
       "Webflow Developed websites",
       "Collaborated on client projects and implemented design ideas"
@@ -40,17 +42,20 @@
   },
   "logics7": {
     "type": "on demand",
+    "position": "Webflow / Front-end Developer",
     "roles": [
-      "Created custom web applications and interfaces",
-      "Implemented payment systems and user interaction features",
-      "Maintained and improved existing client websites"
+      "Developed Next.js website: client-side, Spline 3D integration, performance optimization, CRM integration",
+      "Integrated payment API for a charity website",
+      "Designed Webflow websites"
     ]
   },
   "upwork-freelance": {
     "type": "freelance",
+    "position": "Front-End Developer",
     "roles": [
-      "Delivered small-scale projects and one-off client requests",
-      "Built tailored web solutions for international clients"
+      "Developing client projects as an independent developer",
+      "Client communication and requirements gathering",
+      "Collaboration with teams of designers and developers"
     ]
   }
 }

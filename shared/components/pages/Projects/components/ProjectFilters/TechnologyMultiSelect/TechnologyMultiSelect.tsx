@@ -55,7 +55,7 @@ export const TechnologyMultiSelect = ({
         <DropdownMenu.Portal>
           <DropdownMenu.Content
             className={`${styles.menuContent}`}
-            sideOffset={20}
+            sideOffset={8}
             align="start"
           >
             {technologies.map((t) => {

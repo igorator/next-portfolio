@@ -41,7 +41,8 @@
   },
   {
     "slug": "doido-market",
-    "date": "2025-06",
+    "date": "2025-05",
+    "isHighlighted": true,
     "isCommercial": true,
     "technologiesIds": [
       "vite",
@@ -78,14 +79,15 @@
   },
   {
     "slug": "zycsel-store-bot",
-    "date": "2025-03",
+    "date": "2023-12",
     "demoUrl": "https://t.me/zycsel_bot",
+    "isHighlighted": true,
     "isCommercial": true,
     "technologiesIds": ["nodejs", "supabase", "telegram", "grammy"]
   },
   {
     "slug": "studio-dashboard",
-    "date": "2024-11",
+    "date": "2023-12",
     "githubUrl": "https://github.com/igorator/studio-dashboard",
     "demoUrl": null,
     "isCommercial": false,
@@ -101,7 +103,7 @@
   },
   {
     "slug": "3mpq-studio-lite",
-    "date": "2024-09",
+    "date": "2023-12",
     "githubUrl": "https://github.com/igorator/3mpq-Studio-lite",
     "demoUrl": null,
     "isCommercial": true,
@@ -118,7 +120,8 @@
   },
   {
     "slug": "webwise",
-    "date": "2024-07",
+    "date": "2023-06",
+    "isHighlighted": true,
     "githubUrl": null,
     "demoUrl": "https://webwise.logics7.com/",
     "isCommercial": true,
@@ -142,7 +145,7 @@
   },
   {
     "slug": "turbota-liqpay",
-    "date": "2023-11",
+    "date": "2023-06",
     "githubUrl": null,
     "demoUrl": null,
     "isCommercial": true,
@@ -150,7 +153,7 @@
   },
   {
     "slug": "easm",
-    "date": "2023-09",
+    "date": "2023-06",
     "githubUrl": null,
     "demoUrl": "https://logics7.com/easm/",
     "isCommercial": true,
@@ -166,7 +169,7 @@
   },
   {
     "slug": "dovira",
-    "date": "2022-10",
+    "date": "2022-11",
     "githubUrl": null,
     "demoUrl": "https://www.dovira.uk/",
     "isCommercial": true,

@@ -52,6 +52,7 @@ export const ProjectsGrid = ({
                 githubUrl={project.githubUrl}
                 demoUrl={project.demoUrl}
                 isCommercial={project.isCommercial}
+                isHighlighted={project.isHighlighted}
               />
             </motion.div>
           ))}

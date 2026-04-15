@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "motion/react";
-import { useTranslations } from "next-intl";
+import { useFormatter, useTranslations } from "next-intl";
 import layout from "../../Project.module.css";
 import styles from "./OverviewCard.module.css";
 
@@ -24,6 +24,15 @@ type Props = {
 
 export function OverviewCard({ title, type, category, date }: Props) {
   const t = useTranslations("projects_ui");
+  const format = useFormatter();
+
+  const formatDate = (dateStr: string) => {
+    const [year, month] = dateStr.split("-").map(Number);
+    return format.dateTime(new Date(year, month - 1, 1), {
+      month: "short",
+      year: "numeric",
+    });
+  };
 
   return (
     <motion.article
@@ -43,7 +52,7 @@ export function OverviewCard({ title, type, category, date }: Props) {
         <li className={styles.metaItem}>
           <span className={styles.metaLabel}>{t("date")}</span>
           <time className={styles.metaValue} dateTime={date}>
-            {date}
+            {formatDate(date)}
           </time>
         </li>
       </ul>

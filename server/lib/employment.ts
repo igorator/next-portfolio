@@ -13,7 +13,10 @@ import type { Employment } from "@/shared/types";
 import type { Project } from "@/shared/types/projects/project";
 import { resolveLocale } from "./locale";
 
-type LocalizedMap = Record<string, { type: string; roles: string[] }>;
+type LocalizedMap = Record<
+  string,
+  { type: string; position?: string; roles: string[] }
+>;
 
 const EMPLOYMENT_BY_LANG: Record<Locale, LocalizedMap> = {
   en: employmentEn as LocalizedMap,
@@ -50,6 +53,7 @@ function fetchEmployment(locale: Locale): Employment[] {
     return {
       ...baseItem,
       type: loc?.type ?? "unknown",
+      position: loc?.position,
       roles: loc?.roles ?? [],
       linkedProjects,
     } as Employment;

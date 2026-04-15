@@ -83,7 +83,8 @@
   },
   "employment": {
     "title": "Employment History",
-    "linkedProjects": "Linked projects"
+    "linkedProjects": "Linked projects",
+    "present": "Present"
   },
   "error": {
     "title": "Something went wrong",

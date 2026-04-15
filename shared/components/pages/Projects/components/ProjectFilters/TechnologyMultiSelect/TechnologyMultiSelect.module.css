@@ -55,14 +55,33 @@
 }
 
 .menuContent {
+  composes: glass-card from global;
+  width: 300px;
   max-height: 320px;
-  overflow: auto;
+  overflow-y: auto;
   padding: var(--space-2);
   border-radius: var(--radius-md);
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--backdrop-blur));
-  border: 1px solid var(--glass-border);
   box-shadow: var(--shadow-md);
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--foreground) 25%, transparent)
+    transparent;
+}
+
+.menuContent::-webkit-scrollbar {
+  width: 4px;
+}
+
+.menuContent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.menuContent::-webkit-scrollbar-button {
+  display: none;
+}
+
+.menuContent::-webkit-scrollbar-thumb {
+  background-color: color-mix(in srgb, var(--foreground) 25%, transparent);
+  border-radius: var(--radius-full);
 }
 
 .menuItem {
@@ -85,7 +104,7 @@
 }
 
 .menuItem[data-state="checked"] {
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  color: var(--accent);
 }
 
 .menuItemLabel {
@@ -126,4 +145,10 @@
 
 .triggerButton[data-state="open"] .chevronIcon {
   transform: rotate(180deg);
+}
+
+@media (max-width: 720px) {
+  .menuContent {
+    width: var(--radix-dropdown-menu-trigger-width);
+  }
 }

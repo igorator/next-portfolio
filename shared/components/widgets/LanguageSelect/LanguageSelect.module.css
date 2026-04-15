@@ -18,11 +18,9 @@
 }
 
 .selectContent {
+  composes: glass-card from global;
   overflow: hidden;
   border-radius: var(--radius-md);
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--backdrop-blur));
-  border: 1px solid var(--glass-border);
   box-shadow: var(--shadow-md);
   z-index: 1003;
 }
@@ -45,7 +43,6 @@
 }
 
 .selectItem[data-state="checked"] {
-  background-color: color-mix(in srgb, var(--accent) 10%, var(--background));
   color: var(--accent);
   font-weight: 500;
 }

@@ -1,4 +1,5 @@
 .projectCard {
+  composes: glass-card from global;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -7,15 +8,25 @@
   min-height: 320px;
   height: 100%;
   border-radius: var(--radius-lg);
-  backdrop-filter: blur(var(--backdrop-blur)) saturate(140%);
-  background: linear-gradient(
-    135deg,
-    var(--glass-bg) 0%,
-    color-mix(in srgb, var(--glass-bg) 50%, transparent) 100%
-  );
-  border: 1px solid var(--glass-border);
   box-shadow: var(--shadow-md);
   transition: all var(--transition-normal);
+}
+
+.highlighted {
+  --highlight-glow: color-mix(in oklab, white 22%, transparent);
+  box-shadow:
+    0 -6px 16px 2px var(--highlight-glow),
+    var(--shadow-md);
+}
+
+:root[data-theme="light"] .highlighted {
+  --highlight-glow: color-mix(in oklab, black 18%, transparent);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) .highlighted {
+    --highlight-glow: color-mix(in oklab, black 18%, transparent);
+  }
 }
 
 .title {

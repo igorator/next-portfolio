@@ -1,7 +1,8 @@
 .title {
-  font-weight: bold;
-  margin-bottom: var(--space-6);
-  font-size: var(--text-2xl);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  margin-bottom: var(--section-gap);
+  text-align: center;
 }
 
 .filtersContainer {
