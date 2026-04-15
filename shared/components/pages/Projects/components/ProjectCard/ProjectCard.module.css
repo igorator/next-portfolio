@@ -19,9 +19,20 @@
 }
 
 .highlighted {
+  --highlight-glow: color-mix(in oklab, white 22%, transparent);
   box-shadow:
-    0 0 16px 2px color-mix(in oklab, white 22%, transparent),
+    0 -6px 16px 2px var(--highlight-glow),
     var(--shadow-md);
+}
+
+:root[data-theme="light"] .highlighted {
+  --highlight-glow: color-mix(in oklab, black 18%, transparent);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) .highlighted {
+    --highlight-glow: color-mix(in oklab, black 18%, transparent);
+  }
 }
 
 .title {

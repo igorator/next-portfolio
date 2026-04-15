@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence } from "motion/react";
+import { useTranslations } from "next-intl";
 import { Section } from "@/shared/components/layout/Section/Section";
 import type { ProjectWithTechnologies } from "@/shared/types/projects/project";
 import type { Technology } from "@/shared/types/technology";
@@ -18,6 +19,8 @@ export const ProjectsSection = ({
   projects,
   technologies,
 }: ProjectsSectionProps) => {
+  const t = useTranslations("projects");
+
   const {
     selectedTechs,
     sortBy,
@@ -33,6 +36,8 @@ export const ProjectsSection = ({
 
   return (
     <Section className={styles.projectSection}>
+      <h2 className={styles.title}>{t("title")}</h2>
+
       <ProjectFilters
         technologies={availableTechnologies ?? technologies}
         selectedTechnologies={selectedTechs}
