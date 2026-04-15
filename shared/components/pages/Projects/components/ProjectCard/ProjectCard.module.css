@@ -1,5 +1,4 @@
 .projectCard {
-  composes: glass-card from global;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

@@ -54,7 +54,7 @@ export const TechnologyMultiSelect = ({
       {!loading && (
         <DropdownMenu.Portal>
           <DropdownMenu.Content
-            className={`${styles.menuContent}`}
+            className={`${styles.menuContent} glass-card`}
             sideOffset={8}
             align="start"
           >

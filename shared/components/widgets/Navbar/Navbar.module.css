@@ -62,10 +62,6 @@
   text-overflow: ellipsis;
 }
 
-.navbarLinksGlass {
-  overflow: visible !important;
-}
-
 .navbarControls {
   display: flex;
   height: 100%;
@@ -95,7 +91,7 @@
 
   .navbar {
     inset-inline: 0;
-    padding: 0 var(--space-5);
+    padding: 0 var(--space-3);
     bottom: calc(var(--space-3) + env(safe-area-inset-bottom));
     justify-content: center;
     gap: 0;

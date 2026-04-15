@@ -15,7 +15,6 @@ const getHeroLinks = (t: ReturnType<typeof useTranslations>) => ({
     label: t("navigation.employment"),
     href: routes.employment.path,
   },
-  cv: { label: t("navigation.cv"), href: routes.cv.path },
 });
 
 const titleContainer: Variants = {

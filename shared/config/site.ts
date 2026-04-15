@@ -21,9 +21,6 @@ export const siteConfig = {
     employment: {
       description: "Employment history and work experience.",
     },
-    cv: {
-      description: "CV view or download.",
-    },
   },
   og: {
     brand: "Ihor Kliushnyk",

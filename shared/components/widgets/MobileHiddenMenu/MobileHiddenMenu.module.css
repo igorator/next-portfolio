@@ -42,9 +42,8 @@
 
   overflow: auto;
 
-  transform: translateY(16px);
   opacity: 0;
-  animation: mhm-slide-up 0.25s ease forwards;
+  animation: mhm-fade-in 0.25s ease forwards;
 }
 
 .header {
@@ -100,13 +99,11 @@
 
 /* Анимации */
 
-@keyframes mhm-slide-up {
+@keyframes mhm-fade-in {
   from {
-    transform: translateY(16px);
     opacity: 0;
   }
   to {
-    transform: translateY(0);
     opacity: 1;
   }
 }

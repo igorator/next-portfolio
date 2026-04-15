@@ -3,7 +3,7 @@ import { routing } from "@/i18n/routing";
 import projectBase from "@/server/data/projects/project_base.json";
 import { siteConfig } from "@/shared/config/site";
 
-const STATIC_PATHS = ["/", "/projects", "/employment", "/cv"] as const;
+const STATIC_PATHS = ["/", "/projects", "/employment"] as const;
 
 const projectEntries = (
   projectBase as Array<{ slug: string; date?: string }>

@@ -67,8 +67,8 @@ export const MobileHiddenMenu: React.FC<Props> = ({ open, onClose }) => {
         </div>
 
         <div className={styles.content}>
+          <Socials vertical />
           <ThemeSwitch />
-          <Socials />
         </div>
       </div>
     </AppPortal>
